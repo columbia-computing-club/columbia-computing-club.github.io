@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Welcome to the blog of the Columbia Biostatistis computing club!"
+title: "Welcome to the blog of the Columbia Biostatistics computing club!"
 date: 2017-01-01
 ---
 
