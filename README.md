@@ -1,2 +1,5 @@
 # columbia-computRs.github.io
-statistical programming tutorials from the Columbia University Department of Biostatistics
+Statistical programming tutorials from the Columbia University Department of Biostatistics
+
+
+Access our website [here](http://columbia-computrs.github.io)!
