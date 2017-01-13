@@ -14,13 +14,13 @@ nav ul li, footer ul li {
 }
 a {
     text-decoration: none;
-    color: #999;
+    color: #1E90FF;
 }
 a:hover {
     text-decoration: underline;
 }
 h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 p {
@@ -33,8 +33,13 @@ footer {
     font-size: .8em;
 }
 
-ul.posts { 
-    margin: 20px auto 40px; 
+ul.posts {
+    margin: 20px auto 40px;
+    font-size: 1.75em;
+}
+
+ul {
+    margin: 20px auto 40px;
     font-size: 1.5em;
 }
 
