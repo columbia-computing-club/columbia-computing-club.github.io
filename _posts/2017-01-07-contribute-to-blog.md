@@ -18,6 +18,9 @@ If you are a biostatistics student interested in becoming a contributing member 
 
 4. Now to start writing your post! First go to the [repo for the computing club website](https://github.com/columbia-computing-club/columbia-computing-club.github.io). Click on the *_posts* folder.
 
-5. Click **Create new file**. Name your file. It must follow the naming convention *YYYY-MM-DD-title-of-my-post.md*. This filename gets translated into a link for the post. The file extension '.md' stands for *Markdown*, which is a user-friendly language that generates blog posts into html for websites. There are many [Markdown resources](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for making fancier posts. Follow the example post below for getting started:
+5. Click **Create new file**. Name your file. It must follow the naming convention *YYYY-MM-DD-title-of-my-post.md*. This filename gets translated into a link for the post. The file extension '.md' stands for *Markdown*, which is a user-friendly language that generates blog posts into html for websites. There are many [Markdown resources](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for making fancier posts. Follow the example post below for getting started: <center><img src="/assets/20170116_blog2.png" width="1010"></center>
 
-6.
+
+6. Once you are happy with your post, click **Commit changes**, and the post should be live in a few minutes! You can view it at http://columbia-computing-club.github.io/YYYY/MM/DD/name-of-your-post.
+
+7. Have fun, and good luck!
