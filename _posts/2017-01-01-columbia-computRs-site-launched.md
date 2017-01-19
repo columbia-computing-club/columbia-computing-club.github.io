@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: "Welcome to the blog of the Columbia Biostatistics computing club!"
 date: 2017-01-01
 author: Julia Wrobel
