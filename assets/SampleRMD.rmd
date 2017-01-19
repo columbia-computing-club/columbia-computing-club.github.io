@@ -1,0 +1,172 @@
+---
+title: "R Markdown Presentation"
+author: "Ariel Chernofsky"
+date: "1/19/2017"
+linestretch: 2
+fontsize: 11pt
+geometry: margin = 1in
+output:
+  pdf_document: default
+header-includes:
+- \usepackage{amsmath}
+- \usepackage{multirow}
+- \usepackage{capt-of}
+---
+
+#Code Chunks
+
+##Creating a Code Chunk
+
+creating a code chunk:  
+
+* PC: Ctrl+Alt+I
+* Mac: Cmd+Opt+I
+
+##Code Chunk Options
+
+```{r echo = TRUE, message = FALSE, warning = FALSE}
+ 
+567 * 851
+
+```
+
+##Global Code Chunk Options 
+
+```{r include = FALSE}
+
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+
+```
+
+
+```{r prompt = TRUE}
+
+library(nycflights13)
+
+head(flights[,c(1:8)])
+```
+
+```{r comment=''}
+
+dep_delay = flights$dep_delay
+
+mean(dep_delay, na.rm = T)
+
+```
+## Figure Options
+
+Default figure width and height is 7
+```{r fig.align='center', fig.height= 6, fig.width= 11, fig.path= 'path/plot', fig.ext='png', fig.cap='Histogram'}
+
+arr_time = flights$arr_time
+
+hist(arr_time, main = "Distribution of Arrival Times", xlab = "Arrival Times")
+
+```
+
+#Text
+
+##RMD Formats
+
+R Markdown has built in text formatting examples are provided below:
+
+Section Headers
+
+# Section Headers 1
+
+##Header 2
+
+###Header 3
+
+#### Header 4
+
+#### ...
+
+2 ways to italicize text *italics* or _italics_
+
+2 ways to bold text **italics** or __italics__
+
+strikethrough text: ~~strikethrough~~ 
+
+superscript: superscript^2^ 
+
+##Inline R Code
+
+You can include inline code into your text as follows: 
+
+The average arrival time of the flights is `r mean(flights$arr_time)`. 
+
+* unordered list
+* item 2
+    + sub-item 1
+    + sub-item 2
+
+1. ordered list
+2. item 2
+    + sub-item 1
+    + sub-item 2 
+
+##LaTeX
+
+LaTeX equations, tables, figures etc. can be included examples of each are included below: 
+
+###Equation
+The mass function of the Poisson Distribution is given by:$f(y;\lambda) = \frac{\lambda^y e^{-\lambda}}{y!}$
+
+```{r echo = F}
+
+origin = flights$origin
+carrier = flights$carrier
+
+tab = table(flights$origin, flights$carrier)
+
+```
+
+
+\begin{align*}
+  f(y,\mu, \sigma^2) &= \frac{1}{\sqrt{2\pi \sigma^2}} exp[-\frac{(y-\mu)^2}{2\sigma^2}] \\
+  &= exp[-log\sqrt{2\pi \sigma^2} + \frac{y^2 - 2\mu y + \mu^2}{2\sigma^2}] \\
+  &= exp[\frac{\mu y - \frac{1}{2}\mu^2}{\sigma^2} - \frac{y^2}{2\sigma^2}-log\sqrt{2\pi \sigma^2}]
+\end{align*}
+
+###Online LaTeX Editors
+
+* [overleaf](https://www.overleaf.com/)
+* [ShareLaTex](https://www.sharelatex.com/)
+
+##Tables
+
+###Using RMD Built in Tables
+
+RMD Table
+
+Table Header  | Second Header
+------------- | -------------
+Table Cell | Cell 2
+Cell 3 | Cell 4 
+
+###LaTeX Tables
+
+####By Hand
+
+\begin{center}
+\captionof{table}{Origin by Flight Frequency Table}
+\begin{tabular}{l|rrrr}
+\hline
+ & AA & B6 & DL & UA \\
+\hline
+EWR & `r tab[1,2]` & 6557 & `r tab[1,'DL']` & `r tab['EWR','UA']`\\    
+JFK & `r tab[2,2]` & 42076 & `r tab[2,'DL']` & `r tab['JFK', 'UA']` \\
+LGA & `r tab[3,2]` & 6002 & `r tab[3, 'DL']` & `r tab['LGA', 'UA']` \\
+\end{tabular}
+\end{center}
+
+####Using Kable 
+
+```{r}
+library(knitr)
+
+kable(tab[,c(1:5)], caption = 'A Kable Table')
+```
+
+Other packages for creating LaTeX tables: [stargazer](https://cran.r-project.org/web/packages/stargazer/index.html), [xtable](https://cran.r-project.org/web/packages/xtable/index.html), [tables](https://cran.r-project.org/web/packages/tables/index.html) etc.
