@@ -68,7 +68,7 @@ library(ggplot2)
 box = ggplot(data = iris, aes(x = Species, y = Sepal.Length))
 box + geom_boxplot(aes(fill = Species), col = "grey") + 
   ylab("Sepal Length") + ggtitle("Iris Boxplot") +
-  stat_summary(fun.y = mean, geom = "point", shape = 5, size = 3, color = "pink")
+  stat_summary(fun.y = mean, geom = "point", shape = 5, size = 4, color = "pink")
 
 # Remove the legend : guides(fill=FALSE)
 # Flipped axes : coord_flip()
