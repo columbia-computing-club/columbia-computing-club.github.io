@@ -247,7 +247,22 @@ runApp(&quot;hospitalApp&quot;)</pre>
     ggplot(hospital, aes(x = catVar)) + geom_bar()
   })</pre>
 
-</article></slide><slide class=''><hgroup><h2>Your turn: add a plot to tab 2</h2></hgroup><article  id="your-turn-add-a-plot-to-tab-2">
+</article></slide><slide class=''><hgroup><h2>Add the same bar plot to tab 2 using reactive expressions</h2></hgroup><article  id="add-the-same-bar-plot-to-tab-2-using-reactive-expressions">
+
+<p>Reactive expressions give you flexibility for re-using user selected inputs.</p>
+
+<pre class = 'prettyprint lang-r'># only server.R is different
+
+catInput &lt;- reactive({
+  hospital[, input$catVar]
+})
+
+  output$categoricalPlot &lt;- renderPlot({
+    # draw the barplot
+    ggplot(hospital, aes(x = catInput() )) + geom_bar()
+  })</pre>
+
+</article></slide><slide class=''><hgroup><h2>Your turn: add a plot to tab 3</h2></hgroup><article  id="your-turn-add-a-plot-to-tab-3">
 
 <p>Start with something simple. Some ideas/tips:</p>
 
@@ -284,6 +299,7 @@ plot_shiny(SC)</pre>
 <li><a href='https://shiny.rstudio.com/articles/function.html' title=''>build your shiny app as a function</a></li>
 <li><a href='https://plot.ly/r/' title=''>check out plotly for interactive plotting that intergrates with ggplot</a></li>
 <li><a href='http://www.shinyapps.io/' title=''>hosting and deploying shiny apps online</a></li>
+<li><a href='https://shiny.rstudio.com/tutorial/lesson6/' title=''>reactive expression</a></li>
 </ul></article></slide>
 
 
