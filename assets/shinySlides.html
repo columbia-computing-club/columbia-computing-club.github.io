@@ -247,19 +247,44 @@ runApp(&quot;hospitalApp&quot;)</pre>
     ggplot(hospital, aes(x = catVar)) + geom_bar()
   })</pre>
 
-</article></slide><slide class=''><hgroup><h2>Add the same bar plot to tab 2 using reactive expressions</h2></hgroup><article  id="add-the-same-bar-plot-to-tab-2-using-reactive-expressions">
+</article></slide><slide class=''><hgroup><h2>skeleton for building up tab 2</h2></hgroup><article  id="skeleton-for-building-up-tab-2">
 
-<p>Reactive expressions give you flexibility for re-using user selected inputs.</p>
+<p>replace</p>
 
-<pre class = 'prettyprint lang-r'># only server.R is different
+<pre class = 'prettyprint lang-r'># ui: change this
+tabPanel(title = &quot;tab 2&quot;),
 
+# to this
+ tabPanel(title = &quot;tab 2&quot;,
+             sidebarLayout(
+               sidebarPanel(
+               ),
+              
+               mainPanel(
+                 h3(&quot;Histogram of a continuous variable grouped 
+                    by categorical variable&quot;),
+                 plotOutput(&quot;mixedPlot&quot;)
+               )
+             ) 
+             ), # end of tab 2 </pre>
+
+</article></slide><slide class=''><hgroup><h2>Add the same bar plot to tab 2</h2></hgroup><article  id="add-the-same-bar-plot-to-tab-2">
+
+<p>This time we use reactive expressions! Reactive expressions give you flexibility for re-using user selected inputs and make your code faster by selectively choosing what gets updated each time.</p>
+
+<pre class = 'prettyprint lang-r'># add to server
+
+contInput &lt;- reactive({
+  hospital[, input$contVar]
+})
 catInput &lt;- reactive({
   hospital[, input$catVar]
 })
 
-  output$categoricalPlot &lt;- renderPlot({
+  output$mixedPlot &lt;- renderPlot({
     # draw the barplot
-    ggplot(hospital, aes(x = catInput() )) + geom_bar()
+    ggplot(hospital, aes(x = contInput(), fill = catInput() )) +
+      geom_histogram()
   })</pre>
 
 </article></slide><slide class=''><hgroup><h2>Your turn: add a plot to tab 3</h2></hgroup><article  id="your-turn-add-a-plot-to-tab-3">
