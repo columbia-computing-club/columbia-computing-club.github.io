@@ -13,7 +13,7 @@
 #############
 #Use Substring if you have a consistent, specific length in your string that you want to grab
 x <- c("asfef", "qwerty", "yuiop[.yucky", "b", "stuff.blah.yuck")
-substr(x, 2, 5)
+substr(x, 1, 1)
 #Now try grabbing different parts (first element only, elements 3-7)
 
 #But what if you want to grab a pattern that varies, or don't know where in the string it is? 
@@ -68,9 +68,9 @@ sapply(strsplit(x, "\\.", fixed = FALSE), "[", 1) #works through entire vector
 n <- c("asfef", "yuiop[.yucky", "additional") #new list with common elements to x
 subset(x, x %in% n) #Subset of x where elements match with elements in y
 
+#Use grepl with subset
 subset(x, grepl("y", x)) #subset of x where elements contain "y" anywhere
 #try subsetting where y is at the beginning (^), end ($), search for multiple ([ya])
-
 
 
 #Cheat sheet: Logical operators http://www.statmethods.net/management/operators.html
@@ -89,7 +89,7 @@ subset(x, grepl("y", x)) #subset of x where elements contain "y" anywhere
 setwd("/Users/TinyDragon/Desktop/CBCC Presentation/Data")
 #First explain What is an RData file- how do you make it, how do you load it?
 load("mrna.reduced.RData")
-head(mrna[,100:110])
+head(mrna[,200:210])
 #Examine the data. What do the row names look like? 
 #How about the column names?
 #What class is the data? Why can we check one column and know the class of the whole matrix?
@@ -140,8 +140,8 @@ colnames(cna.seg.m) <- substr(colnames(cna.seg.m),1,12)
 colnames(cna.seg.m) <- gsub("\\.", "-", colnames(cna.seg.m))
 
 #Match CNA features with ones selected on gene expression
-cna.select <-subset(cna.seg.m, rownames(cna.seg.m) %in% rownames(mrna))
-mrna.cn.select <-subset(mrna, rownames(mrna) %in% rownames(cna.select))
+cna.select <-subset(cna.seg.m, rownames(cna.seg.m) %in% rownames(mrna.cn.select)) ##change mrna to mrna.cn.select
+mrna.cn.select <-subset(mrna.cn.select, rownames(mrna.cn.select) %in% rownames(cna.select))
 
 #Now that we have matching column titles we can create subsets of matching samples.
 #We have to TRANSPOSE first since R prefers to work row by row. 
@@ -195,6 +195,7 @@ split <- strsplit(out.split$genename, ";")
 
 #Now Repeat all elements of other rows by number of splits, make new df 
 #****Below, check out "unlist(split)! This is the big kahuna and the reason we did the whole thing
+#For each other variable, we are saying, repeat the elements of VECTOR the amount of times in the length of the split list
 out.split.rep <- data.frame(CHR = rep(out.split$CHR, sapply(split, length)), IlmnID = rep(out.split$IlmnID, sapply(split, length)),  address = rep(out.split$address, sapply(split, length)), genename = unlist(split))
 
 #Now make df WITHOUT multiple gene symbols and remove ones with NA gene symbol
