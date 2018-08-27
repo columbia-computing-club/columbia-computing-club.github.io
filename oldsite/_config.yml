@@ -1,0 +1,3 @@
+name: Columbia Biostatistics Computing Club
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title

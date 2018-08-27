@@ -1,0 +1,57 @@
+---
+title: "Resources"
+output:
+  html_document:
+    df_print: paged
+---
+
+* _March 19, 2018:_ Introduction to Illustrator with Anjile An.
+    + [Link to download materials and resources](http://tinyurl.com/k8ya4gk)
+
+\newline
+
+* _November 13, 2017:_ Using the OSX Terminal with Julia Wrobel.
+    + [Link to Julia's tutorial](http://juliawrobel.com/tutorials/osx_terminal.html)
+
+\newline
+
+* _October 16, 2017:_ LaTeX made easy with Overleaf with Brady Rippon.
+    + [LaTeX with Overleaf Slides](resources_files/latex_101617.pdf)
+
+\newline
+
+* _October 9, 2017:_ Split, Match, Replace, and other ways to juggle multiple data types in R with Margaret Hannum.
+    + [Sample Genomic Data](resources_files/Manipulation_Data.zip)
+    + [Data Manipulation Tutorial Code](resources_files/cbcc_100917.R)
+
+\newline
+
+* _September 11, 2017:_ How to Set Up Your Computer as a Statistician with Jeff Goldsmith
+    + Student Panel: Yutao Liu, Julia Wrobel, Karissa Whiting, and Brady Rippon.
+    + [Notes from presentation and panel discussion](resources_files/computer_091117.pdf)
+
+\newline
+
+* _April 20, 2017:_ Using GitHub for collaboration and version control with Jeff Goldsmith
+    + [Jeff's slides](http://p8105.com/git.html)
+
+\newline
+
+* _March 23, 2017:_ Interactive visualization using RStudio's Shiny with Julia Wrobel
+    + [shiny slides](resources_files/shinySlides.html)
+    + [hospitals dataset](resources_files/Hospital.csv)
+    + [hospitals app](resources_files/hospitalApp.zip)
+
+\newline
+
+* _February 23, 2017:_ The beauty of ggplot2 with Jihui Lee
+    + [ggplot2 pdf](resources_files/ggplot2.pdf)
+    + [Jihui's rMarkdown file on ggplot2](resources_files/ggplot2.rmd)
+
+\newline
+
+* _January 19, 2017:_ Introduction to R and R Markdown with Ariel Chernofsky.
+    + [rMarkdown Exercise](resources_files/RMD_Exercise.pdf)
+    + [Ariel's rMarkdown Slides](resources_files/RMD_slides.pdf)
+    + [Ariel's sample rMarkdown file](resources_files/SampleRMD.rmd)
+
