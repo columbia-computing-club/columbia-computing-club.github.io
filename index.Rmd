@@ -1,0 +1,21 @@
+
+---
+title: "Welcome to the Columbia Biostatistics Computing Club!"
+---
+
+
+The computing club hosts casual seminars focusing on computational topics often encountered in biostatistics research. The tutorials provide hands-on learning at a variety of skill levels, with some focused on bringing new students up to speed and others addressing more advanced problems. Our overarching goal is to impart good programming practices that encourage collaborative reproducible research!
+
+This year's organizers are [Angel Garcia de la Garza](https://www.angelgarciadelagarza.com/), and [Rebecca Venetiater](https://rvenetianer.github.io/-rebeccavenetianer-.github.io/) both students in the Department of Biostatistics at Columbia University. The group is run with the help of faculty advisor [Christine Mauro](https://www.mailman.columbia.edu/people/our-faculty/cmm2212). A schedule for the upcoming semester is below. If there are other topics you'd like to cover in the future, please let us know!
+
+
+The club meets monthly on Tuesday from 4:00-5:00pm in Hammer LL205 unless otherwise noted.
+
+### Fall 2018 Schedule
+
+* _September 11, 2018:_ How to Set Up Your Computer as a Statistician with TBA
+* _September 25, 2018:_ TBA
+* _October 30, 2018:_ TBA
+* _November 27, 2018:_ TBA
+
+<img src="images/mailman_biostats_4c.png" style="width:50%" class="center">
