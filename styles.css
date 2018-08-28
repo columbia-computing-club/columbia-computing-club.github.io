@@ -5,6 +5,26 @@
     width: 30%;
 }
 
+
 h3 {
-  font-size: 20px;
+  font-size: 18px;
+  color: #407DBA;
 }
+
+h2 {
+  font-size: 20px;
+  color: #407DBA;
+}
+
+h1 {
+  font-size: 30px;
+  color: #407DBA;
+}
+
+
+
+.navbar-default {
+  background-color: #407DBA;
+}
+
+
