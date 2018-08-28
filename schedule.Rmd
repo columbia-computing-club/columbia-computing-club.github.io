@@ -3,21 +3,27 @@
 
 <h1> Fall 2018 Schedule </h1>
 
-<p style="font-size:16px;"> The club meets monthly on Tuesday from 4:00-5:00pm in Hammer LL205 unless otherwise noted.</p>
+
+```{r, echo=FALSE}
+
+library(knitr)
+
+event1 <- c("Tuesday 09/11", "How to Set Up Your Computer as a Statistician", "TBA", "4-5pm", "Hammer LL205")
+event2 <- c("Tuesday 09/25", "TBA", "TBA", "4-5pm", "Hammer LL205")
+event3 <- c("Tuesday 10/30", "TBA", "TBA", "4-5pm", "Hammer LL205")
+event4 <- c("Tuesday 11/27", "TBA", "TBA", "4-5pm", "Hammer LL205")
+
+schedule <- rbind(event1,event2,event3,event4)
+colnames(schedule) <- c("Date","Title", "Presenters","Time","Location")
+
+kable(schedule, row.names = FALSE)
+
+```
 
 
-<h3> Tuesday September 11^th^, 2018: </h3>
+<p style="font-size:14px;"> The club meets monthly on Tuesday from 4:00-5:00pm in Hammer LL205 unless otherwise noted.</p>
 
-<p style="font-size:16px;">  How to Set Up Your Computer as a Statistician with TBA. </p>
-<p style="font-size:16px;"> (4-5pm in Hammer LL205) </p>
-
-<h3> Future Meetings </h3>
-
-<p style="font-size:16px;">  September 25^th^, 2018: TBA </p>
-<p style="font-size:16px;">  October 30^th^, 2018: TBA </p>
-<p style="font-size:16px;">  November 27^th^, 2018: TBA </p>
-
-<p style="font-size:18px;"> [Previous Semesters' schedule](old_schedule.html) </p>
+<p style="font-size:14px;"> [Previous Semesters' Schedules](old_schedule.html) </p>
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
