@@ -22,6 +22,7 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
 <script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
 <script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
@@ -184,8 +185,20 @@ $(document).ready(function () {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li>
-  <a href="schedule.html">Schedule</a>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Schedule
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="schedule.html">Current Schedule</a>
+    </li>
+    <li>
+      <a href="old_schedule.html">Past Meetings</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="resources.html">Resources</a>
@@ -218,46 +231,98 @@ $(document).ready(function () {
 
 
 <h1>
-Fall 2018 Schedule
+Current Schedule
 </h1>
-<table>
+<div id="fall-2018" class="section level2">
+<h2>Fall 2018</h2>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
-<tr class="header">
-<th align="left">Date</th>
-<th align="left">Title</th>
-<th align="left">Presenters</th>
-<th align="left">Time</th>
-<th align="left">Location</th>
+<tr>
+<th style="text-align:left;">
+Date
+</th>
+<th style="text-align:left;">
+Title
+</th>
+<th style="text-align:left;">
+Presenters
+</th>
+<th style="text-align:left;">
+Time
+</th>
+<th style="text-align:left;">
+Location
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">Tuesday 09/11</td>
-<td align="left">How to Set Up Your Computer as a Statistician</td>
-<td align="left">TBA</td>
-<td align="left">4-5pm</td>
-<td align="left">Hammer LL205</td>
+<tr>
+<td style="text-align:left;">
+Tuesday 09/11
+</td>
+<td style="text-align:left;">
+How to Set Up Your Computer as a Statistician
+</td>
+<td style="text-align:left;">
+TBA
+</td>
+<td style="text-align:left;">
+4-5pm
+</td>
+<td style="text-align:left;">
+Hammer LL205
+</td>
 </tr>
-<tr class="even">
-<td align="left">Tuesday 09/25</td>
-<td align="left">TBA</td>
-<td align="left">TBA</td>
-<td align="left">4-5pm</td>
-<td align="left">Hammer LL205</td>
+<tr>
+<td style="text-align:left;">
+Tuesday 09/25
+</td>
+<td style="text-align:left;">
+TBA
+</td>
+<td style="text-align:left;">
+TBA
+</td>
+<td style="text-align:left;">
+4-5pm
+</td>
+<td style="text-align:left;">
+Hammer LL205
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Tuesday 10/30</td>
-<td align="left">TBA</td>
-<td align="left">TBA</td>
-<td align="left">4-5pm</td>
-<td align="left">Hammer LL205</td>
+<tr>
+<td style="text-align:left;">
+Tuesday 10/30
+</td>
+<td style="text-align:left;">
+TBA
+</td>
+<td style="text-align:left;">
+TBA
+</td>
+<td style="text-align:left;">
+4-5pm
+</td>
+<td style="text-align:left;">
+Hammer LL205
+</td>
 </tr>
-<tr class="even">
-<td align="left">Tuesday 11/27</td>
-<td align="left">TBA</td>
-<td align="left">TBA</td>
-<td align="left">4-5pm</td>
-<td align="left">Hammer LL205</td>
+<tr>
+<td style="text-align:left;">
+Tuesday 11/27
+</td>
+<td style="text-align:left;">
+TBA
+</td>
+<td style="text-align:left;">
+TBA
+</td>
+<td style="text-align:left;">
+4-5pm
+</td>
+<td style="text-align:left;">
+Hammer LL205
+</td>
 </tr>
 </tbody>
 </table>
@@ -270,11 +335,12 @@ The club meets monthly on Tuesday from 4:00-5:00pm in Hammer LL205 unless otherw
 <p>
  
 </p>
-<p>
- 
-</p>
-<p><img src="images/mailman_biostats_4c_horiz.png" style="width:80%" class="center"></p>
+</div>
 
+<br><br>
+  <footer>
+  <img src="images/mailman_biostats_4c_horiz.png" alt="stickers" style="width:80%" class="center">
+</footer>
 
 
 

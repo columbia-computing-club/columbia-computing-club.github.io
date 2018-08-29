@@ -186,8 +186,20 @@ $(document).ready(function () {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li>
-  <a href="schedule.html">Schedule</a>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Schedule
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="schedule.html">Current Schedule</a>
+    </li>
+    <li>
+      <a href="old_schedule.html">Past Meetings</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="resources.html">Resources</a>
@@ -219,7 +231,7 @@ $(document).ready(function () {
 </div>
 
 
-<h1>
+<h1 style="text-align:center">
 Welcome to the Columbia Biostatistics Computing Club!
 </h1>
 <p>
@@ -235,12 +247,12 @@ Welcome to the Columbia Biostatistics Computing Club!
 <p>
  
 </p>
-<p>
- 
-</p>
-<p><img src="images/mailman_biostats_4c_horiz.png" style="width:80%" class="center"></p>
 </div>
 
+<br><br>
+  <footer>
+  <img src="images/mailman_biostats_4c_horiz.png" alt="stickers" style="width:80%" class="center">
+</footer>
 
 
 
