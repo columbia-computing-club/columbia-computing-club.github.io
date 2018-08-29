@@ -22,6 +22,7 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
 <script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
 <script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
@@ -184,8 +185,20 @@ $(document).ready(function () {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li>
-  <a href="schedule.html">Schedule</a>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Schedule
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="schedule.html">Current Schedule</a>
+    </li>
+    <li>
+      <a href="old_schedule.html">Past Meetings</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="resources.html">Resources</a>
@@ -220,42 +233,241 @@ $(document).ready(function () {
 <h1>
 Past Meetings
 </h1>
-<div id="spring-2018-schedule" class="section level3">
-<h3>Spring 2018 Schedule</h3>
-<ul>
-<li><em>February 5, 2018:</em> General Meeting hosted by Hartaig Singh and Margie Hannum. Hammer LL205.</li>
-<li><em>March 5, 2018:</em> Data Science with Python with Michael Figueroa (from Columbia Data Science Institute). Hammer LL205.</li>
-<li><em>March 19, 2018:</em> Introduction to Illustrator for Scientists with Anjile An. Hammer LL103.</li>
-<li><em>April 2, 2018:</em> Stan for Bayesian Network Analysis with Yutao Liu. Hammer LL205.</li>
-</ul>
-</div>
-<div id="fall-2017-schedule" class="section level3">
-<h3>Fall 2017 Schedule</h3>
-<ul>
-<li><em>September 11, 2017:</em> How to Set Up Your Computer as a Statistician with Jeff Goldsmith. Student Panel: Yutao Liu, Julia Wrobel, Karissa Whiting, and Brady Rippon.</li>
-<li><em>October 9, 2017:</em> Split, Match, Replace and other ways to juggle multiple data types in R with Margaret Hannum.</li>
-<li><em>October 16, 2017:</em> LaTeX Workshop with Brady Rippon. In Biostats Computer Lab</li>
-<li><em>November 13, 2017:</em> Using the OSX Terminal with Julia Wrobel. Hammer LL204</li>
-<li><em>December 4, 2017:</em> Data Collection with SQL with Hartaig Singh. Hammer LL103</li>
-</ul>
-</div>
-<div id="spring-2017" class="section level3">
-<h3>Spring 2017</h3>
-<ul>
-<li><em>January 19:</em> Introduction to R and R Markdown with Ariel Chernofsky</li>
-<li><em>February 23:</em> The beauty of ggplot2 with Jihui Lee</li>
-<li><em>March 23:</em> Interactive visualization using RStudio’s Shiny with Julia Wrobel</li>
-<li><em>April 20:</em> Using GitHub for collaboration and version control with Jeff Goldsmith</li>
-</ul>
 <p>
  
 </p>
+<div id="spring-2018-schedule" class="section level2">
+<h2>Spring 2018 Schedule</h2>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Date
+</th>
+<th style="text-align:left;">
+Title
+</th>
+<th style="text-align:left;">
+Presenters
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 8em; ">
+February 5, 2018
+</td>
+<td style="text-align:left;width: 20em; ">
+General Meeting
+</td>
+<td style="text-align:left;width: 15em; ">
+Hartaig Singh and Margie Hannum
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8em; ">
+March 5, 2018
+</td>
+<td style="text-align:left;width: 20em; ">
+Data Science with Python
+</td>
+<td style="text-align:left;width: 15em; ">
+Michael Figueroa (from Columbia Data Science Institute)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8em; ">
+March 19, 2018
+</td>
+<td style="text-align:left;width: 20em; ">
+<p>Introduction to Illustrator for Scientists</p>
+<a href="http://tinyurl.com/k8ya4gk">Link to download materials and resources</a>
+</td>
+<td style="text-align:left;width: 15em; ">
+Anjile An
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8em; ">
+April 2, 2018
+</td>
+<td style="text-align:left;width: 20em; ">
+Stan for Bayesian Network Analysis
+</td>
+<td style="text-align:left;width: 15em; ">
+Yutao Liu
+</td>
+</tr>
+</tbody>
+</table>
 <p>
  
 </p>
-<p><img src="images/mailman_biostats_4c_horiz.png" style="width:80%" class="center"></p>
+</div>
+<div id="fall-2017-schedule" class="section level2">
+<h2>Fall 2017 Schedule</h2>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Date
+</th>
+<th style="text-align:left;">
+Title
+</th>
+<th style="text-align:left;">
+Presenters
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 8em; ">
+September 11, 2017
+</td>
+<td style="text-align:left;width: 20em; ">
+<p>How to Set Up Your Computer as a Statistician</p>
+<a href="resources_files/computer_091117.pdf">Notes from presentation and panel discussion</a>
+</td>
+<td style="text-align:left;width: 15em; ">
+<p>Jeff Goldsmith</p>
+Student Panel: Yutao Liu, Julia Wrobel, Karissa Whiting, and Brady Rippon
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8em; ">
+October 9, 2017
+</td>
+<td style="text-align:left;width: 20em; ">
+<p>Split, Match, Replace and other ways to juggle multiple data types in R</p>
+<p><a href="resources_files/Manipulation_Data.zip">Sample Genomic Data</a></p>
+<a href="resources_files/cbcc_100917.R">Data Manipulation Tutorial Code</a>
+</td>
+<td style="text-align:left;width: 15em; ">
+Margaret Hannum
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8em; ">
+October 16, 2017
+</td>
+<td style="text-align:left;width: 20em; ">
+<p>LaTeX Workshop</p>
+<a href="resources_files/latex_101617.pdf">LaTeX with Overleaf Slides</a>
+</td>
+<td style="text-align:left;width: 15em; ">
+Brady Rippon
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8em; ">
+November 13, 2017
+</td>
+<td style="text-align:left;width: 20em; ">
+<p>Using the OSX Terminal</p>
+<a href="http://juliawrobel.com/tutorials/osx_terminal.html">Link to Julia’s Tutorial</a>
+</td>
+<td style="text-align:left;width: 15em; ">
+Julia Wrobel
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8em; ">
+December 4, 2017
+</td>
+<td style="text-align:left;width: 20em; ">
+Data Collection with SQL
+</td>
+<td style="text-align:left;width: 15em; ">
+Hartaig Singh
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+ 
+</p>
+</div>
+<div id="spring-2017" class="section level2">
+<h2>Spring 2017</h2>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Date
+</th>
+<th style="text-align:left;">
+Title
+</th>
+<th style="text-align:left;">
+Presenters
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 8em; ">
+January 19, 2017
+</td>
+<td style="text-align:left;width: 20em; ">
+<p>Introduction to R and R Markdown</p>
+<p><a href="resources_files/RMD_Exercise.pdf">rMarkdown Exercise</a></p>
+<a href="resources_files/RMD_slides.pdf">Ariel’s rMarkdown Slides</a> <a href="resources_files/SampleRMD.rmd">Ariel’s sample rMarkdown file</a>
+</td>
+<td style="text-align:left;width: 15em; ">
+Ariel Chernofsky
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8em; ">
+February 23, 2017
+</td>
+<td style="text-align:left;width: 20em; ">
+<p>The beauty of ggplot2</p>
+<p><a href="resources_files/ggplot2.pdf">ggplot2 pdf</a></p>
+<a href="resources_files/ggplot2.rmd">Jihui’s rMarkdown file on ggplot2</a>
+</td>
+<td style="text-align:left;width: 15em; ">
+Jihui Lee
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8em; ">
+March 23, 2017
+</td>
+<td style="text-align:left;width: 20em; ">
+<p>Interactive visualization using RStudio’s Shiny</p>
+<p><a href="resources_files/shinySlides.html">shiny slides</a></p>
+<p><a href="resources_files/Hospital.csv">hospitals dataset</a></p>
+<a href="resources_files/hospitalApp.zip">hospitals app</a>
+</td>
+<td style="text-align:left;width: 15em; ">
+Julia Wrobel
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8em; ">
+April 20, 2017
+</td>
+<td style="text-align:left;width: 20em; ">
+<p>Using GitHub for collaboration and version control</p>
+<a href="http://p8105.com/git.html">Jeff’s slides</a>
+</td>
+<td style="text-align:left;width: 15em; ">
+Jeff Goldsmith
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+ 
+</p>
 </div>
 
+<br><br>
+  <footer>
+  <img src="images/mailman_biostats_4c_horiz.png" alt="stickers" style="width:80%" class="center">
+</footer>
 
 
 

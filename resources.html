@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>Resources</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,11 +19,12 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
-<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
 <script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
 <script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
@@ -172,6 +173,101 @@ $(document).ready(function () {
 
 
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
 
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
@@ -186,8 +282,20 @@ $(document).ready(function () {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li>
-  <a href="schedule.html">Schedule</a>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Schedule
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="schedule.html">Current Schedule</a>
+    </li>
+    <li>
+      <a href="old_schedule.html">Past Meetings</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="resources.html">Resources</a>
@@ -215,92 +323,84 @@ $(document).ready(function () {
 
 
 
+<h1 class="title toc-ignore">Resources</h1>
 
 </div>
 
 
-<h1>
-Resources
-</h1>
+<p>This is a list of all the resources students have created for the computing club</p>
+<div id="general-advice" class="section level2">
+<h2>General Advice</h2>
+<p>How to Set Up Your Computer as a Statistician</p>
 <ul>
-<li><em>March 19, 2018:</em> Introduction to Illustrator with Anjile An.
-<ul>
-<li><a href="http://tinyurl.com/k8ya4gk">Link to download materials and resources</a></li>
-</ul></li>
+<li><a href="resources_files/computer_091117.pdf">2017 Notes from presentation and panel discussion</a></li>
 </ul>
-
-<ul>
-<li><em>November 13, 2017:</em> Using the OSX Terminal with Julia Wrobel.
-<ul>
-<li><a href="http://juliawrobel.com/tutorials/osx_terminal.html">Link to Julia’s tutorial</a></li>
-</ul></li>
-</ul>
-
-<ul>
-<li><em>October 16, 2017:</em> LaTeX made easy with Overleaf with Brady Rippon.
-<ul>
-<li><a href="resources_files/latex_101617.pdf">LaTeX with Overleaf Slides</a></li>
-</ul></li>
-</ul>
-
-<ul>
-<li><em>October 9, 2017:</em> Split, Match, Replace, and other ways to juggle multiple data types in R with Margaret Hannum.
-<ul>
-<li><a href="resources_files/Manipulation_Data.zip">Sample Genomic Data</a></li>
-<li><a href="resources_files/cbcc_100917.R">Data Manipulation Tutorial Code</a></li>
-</ul></li>
-</ul>
-
-<ul>
-<li><em>September 11, 2017:</em> How to Set Up Your Computer as a Statistician with Jeff Goldsmith
-<ul>
-<li>Student Panel: Yutao Liu, Julia Wrobel, Karissa Whiting, and Brady Rippon.</li>
-<li><a href="resources_files/computer_091117.pdf">Notes from presentation and panel discussion</a></li>
-</ul></li>
-</ul>
-
-<ul>
-<li><em>April 20, 2017:</em> Using GitHub for collaboration and version control with Jeff Goldsmith
-<ul>
-<li><a href="http://p8105.com/git.html">Jeff’s slides</a></li>
-</ul></li>
-</ul>
-
-<ul>
-<li><em>March 23, 2017:</em> Interactive visualization using RStudio’s Shiny with Julia Wrobel
-<ul>
-<li><a href="resources_files/shinySlides.html">shiny slides</a></li>
-<li><a href="resources_files/Hospital.csv">hospitals dataset</a></li>
-<li><a href="resources_files/hospitalApp.zip">hospitals app</a></li>
-</ul></li>
-</ul>
-
-<ul>
-<li><em>February 23, 2017:</em> The beauty of ggplot2 with Jihui Lee
-<ul>
-<li><a href="resources_files/ggplot2.pdf">ggplot2 pdf</a></li>
-<li><a href="resources_files/ggplot2.rmd">Jihui’s rMarkdown file on ggplot2</a></li>
-</ul></li>
-</ul>
-
-<ul>
-<li><em>January 19, 2017:</em> Introduction to R and R Markdown with Ariel Chernofsky.
+</div>
+<div id="r-resources" class="section level2">
+<h2>R Resources</h2>
+<p>Introduction to R and R Markdown with Ariel Chernofsky.</p>
 <ul>
 <li><a href="resources_files/RMD_Exercise.pdf">rMarkdown Exercise</a></li>
 <li><a href="resources_files/RMD_slides.pdf">Ariel’s rMarkdown Slides</a></li>
 <li><a href="resources_files/SampleRMD.rmd">Ariel’s sample rMarkdown file</a></li>
-</ul></li>
+</ul>
+<p>The beauty of ggplot2 with Jihui Lee</p>
+<ul>
+<li><a href="resources_files/ggplot2.pdf">ggplot2 pdf</a></li>
+<li><a href="resources_files/ggplot2.rmd">Jihui’s rMarkdown file on ggplot2</a></li>
+</ul>
+<p>Split, Match, Replace, and other ways to juggle multiple data types in R with Margaret Hannum.</p>
+<ul>
+<li><a href="resources_files/Manipulation_Data.zip">Sample Genomic Data</a></li>
+<li><a href="resources_files/cbcc_100917.R">Data Manipulation Tutorial Code</a></li>
+</ul>
+<p>Interactive visualization using RStudio’s Shiny with Julia Wrobel</p>
+<ul>
+<li><a href="resources_files/shinySlides.html">shiny slides</a></li>
+<li><a href="resources_files/Hospital.csv">hospitals dataset</a></li>
+<li><a href="resources_files/hospitalApp.zip">hospitals app</a></li>
+</ul>
+</div>
+<div id="illustrator" class="section level2">
+<h2>Illustrator</h2>
+<p>Introduction to Illustrator with Anjile An.</p>
+<ul>
+<li><a href="http://tinyurl.com/k8ya4gk">Link to download materials and resources</a></li>
+</ul>
+</div>
+<div id="osx-terminal" class="section level2">
+<h2>OSX Terminal</h2>
+<p>Using the OSX Terminal with Julia Wrobel.</p>
+<ul>
+<li><a href="http://juliawrobel.com/tutorials/osx_terminal.html">Link to Julia’s tutorial</a></li>
+</ul>
+</div>
+<div id="latex" class="section level2">
+<h2>LaTeX</h2>
+<p>LaTeX made easy with Overleaf with Brady Rippon.</p>
+<ul>
+<li><a href="resources_files/latex_101617.pdf">LaTeX with Overleaf Slides</a></li>
+</ul>
+</div>
+<div id="github" class="section level2">
+<h2>Github</h2>
+<p>Using GitHub for collaboration and version control with Jeff Goldsmith</p>
+<ul>
+<li><a href="http://p8105.com/git.html">Jeff’s slides</a></li>
 </ul>
 <p>
  
 </p>
-<p>
- 
-</p>
-<p><img src="images/mailman_biostats_4c_horiz.png" style="width:80%" class="center"></p>
+</div>
+
+<br><br>
+  <footer>
+  <img src="images/mailman_biostats_4c_horiz.png" alt="stickers" style="width:80%" class="center">
+</footer>
 
 
-
+</div>
+</div>
 
 </div>
 

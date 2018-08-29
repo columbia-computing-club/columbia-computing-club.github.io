@@ -3,10 +3,14 @@ output_dir: "."
 navbar:
   title: "Home"
   left:
-    - text: "Schedule"
-      href: schedule.html
-    - text: "Resources"
-      href: resources.html
+     - text: "Schedule"
+       menu:
+       - text: Current Schedule
+         href: schedule.html
+       - text: Past Meetings
+         href: old_schedule.html
+     - text: "Resources"
+       href: resources.html
   right:
     - icon: fa-envelope fa-lg
       href: mailto:<ag3914@cumc.columbia.edu>
@@ -14,5 +18,7 @@ navbar:
       href: https://github.com/columbia-computing-club
 output:
   html_document:
+    include:
+        after_body: footer.html
     theme: cerulean
     css: styles.css

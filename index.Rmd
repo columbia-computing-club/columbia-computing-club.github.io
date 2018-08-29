@@ -6,7 +6,7 @@ output:
     df_print: paged
 ---
 
-<h1> Welcome to the Columbia Biostatistics Computing Club! </h1>
+<h1 style="text-align:center"> Welcome to the Columbia Biostatistics Computing Club! </h1>
 
 <p>&nbsp;</p>
 
@@ -24,7 +24,5 @@ The club meets monthly on Tuesday from 4:00-5:00pm in Hammer LL205 unless otherw
 </p>
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
 
-<img src="images/mailman_biostats_4c_horiz.png" style="width:80%" class="center">
