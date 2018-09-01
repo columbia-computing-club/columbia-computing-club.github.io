@@ -14,7 +14,7 @@ output:
 
 <img src="images/columbia_biostatistics.png" style="width:50%" align="left" hspace="20"> The computing club hosts casual seminars focusing on computational topics often encountered in biostatistics research. The tutorials provide hands-on learning at a variety of skill levels, with some focused on bringing new students up to speed and others addressing more advanced problems. Our overarching goal is to impart good programming practices that encourage collaborative reproducible research!
 
-This year's organizers are [Angel Garcia de la Garza](https://www.angelgarciadelagarza.com/), and [Rebecca Venetianer](https://rvenetianer.github.io/-rebeccavenetianer-.github.io/) both students in the Department of Biostatistics at Columbia University. The group is run with the help of faculty advisor [Christine Mauro](https://www.mailman.columbia.edu/people/our-faculty/cmm2212). A schedule for the upcoming semester is below. If there are other topics you'd like to cover in the future, please let us know!
+This year's organizers are [Angel Garcia de la Garza](https://www.angelgarciadelagarza.com/), and [Rebecca Venetianer](https://rvenetianer.github.io/-rebeccavenetianer-.github.io/) both students in the Department of Biostatistics at Columbia University. The group is run with the help of faculty advisor [Christine Mauro](http://christinemauro.com/). A schedule for the upcoming semester is below. If there are other topics you'd like to cover in the future, please let us know!
 
 
 The club meets monthly on Tuesday from 4:00-5:00pm in Hammer LL205 unless otherwise noted.
