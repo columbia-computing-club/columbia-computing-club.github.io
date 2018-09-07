@@ -1,0 +1,32 @@
+---
+title:
+output:
+  html_document:
+    df_print: paged
+---
+
+<h1> About the Computing Club </h1>
+
+The Columbia Biostatistcs Computing Club was founded in 2017 by [Julia Wrobel](http://juliawrobel.com/) and Ariel Chernofsky with the help of faculty advisor [Christine Mauro](http://christinemauro.com/).
+
+Organizers:
+
+### 2018-2019:
+
+[Angel Garcia de la Garza](https://www.angelgarciadelagarza.com/)
+
+[Rebecca Venetianer](https://rvenetianer.github.io/-rebeccavenetianer-.github.io/)
+
+### 2017-2018:
+
+Julia Wrobel 
+
+Hartaig Singh
+
+[Margaret Hannum](https://www.mskcc.org/profile/margaret-hannum)
+
+### 2016-2017:
+
+Ariel Chernofsky
+
+Julia Wrobel

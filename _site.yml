@@ -11,6 +11,8 @@ navbar:
          href: old_schedule.html
      - text: "Resources"
        href: resources.html
+     - text: "About"
+       href: about.html
   right:
     - icon: fa-envelope fa-lg
       href: mailto:<ag3914@cumc.columbia.edu>
