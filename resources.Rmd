@@ -12,7 +12,8 @@ This is a list of all the resources students have created for the computing club
 
 How to Set Up Your Computer as a Statistician
 
-* [2017 Notes from presentation and panel discussion](resources_files/computer_091117.pdf)
+* [2018 Notes from presentation and panel discussion](resources_files/computer_091117.pdf)
+* [2017 Notes from presentation and panel discussion](resources_files/Computing_Club Minutes_September_2018.pdf)
 
 ## R Resources
 
