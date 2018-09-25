@@ -11,6 +11,8 @@ This is a list of all the resources students have created for the computing club
 ## Latex Resources are here:
 
 [It's here!](resources_files/computing-club-tutorial-latex.Rmd)
+[html](resources_files/computing-club-tutorial-latex.html)
+[pdf](resources_files/computing-club-tutorial-latex.pdf)
 
 
 
