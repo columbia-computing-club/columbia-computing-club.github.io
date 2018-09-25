@@ -8,6 +8,12 @@ output:
 
 This is a list of all the resources students have created for the computing club
 
+## Latex Resources are here:
+
+[It's here!](resources_files/computing-club-tutorial-latex.Rmd)
+
+
+
 ## General Advice
 
 How to Set Up Your Computer as a Statistician
