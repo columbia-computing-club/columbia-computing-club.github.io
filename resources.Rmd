@@ -10,10 +10,6 @@ This is a list of all the resources students have created for the computing club
 
 ## Latex Resources are here:
 
-[It's here!](resources_files/computing-club-tutorial-latex.Rmd)
-[html](resources_files/computing-club-tutorial-latex.html)
-[pdf](resources_files/computing-club-tutorial-latex.pdf)
-
 
 
 ## General Advice
@@ -66,12 +62,26 @@ LaTeX made easy with Overleaf with Brady Rippon.
 
 * [LaTeX with Overleaf Slides](resources_files/latex_101617.pdf)
 
+Introduction to LaTeX in R Markdown and Overleaf
+
+* [Yutao's Overlead Tutorial](https://v2.overleaf.com/read/fdxyszqvstzn)
+* [This is an example file that combines R Markdown and LaTeX equations](resources_files/computing-club-tutorial-latex.Rmd)
+* [This is the html output](resources_files/computing-club-tutorial-latex.html)
+* [This is the pdf output](resources_files/computing-club-tutorial-latex.pdf)
+
+
 ## Github
 
 Using GitHub for collaboration and version control with Jeff Goldsmith
 
 * [Jeff's slides](http://p8105.com/git.html)
 
+
+## Python
+
+Introduction to Python for Data Analysis with Christian Pascual 
+
+* [Slides from](https://docs.google.com/presentation/d/1HPGSbms3KJnowUIEx-ZG24GXSwM6zpMWXjrtyHhaDzs/edit#slide=id.g4360c0358c_0_5)
 
 
 <p>&nbsp;</p>
