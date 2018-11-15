@@ -14,8 +14,8 @@ library(kableExtra)
 event1 <- c("Tuesday 09/11", "How to Set Up Your Computer as a Statistician", 
             "Jeff Goldsmith \n \n Student Panel: Angel Garcia de la Garza, Rebecca Venetianer, Julia Wrobel, Erin McDonnell, Junting Ren \n \n [Notes from the session](resources_files/Computing_Club Minutes_September_2018.pdf)", 
             "4-5pm", "Hammer LL205")
-event2 <- c("Tuesday 09/25", "Introduction to LaTeX in R Markdown and Overleaf", "TBA", "4-5pm", "Hammer LL205")
-event3 <- c("Tuesday 10/30", "TBA", "TBA", "4-5pm", "Hammer LL205")
+event2 <- c("Tuesday 09/25", "Introduction to LaTeX in R Markdown and Overleaf", "Yutao Liu \n \n [Overleaf Tutorial](https://v2.overleaf.com/read/fdxyszqvstzn)", "4-5pm", "Hammer LL205")
+event3 <- c("Tuesday 10/30", "Introduction to Python for Data Analysis", "Christian Pascual \n \n [Slides from](https://docs.google.com/presentation/d/1HPGSbms3KJnowUIEx-ZG24GXSwM6zpMWXjrtyHhaDzs/edit#slide=id.g4360c0358c_0_5)", "4-5pm", "Hammer LL205")
 event4 <- c("Tuesday 11/27", "TBA", "TBA", "4-5pm", "Hammer LL205")
 
 schedule <- rbind(event1,event2,event3,event4)
