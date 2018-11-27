@@ -8,8 +8,10 @@ output:
 
 This is a list of all the resources students have created for the computing club
 
-## Latex Resources are here:
+## Tutorial for November ggplot map session is here:
 
+* [Tutorial](resources_files/maps_tutorial.html)
+* [Data](resources_files/provinces_italy.csv)
 
 
 ## General Advice
