@@ -6,13 +6,12 @@ output:
     toc_float: true
 ---
 
-This is a list of all the resources students have created for the computing club
+This is a list of all the resources students have created for the Computing Club
 
 ## Tutorial for November ggplot map session is here:
 
 * [Tutorial](resources_files/maps_tutorial.html)
 * [Data](resources_files/provinces_italy.csv)
-
 
 ## General Advice
 
@@ -45,7 +44,6 @@ Interactive visualization using RStudio's Shiny with Julia Wrobel
 * [hospitals dataset](resources_files/Hospital.csv)
 * [hospitals app](resources_files/hospitalApp.zip)
 
-
 ## Illustrator
 
 Introduction to Illustrator with Anjile An. 
@@ -71,13 +69,11 @@ Introduction to LaTeX in R Markdown and Overleaf
 * [This is the html output](resources_files/computing-club-tutorial-latex.html)
 * [This is the pdf output](resources_files/computing-club-tutorial-latex.pdf)
 
-
 ## Github
 
 Using GitHub for collaboration and version control with Jeff Goldsmith
 
 * [Jeff's slides](http://p8105.com/git.html)
-
 
 ## Python
 
@@ -85,5 +81,3 @@ Introduction to Python for Data Analysis with Christian Pascual
 
 * [Slides from](https://docs.google.com/presentation/d/1HPGSbms3KJnowUIEx-ZG24GXSwM6zpMWXjrtyHhaDzs/edit#slide=id.g4360c0358c_0_5)
 
-
-<p>&nbsp;</p>

@@ -5,28 +5,30 @@ output:
     df_print: paged
 ---
 
-<h1> About the Computing Club </h1>
+<h1>About the Computing Club< Organizers/h1>
 
 The Columbia Biostatistcs Computing Club was founded in 2017 by [Julia Wrobel](http://juliawrobel.com/) and Ariel Chernofsky with the help of faculty advisor [Christine Mauro](http://christinemauro.com/).
 
 Organizers:
 
-### 2018-2019:
+## 2019-2020:
 
-[Angel Garcia de la Garza](https://www.angelgarciadelagarza.com/)
+- [Angel Garcia de la Garza](https://www.linkedin.com/in/angel-garcia-de-la-garza/)
+- [Margaret Gacheru]()
+- [Christian Pascual](https://www.linkedin.com/in/cbpascual/)
 
-[Rebecca Venetianer](https://www.linkedin.com/in/rebeccavenetianer/)
+## 2018-2019:
 
-### 2017-2018:
+- [Angel Garcia de la Garza](https://www.linkedin.com/in/angel-garcia-de-la-garza/)
+- [Rebecca Venetianer](https://www.linkedin.com/in/rebeccavenetianer/)
 
-Julia Wrobel 
+## 2017-2018:
 
-Hartaig Singh
+- [Julia Wrobel](https://www.linkedin.com/in/julia-wrobel-bb040431/)
+- [Hartaig Singh](https://www.linkedin.com/in/hartaig-singh-90227b127/)
+- [Margaret Hannum](https://www.mskcc.org/profile/margaret-hannum)
 
-[Margaret Hannum](https://www.mskcc.org/profile/margaret-hannum)
+## 2016-2017:
 
-### 2016-2017:
-
-Ariel Chernofsky
-
-Julia Wrobel
+- [Ariel Chernofsky](https://www.linkedin.com/in/ariel-chernofsky-16ab2b70/)
+- [Julia Wrobel](https://www.linkedin.com/in/julia-wrobel-bb040431/)

@@ -3,16 +3,52 @@
 
 <h1> Past Meetings </h1>
 
-<p>&nbsp;</p>
+```{r, echo = FALSE, message = FALSE, warning = FALSE }
+library(knitr)
+library(tidyverse)
+library(kableExtra)
+```
+
+## Spring 2019 Schedule
+
+```{r, echo=FALSE, comment=FALSE, message=FALSE}
+event1 <- c("JAnuary 28, 2019", "Intermediate Python", "Christian Pascual")
+event2 <- c("March 5, 2019", "Interactive visualization using RStudio’s Shiny", "Julia Wrobel")
+event3 <- c("March 19, 2019", "", "Angel Garcia de la Garza")
+event4 <- c("April 29, 2019", "Making an R Package", "Nick Williams")
+
+schedule <- rbind(event1, event2, event3, event4)
+colnames(schedule) <- c("Date","Title", "Presenters")
+
+kable(schedule, row.names = FALSE) %>%
+  kable_styling(bootstrap_options = "striped") %>%
+  column_spec(1, width = "8em") %>%
+  column_spec(2, width = "20em") %>%
+  column_spec(3, width = "15em")
+```
+
+## Fall 2018 Schedule
+
+```{r, echo=FALSE, comment=FALSE, message=FALSE}
+event1 <- c("", "Panel of Speakers", "")
+event2 <- c("September 24, 2018", "Using LaTeX", "Yutao Liu")
+event3 <- c("October 30, 2018", "Python for Beginners", "Christian Pascual")
+event3 <- c("November 19, 2018", "Working with maps in R", "Angel Garcia de la Garza")
+event4 <- c("December 3, 2018", "", "")
+
+schedule <- rbind(event1,event2,event3,event4)
+colnames(schedule) <- c("Date","Title", "Presenters")
+
+kable(schedule, row.names = FALSE) %>%
+  kable_styling(bootstrap_options = "striped") %>%
+  column_spec(1, width = "8em") %>%
+  column_spec(2, width = "20em") %>%
+  column_spec(3, width = "15em")
+```
 
 ## Spring 2018 Schedule
 
 ```{r, echo=FALSE, comment=FALSE, message=FALSE}
-
-library(knitr)
-library(tidyverse)
-library(kableExtra)
-
 event1 <- c("February 5, 2018", "General Meeting", "Hartaig Singh and Margie Hannum")
 event2 <- c("March 5, 2018", " Data Science with Python", "Michael Figueroa (from Columbia Data Science Institute)")
 event3 <- c("March 19, 2018", "Introduction to Illustrator for Scientists \n \n
@@ -27,20 +63,11 @@ kable(schedule, row.names = FALSE) %>%
   column_spec(1, width = "8em") %>%
   column_spec(2, width = "20em") %>%
   column_spec(3, width = "15em")
-
-
 ```
-<p>&nbsp;</p>
 
 ## Fall 2017 Schedule
 
-
 ```{r, echo=FALSE, comment=FALSE, message=FALSE}
-
-library(knitr)
-library(tidyverse)
-library(kableExtra)
-
 event1 <- c("September 11, 2017", 
             "How to Set Up Your Computer as a Statistician \n \n [Notes from presentation and panel discussion](resources_files/computer_091117.pdf)", 
             "Jeff Goldsmith \n \n Student Panel: Yutao Liu, Julia Wrobel, Karissa Whiting, and Brady Rippon")
@@ -66,21 +93,11 @@ kable(schedule, row.names = FALSE) %>%
   column_spec(1, width = "8em") %>%
   column_spec(2, width = "20em") %>%
   column_spec(3, width = "15em")
-
-
-
 ```
-<p>&nbsp;</p>
 
 ## Spring 2017
 
-
 ```{r, echo=FALSE, comment=FALSE, message=FALSE}
-
-library(knitr)
-library(tidyverse)
-library(kableExtra)
-
 event1 <- c("January 19, 2017", 
             "Introduction to R and R Markdown \n \n [rMarkdown Exercise](resources_files/RMD_Exercise.pdf) \n \n [Ariel's rMarkdown Slides](resources_files/RMD_slides.pdf) [Ariel's sample rMarkdown file](resources_files/SampleRMD.rmd)", 
             "Ariel Chernofsky")
