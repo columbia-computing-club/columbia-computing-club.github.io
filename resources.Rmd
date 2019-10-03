@@ -81,3 +81,8 @@ Introduction to Python for Data Analysis with Christian Pascual
 
 * [Slides from](https://docs.google.com/presentation/d/1HPGSbms3KJnowUIEx-ZG24GXSwM6zpMWXjrtyHhaDzs/edit#slide=id.g4360c0358c_0_5)
 
+
+## Tests
+
+[Jihui's rMarkdown file on ggplot2](resources_files/test_agg.rmd)
+
