@@ -84,5 +84,8 @@ Introduction to Python for Data Analysis with Christian Pascual
 
 ## Tests
 
-[Jihui's rMarkdown file on ggplot2](resources_files/test_agg.rmd)
+[AGG Test 1](resources_files/test_agg.rmd)
+
+[AGG Test 2](resources_files/test_agg.rmd)
+
 
