@@ -86,6 +86,6 @@ Introduction to Python for Data Analysis with Christian Pascual
 
 [AGG Test 1](resources_files/test_agg.rmd)
 
-[AGG Test 2](resources_files/test_agg.rmd)
+[AGG Test 2](resources_files/test_agg_2.rmd)
 
 
