@@ -8,6 +8,15 @@
 ```{r, echo = FALSE, message = FALSE, warning = FALSE }
 library(tidyverse)
 library(knitr)
+library(kableExtra)
+
+
+
+
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE }
+
 tib = tibble(
   `Topic` = c("Speaker Panel", "Using LaTeX in Overleaf & RMarkdown", "TBD", "caret: Streamlining Model Tuning"),
   `Date` = c("September 9, 2019; 4 - 4:50pm", 
@@ -16,8 +25,16 @@ tib = tibble(
              "December 2, 2019; 4 - 4:50pm"),
   `Location` = c("Hammer LL203", "Hammer LL107", "Hammer LL107", "Hammer LL107")
 )
-kable(tib)
+
+kable(tib, row.names = FALSE) %>%
+  kable_styling(bootstrap_options = "striped") %>%
+  column_spec(1, width = "15em") %>%
+  column_spec(2, width = "15em") %>%
+  column_spec(3, width = "15em")
+
+
 ```
+
 
 <p style="font-size:14px;"> [Previous Semesters' Schedules](old_schedule.html) </p>
 
