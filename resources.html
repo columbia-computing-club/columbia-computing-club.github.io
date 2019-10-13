@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -89,7 +90,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -250,48 +250,9 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -489,16 +450,21 @@ div.tocify {
 </div>
 <div id="latex" class="section level2">
 <h2>LaTeX</h2>
+<p>Christian’s Fall 2019 Tutorial:</p>
+<ul>
+<li><a href="resources_files/latex-presentation.Rmd">.Rmd version of tutorial</a></li>
+<li><a href="resources_files/latex-presentation.html">.html version of tutorial</a></li>
+</ul>
 <p>LaTeX made easy with Overleaf with Brady Rippon.</p>
 <ul>
 <li><a href="resources_files/latex_101617.pdf">LaTeX with Overleaf Slides</a></li>
 </ul>
-<p>Introduction to LaTeX in R Markdown and Overleaf</p>
+<p>Yutao’s Fall 2018 Tutorial</p>
 <ul>
-<li><a href="https://v2.overleaf.com/read/fdxyszqvstzn">Yutao’s Overlead Tutorial</a></li>
-<li><a href="resources_files/computing-club-tutorial-latex.Rmd">This is an example file that combines R Markdown and LaTeX equations</a></li>
-<li><a href="resources_files/computing-club-tutorial-latex.html">This is the html output</a></li>
-<li><a href="resources_files/computing-club-tutorial-latex.pdf">This is the pdf output</a></li>
+<li><a href="https://v2.overleaf.com/read/fdxyszqvstzn">Overleaf Tutorial</a></li>
+<li><a href="resources_files/computing-club-tutorial-latex.Rmd">.Rmd combining R Markdown and LaTeX equations</a></li>
+<li><a href="resources_files/computing-club-tutorial-latex.html">.html output</a></li>
+<li><a href="resources_files/computing-club-tutorial-latex.pdf">.pdf output</a></li>
 </ul>
 </div>
 <div id="github" class="section level2">
@@ -538,6 +504,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

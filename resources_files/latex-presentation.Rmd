@@ -1,0 +1,384 @@
+---
+title: "Learning LaTeX"
+author: "Christian Pascual"
+output: html_document
+---
+
+# Learning and Using $\LaTeX$
+
+So you want to learn a bit of LaTeX to make your homework and reports look nice. Great job, good decision. This tutorial is designed to give you a working knowledge of the language in the context of RMarkdown. Most of the things you learn here will also be applicable to Overleaf as well, so this is a good start. We won't cover *everything* you might need in your future assignments, but you'll be able to find most things with a quick Google search.
+
+Without further ado...
+
+# What is LaTeX?
+
+LaTeX (pronounced LAY-tech) is a type-setting system. In simpler words, it makes it easy for you to write complicated mathematical equations and constructs for homework, manuscripts, reports, whatever you want it to be. 
+
+In many ways, it's just like a programming language. It has a particular syntax that it expects, and it won't work unless you write the syntax correctly. 
+
+# Telling RMarkdown that LaTeX is coming
+
+Before you start writing LaTeX, you need a way to distinguish between the Markdown, code and the actual LaTeX in your RMarkdown file. The way you do this is with **$** signs. There are two ways to create a space for LaTeX using these signs.
+
+### Inline LaTeX
+
+Inline LaTeX is created when you only use **one $ sign** on each side of your LaTeX. Inline LaTeX will flow with the rest of the writing that comes with it, much like how inline R code will. An example of raw inline LaTeX code would look like the following:
+
+```
+I can write inline $\LaTeX$ code between single dollar signs!
+```
+
+This renders to:
+
+I can write inline $\LaTeX$ code between single dollar signs!
+
+### Block LaTeX
+
+Block LaTeX is when the LaTeX is rendered entirely on its own line, like how you would see it rendered in a textbook. You surround block LaTeX with **double $$ signs**. An example of this is:
+
+```
+$$
+f(x|\mu, \sigma) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{1}{2\sigma^2}(x-\mu)^2}
+$$
+```
+
+This renders to:
+
+$$
+f(x|\mu, \sigma) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{1}{2\sigma^2}(x-\mu)^2}
+$$
+
+We'll break down the LaTeX code later on, but notice that the equation takes on its own line and that it's centered! You don't need to separate the `$$` onto different lines, but I find that it really helps with the readability with your code, especially when your LaTeX gets **really long**.
+
+Now that you know how to tell RMarkdown when to expect LaTeX code, we can start learning actual code!
+
+# Special LaTeX Characters
+
+There are certain characters that are really, really important to LaTeX. We'll cover these below:
+
+## The Escape Character: \\
+
+The escape character is used to tell LaTeX that it should expect a special mathematical construct and not just regular text. In the first example, we saw:
+
+```
+I can write inline $\LaTeX$ code between single dollar signs!
+```
+
+The special LaTeX symbol here is actually denoted by `LaTeX`. The `\` before it is what turns it into the special formatting: $\LaTeX$. The `\` character should be placed before any mathematical character, otherwise it will not render correctly.
+
+Example:
+
+```
+$$
+alpha
+$$
+```
+
+$$
+alpha
+$$
+
+vs 
+
+```
+$$
+\alpha
+$$
+```
+
+$$
+\alpha
+$$
+
+## The brackets: \{ \}
+
+The other special symbols you should be aware of are the brackets: `{` and `}`. Brackets are what allow you to group things together in LaTeX. You will most commonly encounter these when you are dealing with fractions, subscripts, and superscripts. Examples follow.
+
+### Making fractions
+
+Fractions are denoted by the `\frac` command. LaTeX expects two sets of brackets to follow after it. The first will correspond to the numerator, the second to the denominator. If you don't give the two sets of brackets, then the command won't render correctly.
+
+```
+$$
+\frac{Numerator}{Denominator}
+$$
+```
+
+$$
+\frac{Numerator}{Denominator}
+$$
+
+### Superscripts
+
+Superscripts are denoted by the `^` caret character. If you do not put a set of brackets after it, the first character after the `^` will be put into the superscript.
+
+```
+$$
+e^{-x}
+$$
+```
+
+$$
+e^{-x}
+$$
+
+### Subscripts
+
+Subscripts are denoted by the `_` underscore character. Like with superscripts, if you do not put a set of brackets after it, the first character after the `_` will be put into the subscript.
+```
+$$
+\sum_{i=1}
+$$
+```
+
+$$
+\sum_{i=1}
+$$
+
+# Greek letters
+
+Greek letters are easy to create in LaTeX. All you need to do is put the `\` character before it to make sure that it renders correctly. Recall in an earlier example:
+
+```
+$$
+f(x|\mu, \sigma) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{1}{2\sigma^2}(x-\mu)^2}
+$$
+```
+
+renders to:
+
+$$
+f(x|\mu, \sigma) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{1}{2\sigma^2}(x-\mu)^2}
+$$
+
+You can see on the left side that there's a $\mu$ and $\sigma$ character. Now that you know about escapes and the brackets, you can better parse the code.
+
+# Opinionated Tips On Readability
+
+If you've gone through Data Science, then you know how important readable code is. LaTeX code can get very, very long, so it's would be helpful to know some tips on breaking up your LaTeX so that you can read it when you come back to it.We'll use the normal distribution equation as an example.
+
+```
+$$
+f(x|\mu, \sigma) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{1}{2\sigma^2}(x-\mu)^2}
+$$
+```
+
+### Breaking up the equation into lines
+
+It can be really helpful to put different terms on their own lines. This will allow you to quickly distinguish different parts of the formula if you need to change certain parts. 
+
+```
+$$
+f(x|\mu, \sigma) = 
+\frac{1}{\sqrt{2\pi}\sigma} 
+e^{-\frac{1}{2\sigma^2}(x-\mu)^2}
+$$
+```
+
+Here I've put the fraction on one line, and the exponential term on yet another line.
+
+### Putting grouping brackets on separate lines
+
+Sometimes the things you need to put into the numerator and denominator get to be really long. In these cases, it might help to put the numerator and denominator on their own lines. 
+
+```
+$$
+f(x|\mu, \sigma) = 
+\frac
+{1}
+{\sqrt{2\pi}\sigma} 
+e^{-\frac{1}{2\sigma^2}(x-\mu)^2}
+$$
+```
+
+In this case, neither numerator nor denominator are very big, so maybe it's not worth it. You'll definitely come into cases where it would help your readability.
+
+### Adding whitespace
+
+Having all these characters close together can make your eyes hurt. Adding white space can help you distinguish between different terms. 
+
+```
+$$
+f(x|\mu, \sigma) = 
+\frac
+{1}
+{\sqrt{2\pi}\sigma} 
+e^{-\frac{ 1 }{2 \sigma^2 } (x - \mu)^2 }
+$$
+```
+
+### A Gotcha: No Empty Whitespace between lines before or after the `$$`
+
+In the interest of spacing out your code, you might accidentally add an empty line between things. In my own experience, RMarkdown doesn't like to see this and will throw an obscure error at you. 
+
+The following is something **you should not do**.
+
+```
+$$
+
+f(x|\mu, \sigma) = 
+
+\frac
+{1}
+{\sqrt{2\pi}\sigma} 
+
+e^{-\frac{ 1 }{2 \sigma^2 } (x - \mu)^2 }
+
+$$
+```
+
+# Aligned Equations
+
+Many times you'll be asked to do a proof or to show your work when you're doing homework. When you're doing block LaTeX, every equation will be centered, but it would be nice if we could line up the equation in places to show the logic. Enter **aligned equations**.
+
+To create an aligned equation, you'll need to define another special space in the `$$` area.
+
+```
+$$
+\begin{aligned}
+Var(X) &= \frac{1}{n} \sum_i (X_i - \bar{X})^2
+\end{aligned}
+$$
+```
+
+$$
+\begin{aligned}
+S^2 &= \frac{1}{(n-1)} \sum_i (X_i - \mu)^2
+\end{aligned}
+$$
+
+Within the `$$` signs, we need to indicate an area where we want to create the aligned equation. This is denoted by `\begin{aligned}` and ended by `\begin{end}`. Notice there is a `&` symbol right before the `=` sign. The `&` allows you to designate the point that you want to align the equation on. To build the equation, we need to end each line with a `\\` symbol. The next line also needs to have a `&` symbol.
+
+```
+$$
+\begin{aligned}
+Var(X) &= \frac{1}{n} \sum_i (X_i - \mu)^2 \\
+&= \frac{1}{n} \sum_i (X_i + \bar{X} - \bar{X} - \mu)^2
+\end{aligned}
+$$
+```
+
+$$
+\begin{aligned}
+Var(X) &= \frac{1}{n} \sum_i (X_i - \mu)^2 \\
+&= \frac{1}{n} \sum_i (X_i - \bar{X} + \bar{X} - \mu)^2 \\
+&= \frac{1}{n} \sum_i (X_i - \bar{X})^2 -2(X_i - \bar{X})(\bar{X} - \mu) + (\bar{X} - \mu)^2 \\
+\end{aligned}
+$$
+
+A practice that I've started using is to put each new line in the equation on its own line in the RMarkdown. This helps with readability and identifying which lines are which if you want to change things in the future.
+
+# Matrices 
+
+Linear algebra makes an appearance a lot in Biostatistics coursework. As such, you'll probably be making a lot of different matrices in your proofs or your homeworks.
+
+Like with aligned equaitons, you need to tell LaTeX that there is a special space dedicated to the matrix. The syntax for making a matrix is below:
+
+```
+$$
+A = 
+\begin{bmatrix}
+1 & 2 \\
+3 & 4 \\
+\end{bmatrix}
+$$
+```
+
+$$
+A = 
+\begin{bmatrix}
+1 & 2 \\
+3 & 4 \\
+\end{bmatrix}
+$$
+
+Instead of using `aligned`, you'll use the `bmatrix` keyword. Within this special space, you divide up columns using the `&` sign and rows with `\\`. One nice thing about `bmatrix` is that it automatically creates brackets that match the elements that you put into it. Another option for creating matrices is to use the `array` command, but I've found that `bmatrix` will do the trick 95% of the time.
+
+# Making Things Bigger
+
+Sometimes when you're making fractions, you'll get fractions that are much bigger than the parentheses that come next to it. An example follows below:
+
+```
+$$
+f(x|\alpha, \beta) = (\frac{\beta^\alpha}{\Gamma(\alpha)}) x^{\alpha - 1} e^{-x/\beta} I(x \geq 0)
+$$
+```
+
+$$
+f(x|\alpha, \beta) = (\frac{\beta^\alpha}{\Gamma(\alpha)}) x^{\alpha - 1} e^{-x/\beta} I(x \geq 0)
+$$
+
+The parentheses around the multiplicative term doesn't quite match the size of the fraction that it's trying to contain. We can actually change the size of particular items in LaTeX using the following keywords:
+
+- `\big`
+- `\bigg`
+- `\Big`
+- `\Bigg`
+
+```
+$$
+( \big( \Big( \bigg( \Bigg(
+$$
+```
+
+$$
+( \big( \Big( \bigg( \Bigg(
+$$
+
+You can use these keywords to alter the size of parentheses, brackets and curly brackets. If we were trying to fix the equation from earlier:
+
+```
+$$
+f(x|\alpha, \beta) = \bigg(\frac{\beta^\alpha}{\Gamma(\alpha)}\bigg) x^{\alpha - 1} e^{-x/\beta} I(x \geq 0)
+$$
+```
+
+$$
+f(x|\alpha, \beta) = \bigg(\frac{\beta^\alpha}{\Gamma(\alpha)}\bigg) x^{\alpha - 1} e^{-x/\beta} I(x \geq 0)
+$$
+
+Much better!
+
+# Writing Text
+
+There will be some times where you may want to write straight up text in your LaTeX equations. I'm not sure why you'd want to, but sometimes you'll want to. If you try to write text in a LaTeX zone, you're going to have a bad time.
+
+```
+$$
+The Hat Equation = (X^TX)^{-1}X^TY
+$$
+```
+
+renders to this hot mess:
+
+$$
+The Hat Equation = (X^TX)^{-1}X^TY
+$$
+
+To correctly do this, you need to use the special LaTeX command `\text{}`.
+
+```
+$$
+\text{The Hat Equation} = (X^TX)^{-1}X^TY
+$$
+```
+
+$$
+\text{The Hat Equation} = (X^TX)^{-1}X^TY
+$$
+
+# Other Useful Expressions 
+
+What we've covered here will cover most of what you'll need to do homework in the Biostatistics program. There's a lot that we haven't covered here, but this could get you started immediately. The following is just a set of other (incomplete) useful symbols that you might use.
+
+- `\sum` =  $\sum$
+- `\prod` =  $\prod$
+- `\{ \}` = $\{ \}$ (You need to escape special symbols in LaTeX if you want to show them in an equation)
+- `\in` = $\in$
+- `\sim` = $\sim$ (like what you use to say something is distributed a certain way)
+- `\infty` = $\infty$ 
+- `\int` = $\int$
+
+# Live Demo Time
+
+All this being said, there is actually a software out there that can take in pictures and output the LaTeX equations associated with it. The software is called [mathpix](https://mathpix.com/). Once you install it on your computer, you can use it to take screenshots of equations, and it will try to convert it into LaTeX.

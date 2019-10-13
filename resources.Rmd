@@ -58,16 +58,21 @@ Using the OSX Terminal with Julia Wrobel.
 
 ## LaTeX
 
+Christian's Fall 2019 Tutorial:
+
+- [.Rmd version of tutorial](resources_files/latex-presentation.Rmd)
+- [.html version of tutorial](resources_files/latex-presentation.html)
+
 LaTeX made easy with Overleaf with Brady Rippon.
 
 * [LaTeX with Overleaf Slides](resources_files/latex_101617.pdf)
 
-Introduction to LaTeX in R Markdown and Overleaf
+Yutao's Fall 2018 Tutorial
 
-* [Yutao's Overlead Tutorial](https://v2.overleaf.com/read/fdxyszqvstzn)
-* [This is an example file that combines R Markdown and LaTeX equations](resources_files/computing-club-tutorial-latex.Rmd)
-* [This is the html output](resources_files/computing-club-tutorial-latex.html)
-* [This is the pdf output](resources_files/computing-club-tutorial-latex.pdf)
+* [Overleaf Tutorial](https://v2.overleaf.com/read/fdxyszqvstzn)
+* [.Rmd combining R Markdown and LaTeX equations](resources_files/computing-club-tutorial-latex.Rmd)
+* [.html output](resources_files/computing-club-tutorial-latex.html)
+* [.pdf output](resources_files/computing-club-tutorial-latex.pdf)
 
 ## Github
 
