@@ -88,6 +88,6 @@ Introduction to Python for Data Analysis with Christian Pascual
 
 ## AGG Tests here:
 
-- [.Rmd version of tutorial](_site.yml)
+- [.Rmd version of tutorial](resources_files/_site.yml)
 
 
