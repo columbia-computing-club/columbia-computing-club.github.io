@@ -20,7 +20,7 @@ This year's organizers are [Angel Garcia de la Garza](https://www.angelgarciadel
 library(tidyverse)
 library(knitr)
 tib = tibble(
-  `Topic` = c("Speaker Panel", "Using LaTeX in Overleaf & RMarkdown", "TBD", "caret: Streamlining Model Tuning"),
+  `Topic` = c("Speaker Panel", "Using LaTeX in Overleaf & RMarkdown", "Building Websites in R", "caret: Streamlining Model Tuning"),
   `Date` = c("September 9, 2019; 4 - 4:50pm", 
              "October 14, 2019; 4 - 4:50pm", 
              "November 11, 2019; 4 - 4:50pm", 

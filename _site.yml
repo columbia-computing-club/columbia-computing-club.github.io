@@ -24,3 +24,4 @@ output:
         after_body: footer.html
     theme: cerulean
     css: styles.css
+google_analytics: "UA-124182553-2"
