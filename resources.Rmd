@@ -86,3 +86,6 @@ Introduction to Python for Data Analysis with Christian Pascual
 
 * [Slides from](https://docs.google.com/presentation/d/1HPGSbms3KJnowUIEx-ZG24GXSwM6zpMWXjrtyHhaDzs/edit#slide=id.g4360c0358c_0_5)
 
+## Portfolio Work
+
+* [Christian's Notes on pages and CSS](resources_files/website-presentation.html)
