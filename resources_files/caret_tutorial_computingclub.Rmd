@@ -1,0 +1,289 @@
+---
+title: "Computing Club Caret Turorial"
+author: "Angel Garcia de la Garza"
+date: "12/2/2019"
+output:
+  html_document:
+    code_folding: hide
+    toc: yes
+    toc_float: yes
+hitheme: tomorrow
+highlighter: highlight.js
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, wanings = FALSE)
+
+# install.packages("gap")
+# install.packages("ellipse")
+# install.packages("RANN")
+library(gap)
+library(tidyverse)
+library(caret)
+
+```
+
+## Background
+
+This is a tutorial on how to use caret to train machine learning models. I will be using the "nep499" dataset. This is a study of the neprilysin gene and sporadic Alzheimer's disease. There are 257 cases and 242 controls, each with eight SNPs detecting through denaturing high-performance liquid chromatography (DHPLC).
+
+```{r load_data, message = FALSE, include=FALSE}
+
+set.seed(1)
+
+data(nep499)
+data.ad <- nep499 %>%
+            mutate(gene.expression = rnorm(499, 1*status), 
+                   ## Created this for demostration purposes
+                  gene.expression = ifelse(rbinom(499,1, 0.95) == 1, gene.expression, NA),
+                  status = ifelse(status == 1, "case", "control"),
+                  status = as.factor(status),
+                  age = as.numeric(age),
+                  sex = as.factor(sex)) %>%
+            mutate_at(names(nep499)[c(4:23)], as.factor)
+           
+
+summary(data.ad)
+
+```
+
+## Exploratory Data Analysis
+
+This is a demostration of the exploratory data analysis tools in caret.
+
+You can easily create pair plots in the same fashion as base R
+
+```{r}
+
+featurePlot(x = data.ad[, c(3,24)], 
+            y = data.ad$status, 
+            plot = "pairs",
+            ## Add a key at the top
+            auto.key = list(columns = 3))
+
+
+```
+
+You can also visualize the data broken down by your outcome
+
+```{r}
+
+featurePlot(x = data.ad$age, 
+            y = data.ad$status,
+            plot = "box")
+
+```
+
+
+## Data Preprocessing
+
+In here, you are able to create a pipeline to deal with colinearity, zero-variance predictors, and missing data
+
+
+### Zero Variance
+
+This is how you get rid of zero variance predictors
+
+```{r, message = FALSE, include=FALSE}
+
+nzv <- nearZeroVar(data.ad, saveMetrics= TRUE)
+nzv
+
+nzv <- nearZeroVar(data.ad)
+data.ad.filtered <- data.ad[, -nzv]
+
+```
+
+
+### Colinearity
+
+This is how you handle colinearity:
+
+```{r, message = FALSE, include=FALSE}
+
+
+comboInfo <- findLinearCombos(data.ad %>%
+                                mutate(status = as.numeric(status)) %>%
+                                select(-gene.expression))
+comboInfo
+
+data.ad.filtered <- data.ad[, -comboInfo$remove]
+
+
+```
+
+
+### Imputation
+
+This is how you input data:
+
+```{r}
+
+data.ad.processed <- preProcess(data.ad.filtered, "knnImpute")
+data.final <- predict(data.ad.processed, data.ad.filtered) %>%
+                select(-id,-N6.a1)
+
+```
+
+
+## Model Training
+
+Once you have cleaned your dataset, you can train your models, you start by defining a sampling framework (how do you want to sample your data to test the sample performance)
+
+First define the sampling framework
+
+
+```{r}
+
+fitControl <- trainControl(## 10-fold CV
+                           method = "repeatedcv",
+                           number = 10,
+                           ## repeated ten times
+                           repeats = 10)
+
+fitControl <- trainControl(## 10-fold CV
+                           method = "cv",
+                           number = 10)
+
+```
+
+Then you can run train on a different set of predictors
+
+```{r message = FALSE, cache = TRUE, include=FALSE}
+
+
+## GLMNET
+train.glmnet <- train(status ~ ., data = data.final, 
+                 method = "glmnet", 
+                 trControl = fitControl)
+
+train.glmnet
+
+
+## Random Forest
+train.rf <- train(status ~ ., data = data.final, 
+                 method = "rf", 
+                 trControl = fitControl)
+
+train.rf
+
+
+## Partial Lease Squares
+train.pls <- train(status ~ ., data = data.final, 
+                 method = "pls", 
+                 trControl = fitControl)
+
+train.pls
+
+
+```
+
+You can play around with the tuning grid:
+
+```{r message = FALSE, cache = TRUE, include=FALSE}
+
+## You can select the grid of parameters to test
+
+glmnetGrid <-  expand.grid(alpha = seq(0,1, 0.05),
+                        lambda = exp(seq(-5,, 0.5)))
+
+train.glmnet <- train(status ~ ., data = data.final, 
+                 method = "glmnet", 
+                 trControl = fitControl,
+                 tuneGrid = glmnetGrid)
+
+train.glmnet
+
+
+## You can also adjust the lenght of the grid 
+
+
+train.glmnet <- train(status ~ ., data = data.final, 
+                 method = "glmnet", 
+                 trControl = fitControl,
+                 tuneLength = 20)
+
+train.glmnet
+
+```
+
+
+You can also change your performance metric:
+
+
+```{r}
+
+fitControl <- trainControl(method = "cv",
+                           number = 10,
+                           ## Estimate class probabilities
+                           classProbs = TRUE,
+                           ## Evaluate performance using 
+                           ## the following function
+                           summaryFunction = twoClassSummary)
+
+```
+
+
+```{r message = FALSE, cache = TRUE, include=FALSE}
+
+
+## GLMNET
+train.glmnet <- train(status ~ ., data = data.final, 
+                 method = "glmnet", 
+                 trControl = fitControl,
+                 metric = "ROC")
+
+train.glmnet
+
+
+## Random Forest
+train.rf <- train(status ~ ., data = data.final, 
+                 method = "rf", 
+                 trControl = fitControl,
+                 metric = "ROC",
+                 tuneLength = 5)
+
+train.rf
+
+
+## Partial Lease Squares
+train.pls <- train(status ~ ., data = data.final, 
+                 method = "pls", 
+                 trControl = fitControl,
+                 metric = "ROC",
+                 tuneLength = 5)
+
+train.pls
+
+
+```
+
+These are visuals of the training process:
+
+```{r}
+
+plot(train.glmnet)  
+plot(train.rf)
+plot(train.pls)
+
+```
+
+
+## Comparing Performance Across Models
+
+```{r}
+
+resamps <- resamples(list(GLMNET = train.glmnet,
+                          RF = train.rf,
+                          PLS = train.pls))
+summary(resamps)
+
+```
+
+
+```{r}
+
+bwplot(resamps, layout = c(3, 1))
+
+```
+

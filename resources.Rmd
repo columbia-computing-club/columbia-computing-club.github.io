@@ -90,3 +90,7 @@ Introduction to Python for Data Analysis with Christian Pascual
 
 * [Angel's .Rmd version of tutorial](resources_files/_site.yml)
 * [Christian's Notes on pages and CSS](resources_files/website-presentation.html)
+
+## caret
+
+* [Angel's .Rmd version of tutorial](resources_files/caret_tutorial_computingclub.Rmd)
