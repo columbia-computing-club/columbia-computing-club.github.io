@@ -1,14 +1,10 @@
-name: "Yay internet!"
+name: "Columbia Biostatistics Computing Club"
 output_dir: "."
 navbar:
   title: "Home"
   left:
-     - text: "Schedule"
-       menu:
-       - text: Current Schedule
-         href: schedule.html
-       - text: Past Meetings
-         href: old_schedule.html
+     - text: "Past Meetings"
+       href: old_schedule.html
      - text: "Resources"
        href: resources.html
      - text: "About"

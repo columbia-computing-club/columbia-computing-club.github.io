@@ -9,10 +9,37 @@ library(tidyverse)
 library(kableExtra)
 ```
 
+## Fall 2019 Schedule
+
+```{r}
+tib = tibble(
+  `Topic` = c("Speaker Panel", 
+              "Using LaTeX in Overleaf & RMarkdown", 
+              "A Biostatistician's Website", 
+              "caret: Streamlining Model Tuning"),
+  `Date` = c("September 9, 2019; 4 - 4:50pm", 
+             "October 14, 2019; 4 - 4:50pm", 
+             "November 11, 2019; 4 - 4:50pm", 
+             "December 2, 2019; 4 - 4:50pm"),
+  `Location` = c(
+    "Hammer LL203", 
+    "Hammer LL107", 
+    "Hammer LL107", 
+    "Hammer LL107")
+)
+
+kable(tib, row.names = FALSE) %>%
+  kable_styling(bootstrap_options = "striped") %>%
+  column_spec(1, width = "8em") %>%
+  column_spec(2, width = "20em") %>%
+  column_spec(3, width = "15em")
+```
+
+
 ## Spring 2019 Schedule
 
 ```{r, echo=FALSE, comment=FALSE, message=FALSE}
-event1 <- c("JAnuary 28, 2019", "Intermediate Python", "Christian Pascual")
+event1 <- c("January 28, 2019", "Intermediate Python", "Christian Pascual")
 event2 <- c("March 5, 2019", "Interactive visualization using RStudio’s Shiny", "Julia Wrobel")
 event3 <- c("March 19, 2019", "", "Angel Garcia de la Garza")
 event4 <- c("April 29, 2019", "Making an R Package", "Nick Williams")
