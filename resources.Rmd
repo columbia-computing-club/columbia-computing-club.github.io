@@ -24,7 +24,7 @@ How to Set Up Your Computer as a Statistician
 
 Introduction to R and R Markdown with Ariel Chernofsky.
 
-* [rMarkdown Exercise](resources_files/RMD_Exercise.pdf)
+* [RMarkdown Exercise](resources_files/RMD_Exercise.pdf)
 * [Ariel's rMarkdown Slides](resources_files/RMD_slides.pdf)
 * [Ariel's sample rMarkdown file](resources_files/SampleRMD.rmd)
 
@@ -40,9 +40,9 @@ Split, Match, Replace, and other ways to juggle multiple data types in R with Ma
 
 Interactive visualization using RStudio's Shiny with Julia Wrobel
 
-* [shiny slides](resources_files/shinySlides.html)
-* [hospitals dataset](resources_files/Hospital.csv)
-* [hospitals app](resources_files/hospitalApp.zip)
+* [Shiny slides](resources_files/shinySlides.html)
+* [Hospitals dataset](resources_files/Hospital.csv)
+* [Hospitals app](resources_files/hospitalApp.zip)
 
 ## Illustrator
 
@@ -82,9 +82,8 @@ Using GitHub for collaboration and version control with Jeff Goldsmith
 
 ## Python
 
-Introduction to Python for Data Analysis with Christian Pascual 
-
-* [Slides from](https://docs.google.com/presentation/d/1HPGSbms3KJnowUIEx-ZG24GXSwM6zpMWXjrtyHhaDzs/edit#slide=id.g4360c0358c_0_5)
+* [Slides for 2018 Presentation](https://docs.google.com/presentation/d/1HPGSbms3KJnowUIEx-ZG24GXSwM6zpMWXjrtyHhaDzs/edit#slide=id.g4360c0358c_0_5)
+* [Notebook for 2020 Workshop](https://colab.research.google.com/drive/15JXH-_An70D7eTR6udDDcNezLHKU0W9x)
 
 ## Portfolio Work
 
