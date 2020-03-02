@@ -22,7 +22,7 @@ library(knitr)
 tib = tibble(
   `Topic` = c(
     "Introduction To Python", 
-    "SQL", 
+    "Introduction To SQL", 
     "TBA", 
     "TBA"),
   `Date` = c(
