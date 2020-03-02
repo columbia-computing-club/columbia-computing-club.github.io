@@ -1,0 +1,342 @@
+---
+title: "SQL Workshop"
+author: "Christian Pascual"
+output: html_document
+---
+
+# Purpose
+
+This document intends to give a summary introduction to SQL and provide a working knowledge of the language itself so that interested learners can continue with more advanced topics. 
+
+# Prerequisites
+
+- Some basic knowledge of R is nice, but not necessary (just for loading data)
+- Please make sure to download the `sql-workshop.db` file from the site to accompany this workshop
+
+# What is SQL?
+
+SQL stands for **S**tructured **Q**uery **L**anguage. The official way to pronounce the name is technically to say all the letters alone, not "sequel". For all intents and purposes, no one will be confused if you say "sequel" in a data analysis context. 
+
+SQL is the language that you use to communicate with a **database**. You can think of a database as just a collection of datasets all in one organized place. At this point, you may be familiar with  *single* datasets in the form of csvs, xlsx files, etc. A database can contain many different datasets, or **tables**, that can be interrelated in some way.
+
+## Why should I care about SQL?
+
+The main reason is that you need to be able to communicate with the databases that many companies use to store their data. Once you write a SQL query that creates a particular type of dataset you might need, you can continue reusing this query to update your dataset whenever the database itself is updated. Databases are more secure than localized datasets, and multiple people can read from the same database without any worry that someone is using a different version.
+
+## SQL Terminology
+
+As mentioned above, a database can contain one or multiple tables. Each tables have columns associated with them, which we refer to as **fields**.
+
+![](./sql-terms.png)
+
+# Downloading libraries
+
+While SQL has some programming capacity, it's main use is to extract data from databases for analysis with another language. For this workshop, we'll be doing R but you can easily read about other interfaces with SQL (SQL-Python, SQL-SAS, etc.)
+
+```{r, eval = FALSE }
+# RSQLite also brings in a dependency: DBI
+install.packages("RSQLite")
+```
+
+`RSQLite` is a SQLite database engine in R. SQLite is a **relational database management system** (RDBMS), which is a software that essentially just allows you to manipulate and control databases. It's important to distinguish the *software* from the *language* of SQL. You create a SQL query and a RDBMS takes it. The RDBMS interprets your SQL and performs the actions contained in your queries. SQLite is just one of many RBDMS available to people, but it is one of the most widely used. There are slight differences between SQLite and other management systems but that's out of scope for the workshop.
+
+# Connect to your database
+
+Databases are denoted with the `.db` extension. You may also find the `.db` file that we're going to use on the Computing Club website or in the email I sent out. The first thing we have to do before we start working with any SQL is to load our libraries and connect to the database.
+
+```{r}
+library(DBI) # Most functions you'll actually use are from DBI instead
+library(RSQLite)
+
+# Connect to the .db file provided 
+db = dbConnect(SQLite(), "./sql-workshop.db")
+
+# Check out what tables are currently contained in the database
+dbListTables(db) # It's just one table: airbnb
+```
+
+```{r}
+# What fields are in our airbnb table?
+dbListFields(db, "airbnb")
+```
+
+The `.db` file I've provided just contains one table, which is named `airbnb`. Later in the workshop, we'll learn to create tables and join tables together. 
+
+# Reading data with `SELECT`
+
+Now that we have the table that we're working with, we can start reading table from it with SQL. If we want to get the entire dataset, we can use the `SELECT` command in our SQL query:
+
+```
+SELECT * 
+FROM airbnb;
+```
+
+The above is our first SQL query. The `SELECT` command lets us select particular fields from a table. Notice that there is a semi-colon at the end to signify the end of the query. The `*` wildcard indicates that we want all of the fields from the `airbnb` table. I've written the `SELECT` and `FROM` in all-caps, but we technically don't need to do this. However, it does help us figure out what each part of the query does.
+
+In order to pass this command to the `sql-workshop.db` file, we need to use functions from `DBI`.
+
+```{r}
+query = "
+SELECT * FROM airbnb;
+"
+
+result = dbGetQuery(db, query)
+head(result)
+```
+
+```{r}
+dim(result)
+```
+
+The naming convention here is a little weird. The `dbGetQuery()` function takes in a database connection and an SQL query in the form of a character vector. The function "gets" the result of the query that you make.
+
+If we only wanted some of the columns, we could just specify which ones we want in the query:
+
+```{r}
+query = "
+SELECT bedrooms, bathrooms 
+FROM airbnb;
+"
+
+result = dbGetQuery(db, query)
+head(result)
+```
+
+# Filtering data with `WHERE`
+
+Using just the `SELECT` command, we get back all of the rows in the table. Sometimes we'll only want rows that fulfill a particular condition. In order to filter the rows that are returned to us, we need to use the `WHERE` keyword. 
+
+```
+SELECT bedrooms, bathrooms 
+FROM airbnb
+WHERE bedrooms == 3;
+```
+
+In the `WHERE` statement, you need to provide a condition. This is similar to how we would select for rows in the `select()` function in `tidyverse`. You can use all of the typical operators such as `==`, `>`, `<=`, etc.
+
+```{r}
+query = "
+SELECT bedrooms, bathrooms 
+FROM airbnb
+WHERE bedrooms == 3;
+"
+
+result = dbGetQuery(db, query)
+head(result)
+```
+
+We can also chain conditions together using the `AND` or `OR` keywords. 
+
+```
+SELECT bedrooms, bathrooms 
+FROM airbnb
+WHERE (bedrooms == 3) AND (bathrooms < 2);
+```
+
+```{r}
+query = "
+SELECT bedrooms, bathrooms 
+FROM airbnb
+WHERE (bedrooms == 3) AND (bathrooms < 2);
+"
+
+result = dbGetQuery(db, query)
+head(result)
+```
+
+Notice that we can use parentheses to group the conditions together. `SELECT` and `WHERE` are how you can get data from a table in a database. 
+
+# Aliases
+
+Sometimes you'll have long field names that are cumbersome to write out in your queries. SQL has a feature called "aliases" where you can give nicknames to specific fields. In order to alias something, you can use the `AS` keyword. 
+
+```
+SELECT maximum_nights AS mn, number_of_reviews AS nr 
+FROM airbnb
+WHERE (mn < 365) AND (nr >= 20);
+```
+
+```{r}
+query = "
+SELECT maximum_nights AS mn, number_of_reviews AS nr 
+FROM airbnb
+WHERE (mn < 365) AND (nr >= 20);
+"
+
+result = dbGetQuery(db, query)
+head(result)
+```
+
+You actually don't need the keyword `AS` in the query, but it helps make things more explicit. You can write the above query as:
+
+```
+SELECT maximum_nights mn, number_of_reviews nr 
+FROM airbnb
+WHERE (mn < 365) AND (nr >= 20);
+```
+
+# Other interesting keywords for `WHERE`
+
+- `NOT`: allows you to negate any condition
+- `IN`: another logical operator for looking for specific items in a list of items. Often used with nested queries.
+- `BETWEEN`: easier than using two `<=` comparison
+- `LIKE`: allows you to try to compare a character column to a "similar" looking word
+- `ORDER BY`: sort the resulting dataset by a particular column
+- `LIMIT`: only return a set amount of rows from the data made by the query
+- `DISTINCT`: sometimes columns will have duplicate values, so this function can return all the unique values in a field
+
+# Creating another table
+
+ If you have a dataset that you want to insert as a table into a database, you can use the `dbWriteTable()` function.
+ 
+```{r, message = FALSE, warning = FALSE }
+# Simulate a dataset
+library(tidyverse)
+opinions = tibble(
+  city = c("Washington",
+           "Hyattsville",           
+           "Silver Spring",
+           "Mount Rainier",
+           "Capitol Heights"),
+  opinion = c("Cool",
+              "Sucks",
+              "Sucks",
+              "Awesome",
+              "Tall"),
+  rating = c(
+    1, 2, 3, 4, 5
+  )
+)
+
+# Store this dataset as a table
+dbWriteTable(db, "opinions", opinions)
+
+# Make sure that the new tables exist
+dbListTables(db)
+```
+
+# Joining tables together
+
+Normally when you receive a dataset from your professor, it's already in a neat `csv` file. In working with SQL, usually you'll have to combine several tables together to produce the final dataset that you typically receive. In order to combine tables, we perform **joins** between tables. There are several types of joins, I've outlined the most basic ones below:
+
+![](./join-types.png)
+
+In order to join tables together, they need to have columns that contain the same information. In the examples above, there is an `id` field that both contain and SQL uses this column to match the rows together. The black cells indicate missing values. "Left" and "right" are relative to the syntax itself. All of the joins have a similar syntax:
+
+```
+SELECT airbnb.state, opinions.opinion
+FROM airbnb
+INNER JOIN opinions 
+ON airbnb.city == opinions.city;
+```
+
+In the `SELECT` section of the query, you need to specify which fields you want from *both* tables you're joining. The table next to the `FROM` statement will be the `Table 1` indicated in the diagram. The table next to the `JOIN` statement is the `Table 2`, and then we specify what columns share the same information in both tables.
+
+```{r}
+query = "
+  SELECT airbnb.state, opinions.opinion
+  FROM airbnb
+  INNER JOIN opinions 
+  ON airbnb.city == opinions.city;
+"
+
+result = dbGetQuery(db, query)
+head(result)
+```
+
+Similarly, there is a corresponding `LEFT JOIN`, `RIGHT JOIN`, and `FULL JOIN` statements that use the same syntax as the example above. You can use multiple `JOINS` in a single statement as well, but your queries will quickly explode in complexity.
+
+# The Rabbit Hole: Subqueries
+
+The keywords described here form most of the fundamental skills you need to learn first from SQL. While this doesn't seem like much, it only sets you up for the next level of complexity in terms of SQL programming. I think the first wall that students will hit when learning SQL is **subqueries**. Up until now, we've either had the table on hand or simulated a table and inserted it into the database. In cases where we don't have this, we'll actually need to create a query *within* another query to create the table that we want to join to. These queries within queries are called *subqueries*. 
+
+For example, when we were learning joins, we saw this command:
+
+```
+SELECT airbnb.state, opinions.opinion
+FROM airbnb
+INNER JOIN opinions 
+ON airbnb.city == opinions.city;
+```
+
+We could rewrite this query in terms of a subquery:
+
+```
+SELECT airbnb.state
+FROM airbnb
+INNER JOIN (
+  SELECT opinions.city, opinions.opinion
+  FROM opinions
+) op
+ON airbnb.city == op.city;
+```
+
+```{r}
+query = "
+SELECT airbnb.state, op.opinion
+FROM airbnb
+INNER JOIN (
+  SELECT opinions.city, opinions.opinion
+  FROM opinions
+) op
+ON airbnb.city == op.city;
+"
+
+result = dbGetQuery(db, query)
+head(result)
+```
+
+There's a lot to unpack here! When dealing with subqueries, it helps a lot to **work from inside out**. The inner query which is lodged into the `INNER JOIN` is just selecting two columns from the `opinions` table. After creating this table, we give it the alias `op`. This alias is being used in the first `SELECT` statement. 
+
+You can also use subqueries to make more complex `WHERE` conditions. Let's say that we want to return all of the columns in the `airbnb` table where the corresponding city was "Cool" in the `opinions` table.
+
+```
+SELECT * FROM airbnb
+WHERE city IN (
+  SELECT city FROM opinions
+  WHERE opinion == "Cool"
+)
+```
+```{r}
+query = "
+SELECT * FROM airbnb
+WHERE city IN (
+  SELECT city FROM opinions
+  WHERE opinion == 'Cool'
+)
+"
+
+result = dbGetQuery(db, query)
+head(result)
+```
+
+Here the subquery essentially filters out the cities that aren't "Cool". From here, the result of the subquery is used for the `IN` condition to the `WHERE` in the overall query.
+
+# Removing Tables
+
+Lastly, a potentially tricky issue with the creation of tables is that once a table is named and created, you *cannot* make another table with the same name. This might come up if you accidentally create a table incorrectly and want to redo it. Before you can recreate the table, you need to delete or `DROP` it from the database.
+
+```{r, eval = FALSE}
+dbSendQuery(db, "DROP TABLE opinions")
+```
+
+ANOTHER potential point of confusion here is the function `dbSendQuery()`. For our purposes here, this function should be used to send queries that *don't* return any data. `SELECT` queries return data, so we should use `dbGetQuery()` with those. In this case, we're deleting a table, which doesn't reutrn data so `dbSendQuery()` is preferable.
+
+# Clean up after yourself
+
+As we close the workshop up, we also need to close the connection to the database. This helps us increase database security since it enables us to authorize users access to the database. However, if we leave the connection open and leave our computer, we potentially expose our database to threats. 
+
+To close a database connection, you can just use the following function:
+
+```{r}
+dbDisconnect(db)
+```
+
+This was a whirlwind tour of SQL and an interface library in R. 
+
+# Resources
+
+- [W3 School's SQL Tutorial](https://www.w3schools.com/sql/default.asp)
+- [RSQLite Tutorial](http://users.stat.umn.edu/~yang3175/lit_sem/RSQLite_Tutorial.html#1)
+- [Another RSQLite Tutorial by Hadley Wickham](https://cran.r-project.org/web/packages/RSQLite/vignettes/RSQLite.html)
+- [SQL Style Guide](https://www.sqlstyle.guide/)

@@ -93,3 +93,9 @@ Using GitHub for collaboration and version control with Jeff Goldsmith
 ## caret
 
 * [Angel's .Rmd version of tutorial](resources_files/caret_tutorial_computingclub.Rmd)
+
+## Christian's 2020 SQL Workshop
+
+* [.db file for workshop](resources_files/sql-workshop.db)
+* [.html file](resources_files/sql-workshop.html)
+* [.Rmd file](resources_files/sql-workshop.Rmd)

@@ -12,7 +12,7 @@ output:
 
 <img src="images/columbia_biostatistics.png" style="width:50%" align="left" hspace="20"> The Columbia Biostatistics Computing Club hosts casual seminars focusing on computational topics often encountered in biostatistics research. These tutorials provide hands-on learning at a variety of skill levels, with some focused on bringing new students up to speed and others addressing more advanced problems. Our overarching goal is to impart good programming practices that encourage collaborative reproducible research!
 
-This year's organizers are [Angel Garcia de la Garza](https://www.angelgarciadelagarza.com), [Margaret Gacheru](https://gacherum.github.io) and [Christian Pascual](https://thecbp.github.io/cbpascual.github.io). Angel and Margaret are third-year and first-year Ph.D students, respectively. Christian is a second-year Master's student on the  Theory and Methods track. The group is run with the help of faculty advisor [Christine Mauro](http://christinemauro.com/). A schedule for the upcoming Fall semester is below. If there are other topics you'd like us to cover in the future, you can contact cbp2128@columbia.edu.
+This year's organizers are [Angel Garcia de la Garza](https://www.angelgarciadelagarza.com), [Margaret Gacheru](https://gacherum.github.io) and [Christian Pascual](https://thecbp.github.io/cbpascual.github.io). Angel and Margaret are third-year and first-year Ph.D students, respectively. Christian is a second-year Master's student on the  Theory and Methods track. The group is run with the help of faculty advisor [Christine Mauro](http://christinemauro.com/). A schedule for the upcoming Spring semester is below. If there are other topics you'd like us to cover in the future, you can contact cbp2128@columbia.edu.
 
 </p>
 
@@ -22,7 +22,7 @@ library(knitr)
 tib = tibble(
   `Topic` = c(
     "Introduction To Python", 
-    "TBA", 
+    "SQL", 
     "TBA", 
     "TBA"),
   `Date` = c(
