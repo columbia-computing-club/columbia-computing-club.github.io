@@ -12,7 +12,7 @@ output:
 
 <img src="images/columbia_biostatistics.png" style="width:50%" align="left" hspace="20"> The Columbia Biostatistics Computing Club hosts casual seminars focusing on computational topics often encountered in biostatistics research. These tutorials provide hands-on learning at a variety of skill levels, with some focused on bringing new students up to speed and others addressing more advanced problems. Our overarching goal is to impart good programming practices that encourage collaborative reproducible research!
 
-This year's organizers are [Angel Garcia de la Garza](https://www.angelgarciadelagarza.com), [Margaret Gacheru](https://gacherum.github.io) and [Christian Pascual](https://thecbp.github.io/cbpascual.github.io). Angel and Margaret are third-year and first-year Ph.D students, respectively. Christian is a second-year Master's student on the  Theory and Methods track. The group is run with the help of faculty advisor [Christine Mauro](http://christinemauro.com/). A schedule for the upcoming Spring semester is below. If there are other topics you'd like us to cover in the future, you can contact cbp2128@columbia.edu.
+This year's organizers are [Angel Garcia de la Garza](https://www.angelgarciadelagarza.com), Muhire Kwizera, Rebecca Silva, Charly Fowler, Bryan Bunning, Gavin Ko and Amy Pitts. Angel and Muhire are fourth-year Ph.D students, Charly and Rebecca are 2nd-year Ph.D students and Amy is a first-year Ph.D student. Gavin and Bryan are second-year Master's students on the  Theory and Methods track. The group is run with the help of faculty advisor [Christine Mauro](http://christinemauro.com/). A schedule for the upcoming  events is below and will be regularly updated. Please fill out this [survey](https://docs.google.com/forms/d/e/1FAIpQLSdw-LEJW3qn_nybZ2AoVvonoSkK_XeqJhnUNSZzK769rkzgGQ/viewform) to let us know what topics you are most interested in. For other inquiries, you can contact cbp2128@columbia.edu.
 
 </p>
 
@@ -21,20 +21,20 @@ library(tidyverse)
 library(knitr)
 tib = tibble(
   `Topic` = c(
-    "Introduction To Python", 
-    "Introduction To SQL", 
+    "Panel: Best practices as a graduate student", 
+    "Introduction To LaTeX", 
     "TBA", 
     "TBA"),
   `Date` = c(
-    "February 10, 2020; 4 - 4:50pm", 
-    "March 2, 2020; 4 - 4:50pm", 
-    "March 30, 2020; 4 - 4:50pm", 
-    "April 13, 2020; 4 - 4:50pm"),
+    "September 16, 2020; 11:30 - 12:30pm", 
+    "September 30, 2020; 11:30 - 12:30pm", 
+    "October 14, 2020; 11:30 - 12:30pm", 
+    "October 28, 2020; 11:30 - 12:30pm"),
   `Location` = c(
-    "Hammer LL103", 
-    "Hammer LL103", 
-    "Hammer LL103", 
-    "Hammer LL103")
+    "Zoom!",
+    "Zoom!",
+    "Zoom!",
+    "Zoom!")
 )
 kable(tib)
 ```

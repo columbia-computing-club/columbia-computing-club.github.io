@@ -9,9 +9,29 @@ library(tidyverse)
 library(kableExtra)
 ```
 
+## Spring 2020 Schedule
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE }
+tib = tibble(
+  `Topic` = c("Introduction to Python", 
+              "Introduction to SQL"),
+  `Date` = c("February 10, 2020; 4 - 4:50pm", 
+             "March 2, 2020; 4 - 4:50pm"),
+  `Location` = c(
+    "Hammer LL103", 
+    "Hammer LL103")
+)
+
+kable(tib, row.names = FALSE) %>%
+  kable_styling(bootstrap_options = "striped") %>%
+  column_spec(1, width = "8em") %>%
+  column_spec(2, width = "20em") %>%
+  column_spec(3, width = "15em")
+```
+
 ## Fall 2019 Schedule
 
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE }
 tib = tibble(
   `Topic` = c("Speaker Panel", 
               "Using LaTeX in Overleaf & RMarkdown", 
