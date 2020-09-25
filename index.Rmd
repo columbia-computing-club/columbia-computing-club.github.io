@@ -23,13 +23,13 @@ tib = tibble(
   `Topic` = c(
     "Panel: Best practices as a graduate student", 
     "Introduction To LaTeX", 
-    "TBA", 
-    "TBA"),
+    "SQL with Career China Club", 
+    "GGplot packages"),
   `Date` = c(
     "September 16, 2020; 11:30 - 12:30pm", 
     "September 30, 2020; 11:30 - 12:30pm", 
     "October 14, 2020; 11:30 - 12:30pm", 
-    "October 28, 2020; 11:30 - 12:30pm"),
+    "October 30 (Friday), 2020; 11:30 - 1:00pm"),
   `Location` = c(
     "Zoom!",
     "Zoom!",
