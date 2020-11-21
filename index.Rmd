@@ -24,17 +24,21 @@ tib = tibble(
     "Panel: Best practices as a graduate student", 
     "Introduction To LaTeX", 
     "SQL with Career China Club", 
-    "GGplot packages"),
+    "GGplot packages",
+    "Python Tutorial"),
   `Date` = c(
     "September 16, 2020; 11:30 - 12:30pm", 
     "September 30, 2020; 11:30 - 12:30pm", 
     "October 14, 2020; 11:30 - 12:30pm", 
-    "October 30 (Friday), 2020; 11:30 - 1:00pm"),
+    "November 13, 2020; 11:30 - 12:30pm", 
+    "December 9, 2020; 11:30 - 12:30pm")
+  ,
   `Location` = c(
-    "Zoom!",
-    "Zoom!",
-    "Zoom!",
-    "Zoom!")
+    "Zoom",
+    "Zoom",
+    "Zoom",
+    "Zoom",
+    "Zoom")
 )
 kable(tib)
 ```
