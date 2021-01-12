@@ -35,7 +35,6 @@ tib = tibble(
     "Zoom",
     "Zoom",
     "Zoom",
-    "Zoom",
     "Zoom")
 )
 kable(tib)

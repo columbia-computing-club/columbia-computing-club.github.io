@@ -34,7 +34,7 @@ tib = tibble(
     "Zoom")
 )
 
-kable(schedule, row.names = FALSE) %>%
+kable(tib, row.names = FALSE) %>%
   kable_styling(bootstrap_options = "striped") %>%
   column_spec(1, width = "8em") %>%
   column_spec(2, width = "20em") %>%

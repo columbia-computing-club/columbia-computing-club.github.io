@@ -314,6 +314,108 @@ $(document).ready(function () {
 <h1>
 Past Meetings
 </h1>
+<div id="fall-2020-schedule" class="section level2">
+<h2>Fall 2020 Schedule</h2>
+<pre class="r"><code>tib = tibble(
+  `Topics` = c(
+    &quot;Panel: Best practices as a graduate student&quot;, 
+    &quot;Introduction To LaTeX&quot;, 
+    &quot;SQL with Career China Club&quot;, 
+    &quot;GGplot packages&quot;,
+    &quot;Python Tutorial&quot;),
+  `Date` = c(
+    &quot;September 16, 2020; 11:30 - 12:30pm&quot;, 
+    &quot;September 30, 2020; 11:30 - 12:30pm&quot;, 
+    &quot;October 14, 2020; 11:30 - 12:30pm&quot;, 
+    &quot;November 13, 2020; 11:30 - 12:30pm&quot;, 
+    &quot;December 9, 2020; 11:30 - 12:30pm&quot;)
+  ,
+  `Location` = c(
+    &quot;Zoom&quot;,
+    &quot;Zoom&quot;,
+    &quot;Zoom&quot;,
+    &quot;Zoom&quot;,
+    &quot;Zoom&quot;)
+)
+
+kable(tib, row.names = FALSE) %&gt;%
+  kable_styling(bootstrap_options = &quot;striped&quot;) %&gt;%
+  column_spec(1, width = &quot;8em&quot;) %&gt;%
+  column_spec(2, width = &quot;20em&quot;) %&gt;%
+  column_spec(3, width = &quot;15em&quot;)</code></pre>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Topics
+</th>
+<th style="text-align:left;">
+Date
+</th>
+<th style="text-align:left;">
+Location
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 8em; ">
+Panel: Best practices as a graduate student
+</td>
+<td style="text-align:left;width: 20em; ">
+September 16, 2020; 11:30 - 12:30pm
+</td>
+<td style="text-align:left;width: 15em; ">
+Zoom
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8em; ">
+Introduction To LaTeX
+</td>
+<td style="text-align:left;width: 20em; ">
+September 30, 2020; 11:30 - 12:30pm
+</td>
+<td style="text-align:left;width: 15em; ">
+Zoom
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8em; ">
+SQL with Career China Club
+</td>
+<td style="text-align:left;width: 20em; ">
+October 14, 2020; 11:30 - 12:30pm
+</td>
+<td style="text-align:left;width: 15em; ">
+Zoom
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8em; ">
+GGplot packages
+</td>
+<td style="text-align:left;width: 20em; ">
+November 13, 2020; 11:30 - 12:30pm
+</td>
+<td style="text-align:left;width: 15em; ">
+Zoom
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8em; ">
+Python Tutorial
+</td>
+<td style="text-align:left;width: 20em; ">
+December 9, 2020; 11:30 - 12:30pm
+</td>
+<td style="text-align:left;width: 15em; ">
+Zoom
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div id="spring-2020-schedule" class="section level2">
 <h2>Spring 2020 Schedule</h2>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
