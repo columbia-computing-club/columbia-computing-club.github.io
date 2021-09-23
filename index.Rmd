@@ -12,7 +12,7 @@ output:
 
 <img src="images/columbia_biostatistics.png" style="width:50%" align="left" hspace="20"> The Columbia Biostatistics Computing Club hosts casual seminars focusing on computational topics often encountered in biostatistics research. These tutorials provide hands-on learning at a variety of skill levels, with some focused on bringing new students up to speed and others addressing more advanced problems. Our overarching goal is to impart good programming practices that encourage collaborative reproducible research!
 
-This year's organizers are [Angel Garcia de la Garza](https://www.angelgarciadelagarza.com), Muhire Kwizera, Rebecca Silva, Charly Fowler, Bryan Bunning, Gavin Ko and Amy Pitts. Angel and Muhire are fourth-year Ph.D students, Charly and Rebecca are 2nd-year Ph.D students and Amy is a first-year Ph.D student. Gavin and Bryan are second-year Master's students on the  Theory and Methods track. The group is run with the help of faculty advisor [Christine Mauro](http://christinemauro.com/). A schedule for the upcoming  events is below and will be regularly updated. Please fill out this [survey](https://docs.google.com/forms/d/e/1FAIpQLSdw-LEJW3qn_nybZ2AoVvonoSkK_XeqJhnUNSZzK769rkzgGQ/viewform) to let us know what topics you are most interested in. For other inquiries, you can contact cbp2128@columbia.edu.
+This year's organizers are [Angel Garcia de la Garza](https://www.angelgarciadelagarza.com), Rebecca Silva, Charly Fowler, Amy Pitts, Safiya Siroto, Emil Hafeez, and Fiona Ehrich. Angel is a fourth-year Ph.D student, Charly and Rebecca are 3rd-year Ph.D students, Amy is a 2nd-year Ph.D student and Safiya is a 1st-year Ph.D student. Emil and Fiona are second-year Master's students on the  Theory and Methods track. The group is run with the help of faculty advisor [Christine Mauro](http://christinemauro.com/). A schedule for the upcoming  events is below and will be regularly updated. Please fill out this [survey](https://docs.google.com/forms/d/e/1FAIpQLSdw-LEJW3qn_nybZ2AoVvonoSkK_XeqJhnUNSZzK769rkzgGQ/viewform) to let us know what topics you are most interested in. For other inquiries, you can contact cbp2128@columbia.edu.
 
 </p>
 
@@ -21,15 +21,15 @@ library(tidyverse)
 library(knitr)
 tib = tibble(
   `Topics` = c(
-    "Website Design; How to Market Yourself with Christian Pascual", 
+    "Speaker Panel: Set yourself up for success", 
     "TBD", 
     "TBD", 
     "TBD"),
   `Date` = c(
-    "January 20, 2021; 11:30 - 12:30pm", 
-    "Febuary 17, 2021; 11:30 - 12:30pm", 
-    "March 17, 2021; 11:30 - 12:30pm", 
-    "April 14, 2021; 11:30 - 12:30pm")
+    "Sept. 21, 2021; 12:00 - 1:00pm", 
+    "Oct. 5, 2021; 12:00 - 1:00pm", 
+    "Oct. 19, 2021; 12:00 - 1:00pm", 
+    "Nov. 9, 2021; 12:00 - 1:00pm")
   ,
   `Location` = c(
     "Zoom",

@@ -12,6 +12,7 @@ This is a list of all the resources students have created for the Computing Club
 
 How to Set Up Your Computer as a Statistician
 
+* [2021 Notes from presentation and panel discussion](resources_files/computing_club_minutes_20212109.pdf)
 * [2018 Notes from presentation and panel discussion](resources_files/Computing_Club Minutes_September_2018.pdf)
 * [2017 Notes from presentation and panel discussion](resources_files/computer_091117.pdf)
 
@@ -91,6 +92,7 @@ Christian's 2020 Workshop
 * [.db file for workshop](resources_files/sql-workshop.db)
 * [.html file of workshop](resources_files/sql-workshop.html)
 * [.Rmd file of workshop](resources_files/sql-workshop.Rmd)
+
 
 # Libraries
 

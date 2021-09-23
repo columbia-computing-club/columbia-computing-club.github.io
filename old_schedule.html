@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title>old_schedule.utf8.md</title>
+<title>old_schedule.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,6 +23,7 @@
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -236,6 +236,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -314,35 +315,61 @@ $(document).ready(function () {
 <h1>
 Past Meetings
 </h1>
+<div id="spring-2021-schedule" class="section level2">
+<h2>Spring 2021 Schedule</h2>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Topics
+</th>
+<th style="text-align:left;">
+Date
+</th>
+<th style="text-align:left;">
+Location
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 8em; ">
+Website Design: How to market yourself with Christian Pascual
+</td>
+<td style="text-align:left;width: 20em; ">
+January 20, 2021; 12:00 - 1:00pm
+</td>
+<td style="text-align:left;width: 15em; ">
+Zoom
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8em; ">
+Intro to Cluster computing
+</td>
+<td style="text-align:left;width: 20em; ">
+March 31, 2021; 12:00 - 1:00pm
+</td>
+<td style="text-align:left;width: 15em; ">
+Zoom
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8em; ">
+gtsummary R package
+</td>
+<td style="text-align:left;width: 20em; ">
+April 27, 2021; 12:00 - 1:00pm
+</td>
+<td style="text-align:left;width: 15em; ">
+Zoom
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div id="fall-2020-schedule" class="section level2">
 <h2>Fall 2020 Schedule</h2>
-<pre class="r"><code>tib = tibble(
-  `Topics` = c(
-    &quot;Panel: Best practices as a graduate student&quot;, 
-    &quot;Introduction To LaTeX&quot;, 
-    &quot;SQL with Career China Club&quot;, 
-    &quot;GGplot packages&quot;,
-    &quot;Python Tutorial&quot;),
-  `Date` = c(
-    &quot;September 16, 2020; 11:30 - 12:30pm&quot;, 
-    &quot;September 30, 2020; 11:30 - 12:30pm&quot;, 
-    &quot;October 14, 2020; 11:30 - 12:30pm&quot;, 
-    &quot;November 13, 2020; 11:30 - 12:30pm&quot;, 
-    &quot;December 9, 2020; 11:30 - 12:30pm&quot;)
-  ,
-  `Location` = c(
-    &quot;Zoom&quot;,
-    &quot;Zoom&quot;,
-    &quot;Zoom&quot;,
-    &quot;Zoom&quot;,
-    &quot;Zoom&quot;)
-)
-
-kable(tib, row.names = FALSE) %&gt;%
-  kable_styling(bootstrap_options = &quot;striped&quot;) %&gt;%
-  column_spec(1, width = &quot;8em&quot;) %&gt;%
-  column_spec(2, width = &quot;20em&quot;) %&gt;%
-  column_spec(3, width = &quot;15em&quot;)</code></pre>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>

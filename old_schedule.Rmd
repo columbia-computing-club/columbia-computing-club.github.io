@@ -9,9 +9,36 @@ library(tidyverse)
 library(kableExtra)
 ```
 
+
+## Spring 2021 Schedule
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE }
+tib = tibble(
+  `Topics` = c(
+    "Website Design: How to market yourself with Christian Pascual", 
+    "Intro to Cluster computing",
+    "gtsummary R package"),
+  `Date` = c(
+    "January 20, 2021; 12:00 - 1:00pm", 
+    "March 31, 2021; 12:00 - 1:00pm", 
+    "April 27, 2021; 12:00 - 1:00pm")
+  ,
+  `Location` = c(
+    "Zoom",
+    "Zoom",
+    "Zoom")
+)
+
+kable(tib, row.names = FALSE) %>%
+  kable_styling(bootstrap_options = "striped") %>%
+  column_spec(1, width = "8em") %>%
+  column_spec(2, width = "20em") %>%
+  column_spec(3, width = "15em")
+```
+
 ## Fall 2020 Schedule
 
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE }
 tib = tibble(
   `Topics` = c(
     "Panel: Best practices as a graduate student", 
