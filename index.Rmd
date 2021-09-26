@@ -22,18 +22,24 @@ library(knitr)
 tib = tibble(
   `Topics` = c(
     "Speaker Panel: Set yourself up for success", 
+    "LaTex", 
     "TBD", 
-    "TBD", 
-    "TBD"),
+    #"TBD",
+    "R-Shiny",
+    "Working with maps in R"),
   `Date` = c(
     "Sept. 21, 2021; 12:00 - 1:00pm", 
     "Oct. 5, 2021; 12:00 - 1:00pm", 
     "Oct. 19, 2021; 12:00 - 1:00pm", 
-    "Nov. 9, 2021; 12:00 - 1:00pm")
+    #"Nov. 3, 2021; 12:00 - 1:00pm",
+    "Nov. 16, 2021; 12:00 - 1:00pm",
+    "Nov. 30, 2021; 12:00 - 1:00pm")
   ,
   `Location` = c(
     "Zoom",
     "Zoom",
+    "Zoom",
+    #"Zoom",
     "Zoom",
     "Zoom")
 )
