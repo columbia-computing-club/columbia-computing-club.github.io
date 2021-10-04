@@ -23,7 +23,7 @@ tib = tibble(
   `Topics` = c(
     "Speaker Panel: Set yourself up for success", 
     "LaTex", 
-    "TBD", 
+    "Python", 
     #"TBD",
     "R-Shiny",
     "Working with maps in R"),
