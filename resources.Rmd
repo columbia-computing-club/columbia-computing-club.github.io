@@ -69,6 +69,12 @@ Christian's Fall 2019 Tutorial:
 - [.Rmd version of tutorial](resources_files/latex-presentation.Rmd)
 - [.html version of tutorial](resources_files/latex-presentation.html)
 
+Zilan + Charly's Fall 2021 Tutorial
+
+* [.pdf output file](resources_files/introduction_to_latex_2021_zilan/Introduction_to_LaTex.pdf)
+* [.tex file](resources_files/introduction_to_latex_2021_zilan/main.tex)
+* [photo needed for .tex file](resources_files/introduction_to_latex_2021_zilan/cu.jpg)
+
 ## Github
 
 Using GitHub for collaboration and version control with Jeff Goldsmith
