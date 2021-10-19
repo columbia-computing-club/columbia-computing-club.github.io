@@ -83,8 +83,10 @@ Using GitHub for collaboration and version control with Jeff Goldsmith
 
 ## Python
 
-* [Slides for 2018 Presentation](https://docs.google.com/presentation/d/1HPGSbms3KJnowUIEx-ZG24GXSwM6zpMWXjrtyHhaDzs/edit#slide=id.g4360c0358c_0_5)
+* [Slides for 2021 Presentation](resources_files/Python_Pres_fall_2021.pdf)
+* [Google Colab for 2021 Presentation](https://colab.research.google.com/drive/1aZnKgFJRLZtT37AS8fM4yeOd_YbH9TuI?usp=sharing)
 * [Notebook for 2020 Workshop](https://colab.research.google.com/drive/15JXH-_An70D7eTR6udDDcNezLHKU0W9x)
+* [Slides for 2018 Presentation](https://docs.google.com/presentation/d/1HPGSbms3KJnowUIEx-ZG24GXSwM6zpMWXjrtyHhaDzs/edit#slide=id.g4360c0358c_0_5)
 
 ## Portfolio Work
 

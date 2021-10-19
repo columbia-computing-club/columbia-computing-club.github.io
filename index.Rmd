@@ -24,14 +24,14 @@ tib = tibble(
     "Speaker Panel: Set yourself up for success", 
     "LaTex", 
     "Python", 
-    #"TBD",
+    "Causal Inference Working Group Joint Meeting ",
     "R-Shiny",
     "Working with maps in R"),
   `Date` = c(
     "Sept. 21, 2021; 12:00 - 1:00pm", 
     "Oct. 5, 2021; 12:00 - 1:00pm", 
     "Oct. 19, 2021; 12:00 - 1:00pm", 
-    #"Nov. 3, 2021; 12:00 - 1:00pm",
+    "Nov. 3, 2021; 12:00 - 1:00pm",
     "Nov. 16, 2021; 12:00 - 1:00pm",
     "Nov. 30, 2021; 12:00 - 1:00pm")
   ,
@@ -39,7 +39,7 @@ tib = tibble(
     "Zoom",
     "Zoom",
     "Zoom",
-    #"Zoom",
+    "Zoom",
     "Zoom",
     "Zoom")
 )
