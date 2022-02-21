@@ -24,19 +24,20 @@ tib = tibble(
     "SQL ",
     "R-Shiny",
     "Cluster Computing",
-    "TBD"),
+    "TBD",
+    "gtsummary with Daniel Sjoberg"),
   `Date` = c(
     "Feb. 8, 2021; 12:00 - 1:00pm", 
     "Feb. 23, 2021; 12:00 - 1:00pm", 
     "Mar. 16, 2021; 12:00 - 1:00pm", 
-    "Mar. 30, 2021; 12:00 - 1:00pm")
-    #"Nov. 16, 2021; 12:00 - 1:00pm",
+    "Mar. 30, 2021; 12:00 - 1:00pm",
+    "April 27, 2021; 11:30 - 1:00pm")
     #"Nov. 30, 2021; 12:00 - 1:00pm")
   ,
   `Location` = c(
     "Zoom",
     #"Zoom",
-    #"Zoom",
+    "Zoom",
     "Zoom",
     "Zoom",
     "Zoom")
