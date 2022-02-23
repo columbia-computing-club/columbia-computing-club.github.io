@@ -39,6 +39,14 @@ Dr. Julia Wrobel's presentation
 * [Hospitals .csv](resources_files/Hospital.csv)
 * [Hospitals app](resources_files/hospitalApp.zip)
 
+## R Shiny 
+
+Fiona and Amy's 2022 Presentation and Demo Resources 
+
+* [Slide from 2022 Presentation](resources_file/shiny_pres/cc_shiny_pres.pdf)
+* [Shiny R Script Example](resources_file/shiny_pres/shiny_example.R)
+
+
 ## Illustrator
 
 Introduction to Illustrator with Anjile An. 
@@ -87,6 +95,8 @@ Using GitHub for collaboration and version control with Jeff Goldsmith
 * [Google Colab for 2021 Presentation](https://colab.research.google.com/drive/1aZnKgFJRLZtT37AS8fM4yeOd_YbH9TuI?usp=sharing)
 * [Notebook for 2020 Workshop](https://colab.research.google.com/drive/15JXH-_An70D7eTR6udDDcNezLHKU0W9x)
 * [Slides for 2018 Presentation](https://docs.google.com/presentation/d/1HPGSbms3KJnowUIEx-ZG24GXSwM6zpMWXjrtyHhaDzs/edit#slide=id.g4360c0358c_0_5)
+
+
 
 ## Portfolio Work
 
