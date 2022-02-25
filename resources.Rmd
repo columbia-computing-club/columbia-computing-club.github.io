@@ -105,6 +105,10 @@ Using GitHub for collaboration and version control with Jeff Goldsmith
 
 ## SQL
 
+Colby Lewis 2022 Presentation 
+
+* [ powerpoint slideshow](resources_files/SQL_for_Tidyverse_Pros.pptx)
+
 Christian's 2020 Workshop
 
 * [.db file for workshop](resources_files/sql-workshop.db)
