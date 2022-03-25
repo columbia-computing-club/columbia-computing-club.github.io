@@ -116,6 +116,12 @@ Christian's 2020 Workshop
 * [.Rmd file of workshop](resources_files/sql-workshop.Rmd)
 
 
+# Cluster 
+
+Zilan's 2022 Workshop 
+
+* [Slide Show](resources_files/Intro_to_cluster.pdf)
+
 # Libraries
 
 ## `maps`
