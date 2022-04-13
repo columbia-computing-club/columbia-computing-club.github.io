@@ -83,6 +83,15 @@ Zilan + Charly's Fall 2021 Tutorial
 * [.tex file](resources_files/introduction_to_latex_2021_zilan/main.tex)
 * [photo needed for .tex file](resources_files/introduction_to_latex_2021_zilan/cu.jpg)
 
+## Beamer 
+
+Ruiyang + Jimmy's Spring 2022 Tutorial 
+
+* [basics in overleaf pdf](resources_files/beamer/beamer_basics_overleaf.pdf)
+* [basics in overleaf tex](https://www.overleaf.com/read/dkbknhgfgfxy)
+* [Special Topics pdf](resources_files/beamer/beamerSpecialTopics.pdf)
+* [Special Topics Rmd](resources_files/beamer/beamerSpecialTopics.Rmd)
+
 ## Github
 
 Using GitHub for collaboration and version control with Jeff Goldsmith

@@ -1,0 +1,227 @@
+---
+title: "Dream with Beamer"
+author: "Jimmy Kelliher"
+date: "2022-04-13"
+output:
+  beamer_presentation:
+    theme: "Copenhagen"
+    colortheme: "dolphin"
+header-includes:
+- \usepackage{booktabs}
+- \usepackage{colortbl}
+---
+
+```{r setup, include = FALSE}
+# set seed for reproducibility
+set.seed(1)
+
+# load necessary packages
+library(tidyverse)
+library(kableExtra)
+
+# set knitr defaults
+knitr::opts_chunk$set(
+    echo      = FALSE
+  , warning   = FALSE
+)
+
+# set theme defaults
+theme_set(
+  theme_bw() +
+  theme(
+    legend.position = "bottom"
+    , plot.title    = element_text(hjust = 0.5)
+    , plot.subtitle = element_text(hjust = 0.5)
+    , plot.caption  = element_text(hjust = 0.0)
+  )
+)
+
+# set color scale defaults
+options(
+  ggplot2.continuous.colour = "viridis",
+  ggplot2.continuous.fill   = "viridis"
+)
+scale_colour_discrete = scale_colour_viridis_d
+scale_fill_discrete   = scale_fill_viridis_d
+```
+
+## Using Boxes to Highlight Theorems or Definitions
+
+\begin{block}{Theorem}
+There are infinitely many primes.
+\end{block}
+
+_Proof._ Toward contradiction, suppose there are finitely primes given by the collection $\{ p_1, \ldots, p_n \}$. Define
+  \[ p \equiv 1 + \prod_{i = 1}^n p_i. \]
+By construction, for all $i \in \{ 1, \ldots, n \}$, $p \equiv 1 \pmod{p_i}$, and hence $p_i$ does not divide $p$. By the uniqueness of the prime factorization of $p$, then, the only divisors of $p$ are 1 and itself, so $p$ must also be a prime. However, because $p > p_i$ for all $i \in \{ 1, \ldots, n \}$, $p \not\in \{ p_1, \ldots, p_n \}$. Thus, we have constructed a new prime not in our collection of all primes, giving the desired contradiction. $\Box$
+
+
+
+
+
+## Using Boxes to Highlight Theorems or Definitions
+
+\begin{block}{Definition 1.1.}
+Let $G$ be any set and let $* : G \times G \to G$ be a binary operation on $G$. A {\it group} is an ordered pair $(G, *)$ such that
+  \begin{enumerate}
+    \item $\forall \, a, b, c \in G$, $(a * b) * c = a * (b * c)$;
+    \item $\exists \, e \in G$ such that $\forall \, a \in G$, $e * a = a * e = a$; and
+    \item $\forall \, a \in G$, $\exists \, b \in G$ such that $a * b = b * a = e$.
+  \end{enumerate}
+That is, the binary operation must be associative, an identity element must exist, and inverses must exist for all elements of the group.
+\end{block}
+
+
+__Example 1.2.__ The set of real numbers $\mathbb{R}$ is a group under addition.
+
+__Example 1.3.__ The set of real numbers $\mathbb{R}$ is _not_ a group under multiplication, as zero has no inverse. However, $\mathbb{R} \setminus \{ 0 \}$ is indeed a group under multiplication.
+
+
+
+
+
+## Using TikZ to Create Diagrams
+
+```{tikz tikz_simple, fig.align = "center"}
+\tikzstyle{block} = [circle, draw, text width=5em, text centered, minimum height=1em]
+\tikzstyle{line} = [draw, -latex]
+
+\begin{tikzpicture}[node distance = 4cm, auto]
+    % Place nodes
+    \node [block] (A) {Treatment $A$};
+    \node [block, above of = A] (L) {Confounder $L$};
+    \node [block, right of = A] (Y) {Outcome $Y$};
+    % Draw edges
+    \path [line] (L) -- (A);
+    \path [line] (L) -- (Y);
+    \path [line] (A) -- (Y);
+\end{tikzpicture}
+```
+
+
+
+
+
+## Using TikZ to Create Diagrams
+
+```{tikz tikz_complex, fig.align = "center", out.width = "90%"}
+\tikzstyle{block} = [rectangle, draw, text width=5em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{line} = [draw, -latex]
+
+\begin{tikzpicture}[node distance = 4cm, auto]
+    % Place nodes
+    \node [block] (gen) {Data Generation};
+    \node [block, right of = gen] (init) {Sample i};
+    \node [block, above right of = init] (psm0) {PSM};
+    \node [block, below right of = init] (bootc) {Bootstrap};
+    \node [block, above right of = psm0] (base) {$\hat{\sigma}_\beta^2$};
+    \node [block, below right of = psm0] (boots) {Bootstrap};
+    \node [block, right of = bootc] (sampc1) {Unmatched Sample 1};
+    \node [block, below of = sampc1, yshift = 2.95cm] (sampc2) {Unmatched Sample 2};
+    \node [block, below of = sampc2, yshift = 2.95cm] (sampc3) {Unmatched Sample $m_{\text{b}}$};
+    \node [block, right of = boots] (samps1) {Matched Sample $m_{\text{b}}$};
+    \node [block, above of = samps1, yshift = -2.95cm] (samps2) {Matched Sample 2};
+    \node [block, above of = samps2, yshift = -2.95cm] (samps3) {Matched Sample 1};
+    \node [block, right of = samps2] (simp) {$\hat{\sigma}_\beta^2$};
+    \node [block, right of = sampc1] (psm1) {PSM};
+    \node [block, right of = sampc2] (psm2) {PSM};
+    \node [block, right of = sampc3] (psm3) {PSM};
+    \node [block, right of = psm2] (comp) {$\hat{\sigma}_\beta^2$};
+    % Draw edges
+    \path [line] (gen) -- (init);
+    \path [line] (init) -- (psm0);
+    \path [line] (init) -- node {Complex}(bootc);
+    \path [line] (psm0) -- node {Baseline}(base);
+    \path [line] (psm0) -- node {Simple}(boots);
+    \path [line] (boots) -- (samps1);
+    \path [line] (boots) -- (samps2);
+    \path [line] (boots) -- (samps3);
+    \path [line] (bootc) -- (sampc1);
+    \path [line] (bootc) -- (sampc2);
+    \path [line] (bootc) -- (sampc3);
+    \path [line] (sampc1) -- (psm1);
+    \path [line] (sampc2) -- (psm2);
+    \path [line] (sampc3) -- (psm3);
+    \path [line] (samps1) -- (simp);
+    \path [line] (samps2) -- (simp);
+    \path [line] (samps3) -- (simp);
+    \path [line] (psm1) -- (comp);
+    \path [line] (psm2) -- (comp);
+    \path [line] (psm3) -- (comp);
+    %
+    \node [yshift = -2.50cm, xshift = 1.75cm] (text) {$i \in \{ 1, \ldots, m_{\text{s}} \}$};
+    \draw[black, ->] (text) + (80:2.25cm) arc(80:-260:1cm);
+\end{tikzpicture}
+```
+
+
+
+
+
+## Using Tidyverse to Create Graphs
+If $X \sim \text{Beta}(\alpha, \beta)$, then $X$ has a density given by
+  \[
+    f(x \, | \, \alpha, \beta)
+    = \frac{\Gamma(\alpha) \Gamma(\beta)}{\Gamma(\alpha + \beta)} x^{\alpha - 1} (1 - x)^{\beta - 1}.
+  \]
+Let's plot this density explicitly for $(\alpha, \beta) = (2, 5)$.
+
+
+```{r, fig.align = "center", fig.width = 3, fig.height = 2}
+# set parameters
+n     <- 1000 # bin size
+alpha <- 2    # shape parameter 1
+beta  <- 5    # shape parameter 2
+
+# approximate graph of distribution
+beta_density <- tibble(
+    X = seq(0, 1, length.out = n)
+  , Y = dbeta(X, alpha, beta)
+)
+
+# output
+beta_density %>%
+  ggplot(aes(x = X, y = Y)) +
+  geom_line() +
+  labs(x = "", y = "")
+```
+
+
+
+
+
+## Using KableExtra to Create Tables
+Suppose we have the data-generating process
+  \[ Z = \beta_0 + \beta_1 X + \beta_2 Y + \varepsilon \]
+for $X, Y \sim N(0, 1)$ and $\varepsilon \sim N(0, \sigma^2)$, all mutually uncorrelated. Let's assume $(\beta_0, \beta_1, \beta_2) = (1, 5, -2)$, draw an iid sample of size $n =$ 1,000, and fit a linear model.
+
+\begin{center}
+Table of Inferential Statistics
+\end{center}
+\vspace{-5mm}
+```{r}
+# set parameters
+beta0 <-  1
+beta1 <-  5
+beta2 <- -2
+sigma <-  3
+
+# simulate data
+n <- 1000
+X <- rnorm(n)
+Y <- rnorm(n)
+Z <- beta0 + beta1 * X + beta2 * Y + rnorm(n, 0, sigma)
+
+# fit a model to the data
+fit <- lm(Z ~ X + Y)
+
+# output
+fit %>%
+  broom::tidy() %>%
+  kbl(booktabs = T, digits = 2) %>%
+  kable_styling(latex_options = "striped")
+```
+
+\vspace{10mm}
+
+[Click here for more on KableExtra!](http://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf)
