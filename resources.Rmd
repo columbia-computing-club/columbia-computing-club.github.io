@@ -133,6 +133,10 @@ Zilan's 2022 Workshop
 
 # Libraries
 
+## `gtsummary`
+
+* [Slide Show](http://www.danieldsjoberg.com/gtsummary-Columbia-Computing-Club/#1)
+
 ## `maps`
 
 * [.html file](resources_files/maps_tutorial.html)

@@ -13,12 +13,22 @@
 
 <title>Resources</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
@@ -28,12 +38,16 @@
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
-<style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -46,32 +60,8 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -82,10 +72,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -102,40 +88,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -163,7 +125,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -175,7 +137,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -186,10 +148,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -201,7 +176,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -327,7 +301,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -341,7 +315,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -378,7 +352,7 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -387,31 +361,41 @@ div.tocify {
 </div>
 
 
-<p>This is a list of all the resources students have created for the Computing Club:</p>
+<p>This is a list of all the resources students have created for the
+Computing Club:</p>
 <div id="general-advice" class="section level2">
 <h2>General Advice</h2>
 <p>How to Set Up Your Computer as a Statistician</p>
 <ul>
-<li><a href="resources_files/computing_club_minutes_20212109.pdf">2021 Notes from presentation and panel discussion</a></li>
-<li><a href="resources_files/Computing_Club%20Minutes_September_2018.pdf">2018 Notes from presentation and panel discussion</a></li>
-<li><a href="resources_files/computer_091117.pdf">2017 Notes from presentation and panel discussion</a></li>
+<li><a href="resources_files/computing_club_minutes_20212109.pdf">2021
+Notes from presentation and panel discussion</a></li>
+<li><a
+href="resources_files/Computing_Club%20Minutes_September_2018.pdf">2018
+Notes from presentation and panel discussion</a></li>
+<li><a href="resources_files/computer_091117.pdf">2017 Notes from
+presentation and panel discussion</a></li>
 </ul>
 </div>
 <div id="r-resources" class="section level2">
 <h2>R Resources</h2>
 <p>Introduction to R and R Markdown with Ariel Chernofsky.</p>
 <ul>
-<li><a href="resources_files/RMD_Exercise.pdf">RMarkdown Exercise</a></li>
-<li><a href="resources_files/RMD_slides.pdf">Ariel’s rMarkdown Slides</a></li>
-<li><a href="resources_files/SampleRMD.rmd">Ariel’s sample rMarkdown file</a></li>
+<li><a href="resources_files/RMD_Exercise.pdf">RMarkdown
+Exercise</a></li>
+<li><a href="resources_files/RMD_slides.pdf">Ariel’s rMarkdown
+Slides</a></li>
+<li><a href="resources_files/SampleRMD.rmd">Ariel’s sample rMarkdown
+file</a></li>
 </ul>
 </div>
 <div id="data-manipulation" class="section level2">
 <h2>Data manipulation</h2>
 <p>Margaret Hannum’s presentation with genomic data.</p>
 <ul>
-<li><a href="resources_files/Manipulation_Data.zip">Sample Genomic Data</a></li>
-<li><a href="resources_files/cbcc_100917.R">Data Manipulation Tutorial Code</a></li>
+<li><a href="resources_files/Manipulation_Data.zip">Sample Genomic
+Data</a></li>
+<li><a href="resources_files/cbcc_100917.R">Data Manipulation Tutorial
+Code</a></li>
 </ul>
 </div>
 <div id="rstudio" class="section level2">
@@ -427,62 +411,84 @@ div.tocify {
 <h2>R Shiny</h2>
 <p>Fiona and Amy’s 2022 Presentation and Demo Resources</p>
 <ul>
-<li><a href="resources_file/shiny_pres/cc_shiny_pres.pdf">Slide from 2022 Presentation</a></li>
-<li><a href="resources_file/shiny_pres/shiny_example.R">Shiny R Script Example</a></li>
+<li><a href="resources_file/shiny_pres/cc_shiny_pres.pdf">Slide from
+2022 Presentation</a></li>
+<li><a href="resources_file/shiny_pres/shiny_example.R">Shiny R Script
+Example</a></li>
 </ul>
 </div>
 <div id="illustrator" class="section level2">
 <h2>Illustrator</h2>
 <p>Introduction to Illustrator with Anjile An.</p>
 <ul>
-<li><a href="http://tinyurl.com/k8ya4gk">Link to download materials and resources</a></li>
+<li><a href="http://tinyurl.com/k8ya4gk">Link to download materials and
+resources</a></li>
 </ul>
 </div>
 <div id="osx-terminal" class="section level2">
 <h2>OSX Terminal</h2>
 <p>Using the OSX Terminal with Julia Wrobel.</p>
 <ul>
-<li><a href="http://juliawrobel.com/tutorials/osx_terminal.html">Link to Julia’s tutorial</a></li>
+<li><a href="http://juliawrobel.com/tutorials/osx_terminal.html">Link to
+Julia’s tutorial</a></li>
 </ul>
 </div>
 <div id="latex" class="section level2">
 <h2>LaTeX</h2>
 <p>Brady Rippon’s Fall 2017 Tutorial</p>
 <ul>
-<li><a href="resources_files/latex_101617.pdf">LaTeX with Overleaf Slides</a></li>
+<li><a href="resources_files/latex_101617.pdf">LaTeX with Overleaf
+Slides</a></li>
 </ul>
 <p>Yutao’s Fall 2018 Tutorial</p>
 <ul>
-<li><a href="https://v2.overleaf.com/read/fdxyszqvstzn">Overleaf Tutorial</a></li>
-<li><a href="resources_files/computing-club-tutorial-latex.Rmd">.Rmd combining R Markdown and LaTeX equations</a></li>
-<li><a href="resources_files/computing-club-tutorial-latex.html">.html output</a></li>
-<li><a href="resources_files/computing-club-tutorial-latex.pdf">.pdf output</a></li>
+<li><a href="https://v2.overleaf.com/read/fdxyszqvstzn">Overleaf
+Tutorial</a></li>
+<li><a href="resources_files/computing-club-tutorial-latex.Rmd">.Rmd
+combining R Markdown and LaTeX equations</a></li>
+<li><a href="resources_files/computing-club-tutorial-latex.html">.html
+output</a></li>
+<li><a href="resources_files/computing-club-tutorial-latex.pdf">.pdf
+output</a></li>
 </ul>
 <p>Christian’s Fall 2019 Tutorial:</p>
 <ul>
-<li><a href="resources_files/latex-presentation.Rmd">.Rmd version of tutorial</a></li>
-<li><a href="resources_files/latex-presentation.html">.html version of tutorial</a></li>
+<li><a href="resources_files/latex-presentation.Rmd">.Rmd version of
+tutorial</a></li>
+<li><a href="resources_files/latex-presentation.html">.html version of
+tutorial</a></li>
 </ul>
 <p>Zilan + Charly’s Fall 2021 Tutorial</p>
 <ul>
-<li><a href="resources_files/introduction_to_latex_2021_zilan/Introduction_to_LaTex.pdf">.pdf output file</a></li>
-<li><a href="resources_files/introduction_to_latex_2021_zilan/main.tex">.tex file</a></li>
-<li><a href="resources_files/introduction_to_latex_2021_zilan/cu.jpg">photo needed for .tex file</a></li>
+<li><a
+href="resources_files/introduction_to_latex_2021_zilan/Introduction_to_LaTex.pdf">.pdf
+output file</a></li>
+<li><a
+href="resources_files/introduction_to_latex_2021_zilan/main.tex">.tex
+file</a></li>
+<li><a
+href="resources_files/introduction_to_latex_2021_zilan/cu.jpg">photo
+needed for .tex file</a></li>
 </ul>
 </div>
 <div id="beamer" class="section level2">
 <h2>Beamer</h2>
 <p>Ruiyang + Jimmy’s Spring 2022 Tutorial</p>
 <ul>
-<li><a href="resources_files/beamer/beamer_basics_overleaf.pdf">basics in overleaf pdf</a></li>
-<li><a href="https://www.overleaf.com/read/dkbknhgfgfxy">basics in overleaf tex</a></li>
-<li><a href="resources_files/beamer/beamerSpecialTopics.pdf">Special Topics pdf</a></li>
-<li><a href="resources_files/beamer/beamerSpecialTopics.Rmd">Special Topics Rmd</a></li>
+<li><a href="resources_files/beamer/beamer_basics_overleaf.pdf">basics
+in overleaf pdf</a></li>
+<li><a href="https://www.overleaf.com/read/dkbknhgfgfxy">basics in
+overleaf tex</a></li>
+<li><a href="resources_files/beamer/beamerSpecialTopics.pdf">Special
+Topics pdf</a></li>
+<li><a href="resources_files/beamer/beamerSpecialTopics.Rmd">Special
+Topics Rmd</a></li>
 </ul>
 </div>
 <div id="github" class="section level2">
 <h2>Github</h2>
-<p>Using GitHub for collaboration and version control with Jeff Goldsmith</p>
+<p>Using GitHub for collaboration and version control with Jeff
+Goldsmith</p>
 <ul>
 <li><a href="http://p8105.com/git.html">Jeff’s slides</a></li>
 </ul>
@@ -490,30 +496,43 @@ div.tocify {
 <div id="python" class="section level2">
 <h2>Python</h2>
 <ul>
-<li><a href="resources_files/Python_Pres_fall_2021.pdf">Slides for 2021 Presentation</a></li>
-<li><a href="https://colab.research.google.com/drive/1aZnKgFJRLZtT37AS8fM4yeOd_YbH9TuI?usp=sharing">Google Colab for 2021 Presentation</a></li>
-<li><a href="https://colab.research.google.com/drive/15JXH-_An70D7eTR6udDDcNezLHKU0W9x">Notebook for 2020 Workshop</a></li>
-<li><a href="https://docs.google.com/presentation/d/1HPGSbms3KJnowUIEx-ZG24GXSwM6zpMWXjrtyHhaDzs/edit#slide=id.g4360c0358c_0_5">Slides for 2018 Presentation</a></li>
+<li><a href="resources_files/Python_Pres_fall_2021.pdf">Slides for 2021
+Presentation</a></li>
+<li><a
+href="https://colab.research.google.com/drive/1aZnKgFJRLZtT37AS8fM4yeOd_YbH9TuI?usp=sharing">Google
+Colab for 2021 Presentation</a></li>
+<li><a
+href="https://colab.research.google.com/drive/15JXH-_An70D7eTR6udDDcNezLHKU0W9x">Notebook
+for 2020 Workshop</a></li>
+<li><a
+href="https://docs.google.com/presentation/d/1HPGSbms3KJnowUIEx-ZG24GXSwM6zpMWXjrtyHhaDzs/edit#slide=id.g4360c0358c_0_5">Slides
+for 2018 Presentation</a></li>
 </ul>
 </div>
 <div id="portfolio-work" class="section level2">
 <h2>Portfolio Work</h2>
 <ul>
-<li><a href="resources_files/_site.yml">Angel’s .Rmd version of tutorial</a></li>
-<li><a href="resources_files/website-presentation.html">Christian’s Notes on pages and CSS</a></li>
+<li><a href="resources_files/_site.yml">Angel’s .Rmd version of
+tutorial</a></li>
+<li><a href="resources_files/website-presentation.html">Christian’s
+Notes on pages and CSS</a></li>
 </ul>
 </div>
 <div id="sql" class="section level2">
 <h2>SQL</h2>
 <p>Colby Lewis 2022 Presentation</p>
 <ul>
-<li><a href="resources_files/SQL_for_Tidyverse_Pros.pptx">powerpoint slideshow</a></li>
+<li><a href="resources_files/SQL_for_Tidyverse_Pros.pptx">powerpoint
+slideshow</a></li>
 </ul>
 <p>Christian’s 2020 Workshop</p>
 <ul>
-<li><a href="resources_files/sql-workshop.db">.db file for workshop</a></li>
-<li><a href="resources_files/sql-workshop.html">.html file of workshop</a></li>
-<li><a href="resources_files/sql-workshop.Rmd">.Rmd file of workshop</a></li>
+<li><a href="resources_files/sql-workshop.db">.db file for
+workshop</a></li>
+<li><a href="resources_files/sql-workshop.html">.html file of
+workshop</a></li>
+<li><a href="resources_files/sql-workshop.Rmd">.Rmd file of
+workshop</a></li>
 </ul>
 </div>
 <div id="cluster" class="section level1">
@@ -525,6 +544,14 @@ div.tocify {
 </div>
 <div id="libraries" class="section level1">
 <h1>Libraries</h1>
+<div id="gtsummary" class="section level2">
+<h2><code>gtsummary</code></h2>
+<ul>
+<li><a
+href="http://www.danieldsjoberg.com/gtsummary-Columbia-Computing-Club/#1">Slide
+Show</a></li>
+</ul>
+</div>
 <div id="maps" class="section level2">
 <h2><code>maps</code></h2>
 <ul>
@@ -535,7 +562,8 @@ div.tocify {
 <div id="caret" class="section level2">
 <h2><code>caret</code></h2>
 <ul>
-<li><a href="resources_files/caret_tutorial_computingclub.Rmd">Angel’s .Rmd version of tutorial</a></li>
+<li><a href="resources_files/caret_tutorial_computingclub.Rmd">Angel’s
+.Rmd version of tutorial</a></li>
 </ul>
 </div>
 <div id="ggplot2" class="section level2">
@@ -543,7 +571,8 @@ div.tocify {
 <p>Jihui Lee’s presentation</p>
 <ul>
 <li><a href="resources_files/ggplot2.pdf">.pdf file</a></li>
-<li><a href="resources_files/ggplot2.rmd">Jihui’s rMarkdown file on ggplot2</a></li>
+<li><a href="resources_files/ggplot2.rmd">Jihui’s rMarkdown file on
+ggplot2</a></li>
 </ul>
 </div>
 </div>
@@ -563,7 +592,7 @@ div.tocify {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -581,7 +610,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -590,6 +619,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')
