@@ -12,8 +12,8 @@ output:
 
 <img src="images/columbia_biostatistics.png" style="width:50%" align="left" hspace="20"> The Columbia Biostatistics Computing Club hosts casual seminars focusing on computational topics often encountered in biostatistics research. These tutorials provide hands-on learning at a variety of skill levels, with some focused on bringing new students up to speed and others addressing more advanced problems. Our overarching goal is to impart good programming practices that encourage collaborative reproducible research!
 
-This year's organizers are Charly Fowler, Amy Pitts, and Safiya Siroto, Charly is a 4th-year Ph.D students, Amy is a 3rd-year Ph.D student and Safiya is a 2nd-year Ph.D student. The group is run with the help of faculty advisor [Christine Mauro](http://christinemauro.com/). A schedule for the upcoming  events is below and will be regularly updated. Please fill out this [survey](
-https://docs.google.com/forms/d/e/1FAIpQLSceqYZIWdNcKL_wcdWGeVVQrp1CFQiWfMdvgHgIJGqC5Hmh5Q/viewform?usp=sf_link) to let us know what topics you are most interested in. For other inquiries, you can contact ajp2257@cumc@columbia.edu.
+This year's organizers are Charly Fowler, Amy Pitts, Safiya Siroto and Ziyi (Iris) Wang, Charly is a 4th-year Ph.D students, Amy is a 3rd-year Ph.D student, Ziyi and Safiya are a 2nd-year Ph.D student. The group is run with the help of faculty advisor [Christine Mauro](http://christinemauro.com/). A schedule for the upcoming  events is below and will be regularly updated. Please fill out this [survey](
+https://docs.google.com/forms/d/e/1FAIpQLSceqYZIWdNcKL_wcdWGeVVQrp1CFQiWfMdvgHgIJGqC5Hmh5Q/viewform?usp=sf_link) to let us know what topics you are most interested in. For other inquiries, you can contact ajp2257@cumc.columbia.edu.
 
 </p>
 
@@ -32,7 +32,7 @@ tib = tibble(
    # "Beamer Presentations with Career China",
     "TBD"),
   `Date` = c(
-    "TBD", 
+    "September 20, 2022", 
     "TBD", 
      "TBD", 
    # "Mar. 30, 2022; 11:30 - 1:00pm",
@@ -40,7 +40,7 @@ tib = tibble(
      "TBD")
   ,
   `Location` = c(
-    "TBD",
+    "Hammer LL Computer Lab",
     "TBD",
     "TBD",
     #"TBD",
