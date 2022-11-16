@@ -42,10 +42,10 @@ tib = tibble(
   `Location` = c(
     "Hammer LL203",
     "Hammer 312",
-    "TBD",
+    "Hammer 312",
     #"TBD",
     #"Zoom",
-    "TBD")
+    "Hammer LL210")
 )
 kable(tib)
 ```

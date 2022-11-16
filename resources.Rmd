@@ -84,6 +84,12 @@ Zilan + Charly's Fall 2021 Tutorial
 * [.tex file](resources_files/introduction_to_latex_2021_zilan/main.tex)
 * [photo needed for .tex file](resources_files/introduction_to_latex_2021_zilan/cu.jpg)
 
+Jimmy + Iris's Fall 2022 Tutorial
+
+*[.pdf output file](resources_files/jimmy_pres/intro2latex.pdf)
+*[.tex file](resources_files/jimmy_pres/intro2latex.tex)
+
+
 ## Beamer 
 
 Ruiyang + Jimmy's Spring 2022 Tutorial 
@@ -101,10 +107,13 @@ Using GitHub for collaboration and version control with Jeff Goldsmith
 
 ## Python
 
+* [Slides for 2022 Presentation](resources_files/Safiya_Python_Presentation_2022.pdf)
+* [Google Colab for 2022 Presentatio](https://colab.research.google.com/drive/1II3LWtEW1wnlFFFYMCWq6gAHxY8ngMYS?usp=sharing)
 * [Slides for 2021 Presentation](resources_files/Python_Pres_fall_2021.pdf)
 * [Google Colab for 2021 Presentation](https://colab.research.google.com/drive/1aZnKgFJRLZtT37AS8fM4yeOd_YbH9TuI?usp=sharing)
 * [Notebook for 2020 Workshop](https://colab.research.google.com/drive/15JXH-_An70D7eTR6udDDcNezLHKU0W9x)
 * [Slides for 2018 Presentation](https://docs.google.com/presentation/d/1HPGSbms3KJnowUIEx-ZG24GXSwM6zpMWXjrtyHhaDzs/edit#slide=id.g4360c0358c_0_5)
+
 
 
 
