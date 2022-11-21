@@ -34,10 +34,10 @@ tib = tibble(
   `Date` = c(
     "September 20, 2022; 11:45 AM - 12:45 PM", 
     "October 18, 2022; 11:45 AM - 12:45 PM", 
-     "Noverber 1, 2022; 11:45 AM - 12:45 PM", 
+     "November 1, 2022; 11:45 AM - 12:45 PM", 
    # "Mar. 30, 2022; 11:30 - 1:00pm",
   #  "April 13, 2022; 11:30 - 12:30pm",
-     "Noverber 29, 2022; 11:45 AM - 12:45 PM")
+     "November 29, 2022; 11:45 AM - 12:45 PM")
   ,
   `Location` = c(
     "Hammer LL203",
