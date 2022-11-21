@@ -44,8 +44,8 @@ Dr. Julia Wrobel's presentation
 
 Fiona and Amy's 2022 Presentation and Demo Resources 
 
-* [Slide from 2022 Presentation](resources_file/shiny_pres/cc_shiny_pres.pdf)
-* [Shiny R Script Example](resources_file/shiny_pres/shiny_example.R)
+* [Slide from 2022 Presentation](resources_files/shiny_pres/cc_shiny_pres.pdf)
+* [Shiny R Script Example](resources_files/shiny_pres/shiny_example.R)
 
 
 ## Illustrator
