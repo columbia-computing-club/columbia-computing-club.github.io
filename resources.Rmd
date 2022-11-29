@@ -8,6 +8,12 @@ output:
 
 This is a list of all the resources students have created for the Computing Club:
 
+## File for Nov 29th Meeting!
+
+* [base file](shiny_base_nov2022.R)
+* [Sign in Sheet](https://docs.google.com/forms/d/e/1FAIpQLSdBzOKdg0QXo_Quh_3etDpMnLkWsONwYySE0iAcK5BKBdhAyA/viewform?usp=sf_link)
+
+
 ## General Advice
 
 How to Set Up Your Computer as a Statistician
