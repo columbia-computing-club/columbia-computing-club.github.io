@@ -8,12 +8,6 @@ output:
 
 This is a list of all the resources students have created for the Computing Club:
 
-## File for Nov 29th Meeting!
-
-* [base file](shiny_base_nov2022.R)
-* [Sign in Sheet](https://docs.google.com/forms/d/e/1FAIpQLSdBzOKdg0QXo_Quh_3etDpMnLkWsONwYySE0iAcK5BKBdhAyA/viewform?usp=sf_link)
-
-
 ## General Advice
 
 How to Set Up Your Computer as a Statistician
@@ -48,7 +42,14 @@ Dr. Julia Wrobel's presentation
 
 ## R Shiny 
 
-Fiona and Amy's 2022 Presentation and Demo Resources 
+Amy's Fall 2022 Presentation and Demo Files:
+
+* [Slides](resources_files/shiny_pres/cc_pres_nov_2022.pdf)
+* [base file](resources_files/shiny_pres/shiny_base_nov2022.R)
+* [Shiny R Script Example](resources_files/shiny_pres/shiny_example.R)
+
+
+Fiona and Amy's Spring 2022 Presentation and Demo Resources 
 
 * [Slide from 2022 Presentation](resources_files/shiny_pres/cc_shiny_pres.pdf)
 * [Shiny R Script Example](resources_files/shiny_pres/shiny_example.R)
