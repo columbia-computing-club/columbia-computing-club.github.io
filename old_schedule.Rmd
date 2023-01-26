@@ -9,6 +9,39 @@ library(tidyverse)
 library(kableExtra)
 ```
 
+## Fall 2022 Schedule
+```{r, echo = FALSE, message = FALSE, warning = FALSE }
+tib = tibble(
+  `Topics` = c(
+    "How to Set Up Your Computer as a Statistician ",
+    "Latex + Beamer",
+    "Python",
+    #"TBD",
+   # "Beamer Presentations with Career China",
+    "RShiny"),
+  `Date` = c(
+    "September 20, 2022; 11:45 AM - 12:45 PM", 
+    "October 18, 2022; 11:45 AM - 12:45 PM", 
+     "November 1, 2022; 11:45 AM - 12:45 PM", 
+   # "Mar. 30, 2022; 11:30 - 1:00pm",
+  #  "April 13, 2022; 11:30 - 12:30pm",
+     "November 29, 2022; 11:45 AM - 12:45 PM")
+  ,
+  `Location` = c(
+    "Hammer LL203",
+    "Hammer 312",
+    "Hammer 312",
+    #"TBD",
+    #"Zoom",
+    "Hammer LL210")
+)
+kable(tib, row.names = FALSE) %>%
+  kable_styling(bootstrap_options = "striped") %>%
+  column_spec(1, width = "8em") %>%
+  column_spec(2, width = "20em") %>%
+  column_spec(3, width = "15em")
+```
+
 ## Spring 2022 Schedule
 ```{r, echo = FALSE, message = FALSE, warning = FALSE }
 tib = tibble(

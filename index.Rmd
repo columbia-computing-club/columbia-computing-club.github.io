@@ -25,27 +25,21 @@ library(tidyverse)
 library(knitr)
 tib = tibble(
   `Topics` = c(
-    "How to Set Up Your Computer as a Statistician ",
-    "Latex + Beamer",
-    "Python",
-    #"TBD",
-   # "Beamer Presentations with Career China",
-    "RShiny"),
+    "Drawing DAGs in R, Colab with CILG",
+    "Making a Website",
+    "TBD",
+    "Making Presentations with Beamer + Quarto"),
   `Date` = c(
-    "September 20, 2022; 11:45 AM - 12:45 PM", 
-    "October 18, 2022; 11:45 AM - 12:45 PM", 
-     "November 1, 2022; 11:45 AM - 12:45 PM", 
-   # "Mar. 30, 2022; 11:30 - 1:00pm",
-  #  "April 13, 2022; 11:30 - 12:30pm",
-     "November 29, 2022; 11:45 AM - 12:45 PM")
+    "Feburary 13, 2023; 11:30 AM - 12:50 PM", 
+    "Feburary 28, 2023; 11:45 AM - 12:45 PM", 
+     "March 28, 2023; 11:45 AM - 12:45 PM", 
+     "April 11, 2023; 11:45 AM - 12:45 PM")
   ,
   `Location` = c(
-    "Hammer LL203",
-    "Hammer 312",
-    "Hammer 312",
-    #"TBD",
-    #"Zoom",
-    "Hammer LL210")
+    "TBD",
+    "TBD",
+    "TBD",
+    "TBD")
 )
 kable(tib)
 ```
