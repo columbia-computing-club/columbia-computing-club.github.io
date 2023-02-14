@@ -30,13 +30,13 @@ tib = tibble(
     "TBD",
     "Making Presentations with Beamer + Quarto"),
   `Date` = c(
-    "Feburary 13, 2023; 11:30 AM - 12:50 PM", 
+    "Feburary 14, 2023; 11:45 AM - 12:45 PM", 
     "Feburary 28, 2023; 11:45 AM - 12:45 PM", 
      "March 28, 2023; 11:45 AM - 12:45 PM", 
      "April 11, 2023; 11:45 AM - 12:45 PM")
   ,
   `Location` = c(
-    "TBD",
+    "ARB 532A",
     "TBD",
     "TBD",
     "TBD")

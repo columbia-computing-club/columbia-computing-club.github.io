@@ -54,6 +54,11 @@ Fiona and Amy's Spring 2022 Presentation and Demo Resources
 * [Slide from 2022 Presentation](resources_files/shiny_pres/cc_shiny_pres.pdf)
 * [Shiny R Script Example](resources_files/shiny_pres/shiny_example.R)
 
+## Software for DAGs
+
+* [Slide from 2023 Presentation](resources_files/DAG_pres.html)
+* [TikZ Tex file](resources_files/dag_tex.tex)
+
 
 ## Illustrator
 
@@ -93,8 +98,8 @@ Zilan + Charly's Fall 2021 Tutorial
 
 Jimmy + Iris's Fall 2022 Tutorial
 
-*[.pdf output file](resources_files/jimmy_pres/intro2latex.pdf)
-*[.tex file](resources_files/jimmy_pres/intro2latex.tex)
+* [.pdf output file](resources_files/jimmy_pres/intro2latex.pdf)
+* [.tex file](resources_files/jimmy_pres/intro2latex.tex)
 
 
 ## Beamer 
