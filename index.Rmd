@@ -25,20 +25,14 @@ library(tidyverse)
 library(knitr)
 tib = tibble(
   `Topics` = c(
-    "Drawing DAGs in R, Colab with CILG",
-    "Making a Website",
-    "TBD",
-    "Making Presentations with Beamer + Quarto"),
+    "Check Back Next Semester :) ",
+    "TBA"),
   `Date` = c(
-    "Feburary 14, 2023; 11:45 AM - 12:45 PM", 
-    "Feburary 28, 2023; 11:45 AM - 12:45 PM", 
-     "March 28, 2023; 11:45 AM - 12:45 PM", 
-     "April 11, 2023; 11:45 AM - 12:45 PM")
+    "TBA", 
+     "TBA")
   ,
   `Location` = c(
-    "ARB 532A",
-    "TBD",
-    "TBD",
+    "TBA",
     "TBD")
 )
 kable(tib)
