@@ -12,8 +12,8 @@ output:
 
 <img src="images/columbia_biostatistics.png" style="width:50%" align="left" hspace="20"> The Columbia Biostatistics Computing Club hosts casual seminars focusing on computational topics often encountered in biostatistics research. These tutorials provide hands-on learning at a variety of skill levels, with some focused on bringing new students up to speed and others addressing more advanced problems. Our overarching goal is to impart good programming practices that encourage collaborative reproducible research!
 
-This year's organizers are Charly Fowler, Amy Pitts, Safiya Sirota and Ziyi (Iris) Wang, Charly is a 4th-year Ph.D students, Amy is a 3rd-year Ph.D student, Ziyi and Safiya are a 2nd-year Ph.D student. The group is run with the help of faculty advisor [Christine Mauro](http://christinemauro.com/). A schedule for the upcoming  events is below and will be regularly updated. Please fill out this [survey](
-https://docs.google.com/forms/d/e/1FAIpQLSceqYZIWdNcKL_wcdWGeVVQrp1CFQiWfMdvgHgIJGqC5Hmh5Q/viewform?usp=sf_link) to let us know what topics you are most interested in. For other inquiries, you can contact ajp2257@cumc.columbia.edu.
+This year's organizers are Charly Fowler, [Amy Pitts](https://amypitts01.github.io/), Safiya Sirota, Ziyi Wang, Guadalupe Antonio Lopez, and Gustavo Garcia-Franceschini. In the doctoral program, Charly is in her fifth year, Amy is in her fourth year, while Ziyi and Safiya are both in their third year, and Guadalupe and Gustavo are starting their first year. The group is run with the help of faculty advisor [Christine Mauro](http://christinemauro.com/). A schedule for the upcoming  events is below and will be regularly updated. Please fill out this [survey](
+https://docs.google.com/forms/d/e/1FAIpQLSeTfIAiAvOHiVlbLPnZFyidY4D5MuMSkK8A_xsWbVYs7F75Mg/viewform?usp=sf_link) to let us know what topics you are most interested in. For other inquiries, you can contact ajp2257@cumc.columbia.edu.
 
 </p>
 
@@ -25,13 +25,19 @@ library(tidyverse)
 library(knitr)
 tib = tibble(
   `Topics` = c(
-    "Check Back Next Semester :) ",
+    "How to Set Up Your Computer as a Statistician",
+    "Latex",
+    "Python",
     "TBA"),
   `Date` = c(
-    "TBA", 
+    "TBA",
+    "October 18, 2023",
+    "November 15, 2023", 
      "TBA")
   ,
   `Location` = c(
+    "TBA",
+    "TBA", 
     "TBA",
     "TBD")
 )

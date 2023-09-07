@@ -13,7 +13,7 @@
 
 <title>index.knit</title>
 
-<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
@@ -34,8 +34,8 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -146,11 +146,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -179,8 +183,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -188,16 +192,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -298,19 +295,26 @@ with some focused on bringing new students up to speed and others
 addressing more advanced problems. Our overarching goal is to impart
 good programming practices that encourage collaborative reproducible
 research!</p>
-<p>This year’s organizers are Charly Fowler, Amy Pitts, Safiya Sirota
-and Ziyi (Iris) Wang, Charly is a 4th-year Ph.D students, Amy is a
-3rd-year Ph.D student, Ziyi and Safiya are a 2nd-year Ph.D student. The
-group is run with the help of faculty advisor <a
-href="http://christinemauro.com/">Christine Mauro</a>. A schedule for
-the upcoming events is below and will be regularly updated. Please fill
-out this <a
-href="https://docs.google.com/forms/d/e/1FAIpQLSceqYZIWdNcKL_wcdWGeVVQrp1CFQiWfMdvgHgIJGqC5Hmh5Q/viewform?usp=sf_link">survey</a>
+<p>This year’s organizers are Charly Fowler, <a
+href="https://amypitts01.github.io/">Amy Pitts</a>, Safiya Sirota, Ziyi
+Wang, Guadalupe Antonio Lopez, and Gustavo Garcia-Franceschini. In the
+doctoral program, Charly is in her fifth year, Amy is in her fourth
+year, while Ziyi and Safiya are both in their third year, and Guadalupe
+and Gustavo are starting their first year. The group is run with the
+help of faculty advisor <a href="http://christinemauro.com/">Christine
+Mauro</a>. A schedule for the upcoming events is below and will be
+regularly updated. Please fill out this <a
+href="https://docs.google.com/forms/d/e/1FAIpQLSeTfIAiAvOHiVlbLPnZFyidY4D5MuMSkK8A_xsWbVYs7F75Mg/viewform?usp=sf_link">survey</a>
 to let us know what topics you are most interested in. For other
 inquiries, you can contact <a href="mailto:ajp2257@cumc.columbia.edu"
 class="email">ajp2257@cumc.columbia.edu</a>.</p>
 </p>
 <table>
+<colgroup>
+<col width="63%" />
+<col width="24%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Topics</th>
@@ -320,8 +324,18 @@ class="email">ajp2257@cumc.columbia.edu</a>.</p>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Check Back Next Semester :)</td>
+<td align="left">How to Set Up Your Computer as a Statistician</td>
 <td align="left">TBA</td>
+<td align="left">TBA</td>
+</tr>
+<tr class="even">
+<td align="left">Latex</td>
+<td align="left">October 18, 2023</td>
+<td align="left">TBA</td>
+</tr>
+<tr class="odd">
+<td align="left">Python</td>
+<td align="left">November 15, 2023</td>
 <td align="left">TBA</td>
 </tr>
 <tr class="even">
