@@ -30,13 +30,13 @@ tib = tibble(
     "Python",
     "TBA"),
   `Date` = c(
-    "TBA",
+    "September 19, 2023 from 11:45am-12:45pm",
     "October 18, 2023",
     "November 15, 2023", 
      "TBA")
   ,
   `Location` = c(
-    "TBA",
+    "ARB 532A/B",
     "TBA", 
     "TBA",
     "TBD")
