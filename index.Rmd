@@ -26,12 +26,12 @@ library(knitr)
 tib = tibble(
   `Topics` = c(
     "How to Set Up Your Computer as a Statistician",
-    "Latex",
     "Python",
+    "Latex",
     "TBA"),
   `Date` = c(
     "September 19, 2023 from 11:45am-12:45pm",
-    "October 18, 2023",
+    "October 18, 2023 from 11:45am-12:45pm",
     "November 15, 2023", 
      "TBA")
   ,
