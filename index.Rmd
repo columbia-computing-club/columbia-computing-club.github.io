@@ -26,18 +26,18 @@ library(knitr)
 tib = tibble(
   `Topics` = c(
     "How to Set Up Your Computer as a Statistician",
-    "Python",
+    "Intro to Python",
     "Latex",
     "TBA"),
   `Date` = c(
     "September 19, 2023 from 11:45am-12:45pm",
-    "October 18, 2023 from 11:45am-12:45pm",
+    "October 11, 2023 from 11:45am-12:45pm",
     "November 15, 2023", 
      "TBA")
   ,
   `Location` = c(
     "ARB 532A/B",
-    "TBA", 
+    "Hammer LL103", 
     "TBA",
     "TBD")
 )
