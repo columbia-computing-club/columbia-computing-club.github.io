@@ -8,6 +8,12 @@ output:
 
 This is a list of all the resources students have created for the Computing Club:
 
+## Meeting Oct 11 Resource:
+
+* [Sign in Link](https://forms.gle/R77sqSEfrEYPjkvD8)
+* [Blank Google Colab](https://colab.research.google.com/drive/1g4343nOLPo1p9MpvOEAnPM426lXDblph#scrollTo=xiZIneWtEdYs)
+* [Completed Google Colab](https://colab.research.google.com/drive/1tvqgGZG3k6I9R9THvQFl6R5JuYafWELX)
+
 ## General Advice
 
 How to Set Up Your Computer as a Statistician
