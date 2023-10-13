@@ -8,16 +8,12 @@ output:
 
 This is a list of all the resources students have created for the Computing Club:
 
-## Meeting Oct 11 Resource:
-
-* [Sign in Link](https://forms.gle/R77sqSEfrEYPjkvD8)
-* [Blank Google Colab](https://colab.research.google.com/drive/1g4343nOLPo1p9MpvOEAnPM426lXDblph#scrollTo=xiZIneWtEdYs)
-* [Completed Google Colab](https://colab.research.google.com/drive/1tvqgGZG3k6I9R9THvQFl6R5JuYafWELX)
 
 ## General Advice
 
 How to Set Up Your Computer as a Statistician
 
+* [2023 Notes from presentation and panel discussion](resources_files/meeting_sept23.docx)
 * [2022 Notes from presentation and panel discussion](resources_files/meeting_sept20.docx)
 * [2021 Notes from presentation and panel discussion](resources_files/computing_club_minutes_20212109.pdf)
 * [2018 Notes from presentation and panel discussion](resources_files/Computing_Club Minutes_September_2018.pdf)
@@ -54,7 +50,6 @@ Amy's Fall 2022 Presentation and Demo Files:
 * [base file](resources_files/shiny_pres/shiny_base_nov2022.R)
 * [Shiny R Script Example](resources_files/shiny_pres/shiny_example.R)
 
-
 Fiona and Amy's Spring 2022 Presentation and Demo Resources 
 
 * [Slide from 2022 Presentation](resources_files/shiny_pres/cc_shiny_pres.pdf)
@@ -62,8 +57,11 @@ Fiona and Amy's Spring 2022 Presentation and Demo Resources
 
 ## Software for DAGs
 
+Amy & Charly 2023
+
 * [Slide from 2023 Presentation](resources_files/DAG_pres.html)
 * [TikZ Tex file](resources_files/dag_tex.tex)
+* [arxiv paper](https://arxiv.org/pdf/2305.12006.pdf)
 
 
 ## Illustrator
@@ -80,9 +78,21 @@ Using the OSX Terminal with Julia Wrobel.
 
 ## LaTeX
 
-Brady Rippon's Fall 2017 Tutorial
+Jimmy + Ziyi's Fall 2022 Tutorial
 
-* [LaTeX with Overleaf Slides](resources_files/latex_101617.pdf)
+* [.pdf output file](resources_files/jimmy_pres/intro2latex.pdf)
+* [.tex file](resources_files/jimmy_pres/intro2latex.tex)
+
+Zilan + Charly's Fall 2021 Tutorial
+
+* [.pdf output file](resources_files/introduction_to_latex_2021_zilan/Introduction_to_LaTex.pdf)
+* [.tex file](resources_files/introduction_to_latex_2021_zilan/main.tex)
+* [photo needed for .tex file](resources_files/introduction_to_latex_2021_zilan/cu.jpg)
+
+Christian's Fall 2019 Tutorial:
+
+- [.Rmd version of tutorial](resources_files/latex-presentation.Rmd)
+- [.html version of tutorial](resources_files/latex-presentation.html)
 
 Yutao's Fall 2018 Tutorial
 
@@ -91,31 +101,18 @@ Yutao's Fall 2018 Tutorial
 * [.html output](resources_files/computing-club-tutorial-latex.html)
 * [.pdf output](resources_files/computing-club-tutorial-latex.pdf)
 
-Christian's Fall 2019 Tutorial:
+Brady Rippon's Fall 2017 Tutorial
 
-- [.Rmd version of tutorial](resources_files/latex-presentation.Rmd)
-- [.html version of tutorial](resources_files/latex-presentation.html)
-
-Zilan + Charly's Fall 2021 Tutorial
-
-* [.pdf output file](resources_files/introduction_to_latex_2021_zilan/Introduction_to_LaTex.pdf)
-* [.tex file](resources_files/introduction_to_latex_2021_zilan/main.tex)
-* [photo needed for .tex file](resources_files/introduction_to_latex_2021_zilan/cu.jpg)
-
-Jimmy + Iris's Fall 2022 Tutorial
-
-* [.pdf output file](resources_files/jimmy_pres/intro2latex.pdf)
-* [.tex file](resources_files/jimmy_pres/intro2latex.tex)
-
+* [LaTeX with Overleaf Slides](resources_files/latex_101617.pdf)
 
 ## Beamer 
 
-Waveley Qiu Tutorial
+Waveley Qiu Tutorial 2023:
 
 * [Intro to Beamer in RMarkdown Pres](resources_files/intro_to_beamer.pdf)
 * [Link to Github](https://github.com/waveley/intro_to_beamer)
 
-Ruiyang + Jimmy's Spring 2022 Tutorial 
+Ruiyang + Jimmy's Spring 2022 Tutorial: 
 
 * [basics in overleaf pdf](resources_files/beamer/beamer_basics_overleaf.pdf)
 * [basics in overleaf tex](https://www.overleaf.com/read/dkbknhgfgfxy)
@@ -130,14 +127,25 @@ Using GitHub for collaboration and version control with Jeff Goldsmith
 
 ## Python
 
+Fall 2023 (Safiya Sirota & Gustavo Garcia-Franceschini):
+
+* [Slide  Show](resources_files/Python Presentation 2023.pdf)
+* [Blank Google Colab](https://colab.research.google.com/drive/1g4343nOLPo1p9MpvOEAnPM426lXDblph#scrollTo=xiZIneWtEdYs)
+* [Completed Google Colab](https://colab.research.google.com/drive/1tvqgGZG3k6I9R9THvQFl6R5JuYafWELX)
+
+Fall 2022 (Safiya Sirota & Paula Wu):
+
 * [Slides for 2022 Presentation](resources_files/Safiya_Python_Presentation_2022.pdf)
 * [Google Colab for 2022 Presentatio](https://colab.research.google.com/drive/1II3LWtEW1wnlFFFYMCWq6gAHxY8ngMYS?usp=sharing)
+
+Fall 2021 (Safiya Sirota & Paula Wu):
+
 * [Slides for 2021 Presentation](resources_files/Python_Pres_fall_2021.pdf)
 * [Google Colab for 2021 Presentation](https://colab.research.google.com/drive/1aZnKgFJRLZtT37AS8fM4yeOd_YbH9TuI?usp=sharing)
-* [Notebook for 2020 Workshop](https://colab.research.google.com/drive/15JXH-_An70D7eTR6udDDcNezLHKU0W9x)
-* [Slides for 2018 Presentation](https://docs.google.com/presentation/d/1HPGSbms3KJnowUIEx-ZG24GXSwM6zpMWXjrtyHhaDzs/edit#slide=id.g4360c0358c_0_5)
 
+Fall 2020 (Amy Pitts & Muhire Honorine Kwizera):
 
+* [Slide Show 2020 Workshop](resources_files/Python_tutorial_2020_amy.pdf)
 
 
 ## Portfolio Work
@@ -158,28 +166,28 @@ Christian's 2020 Workshop
 * [.Rmd file of workshop](resources_files/sql-workshop.Rmd)
 
 
-# Cluster 
+## Cluster 
 
 Zilan's 2022 Workshop 
 
 * [Slide Show](resources_files/Intro_to_cluster.pdf)
 
-# Libraries
+## Libraries
 
-## `gtsummary`
+### `gtsummary`
 
 * [Slide Show](http://www.danieldsjoberg.com/gtsummary-Columbia-Computing-Club/#1)
 
-## `maps`
+### `maps`
 
 * [.html file](resources_files/maps_tutorial.html)
 * [.csv file](resources_files/provinces_italy.csv)
 
-## `caret`
+### `caret`
 
 * [Angel's .Rmd version of tutorial](resources_files/caret_tutorial_computingclub.Rmd)
 
-## `ggplot2`
+### `ggplot2`
 
 Jihui Lee's presentation
 
