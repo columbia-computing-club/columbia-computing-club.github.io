@@ -27,18 +27,18 @@ tib = tibble(
   `Topics` = c(
     "How to Set Up Your Computer as a Statistician",
     "Intro to Python",
-    "Latex",
+    "Intro to Latex",
     "TBA"),
   `Date` = c(
     "September 19, 2023 from 11:45am-12:45pm",
     "October 11, 2023 from 11:45am-12:45pm",
-    "November 15, 2023", 
+    "November 15, 2023 from 11:45am-12:45pm", 
      "TBA")
   ,
   `Location` = c(
     "ARB 532A/B",
     "Hammer LL103", 
-    "TBA",
+    "Hammer LL103",
     "TBD")
 )
 kable(tib)
