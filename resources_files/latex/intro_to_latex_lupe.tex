@@ -1,0 +1,177 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{url}
+
+\title{Intro to \LaTeX}
+\author{Lupe Antonio Lopez}
+\date{November 15, 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{What is \LaTeX?}
+
+\LaTeX is a document preparation system used to create professional-looking documents. It complies unformatted text and commands it into a prepared document without having to worry too much about the layout or appearance of the content. \LaTeX is especially useful when writing complicated mathematical equations for homeworks, projects, reports, etc. 
+
+\noindent You could say, it's like a programming language. It expects a particular syntax, or else it won't work. 
+
+\noindent You may be asking yourself, why should I use \LaTeX? Totally, valid question! Personally, \LaTeX is appealing because it allows for precise and concise presentations of mathematical ideas. You are able to implement professional-looking tables, figures, and equations to help aid your presentations and research! 
+
+Now, let's dive into some basics!
+
+\section{Where to use \LaTeX}
+
+\begin{itemize}
+    \item Overleaf is an easy-to-use online \LaTeX editor, comparable to Google Docs. This is my preferred method when creating documents or homework assignments that don't involved a lot of R code. Note: use your Columbia email to access a premium account! You add unlimited collaborators to a project. 
+
+    \item RMarkdown allows for a seamless incorporation of \LaTeX. In order to use \LaTeX in an .RMD file, you must add \$ before any \LaTeX language.
+
+    \item There are editor desktop apps like Texmaker and TexShop, comparable to Word. Note that these do not require internet and are great for on-the-go. 
+\end{itemize}
+
+Regardless, they all use the same \LaTeX syntax!
+
+
+\section{Starting a document in Overleaf}
+
+Create a New Project to access a \verb|.tex| file, where you will compile the source file with text and/or \LaTeX. To your right, the compiled \verb|.pdf| file will appear.
+
+
+\noindent Now, some layout/aesthetic basics:
+
+\begin{enumerate}
+    \item \verb|\documentclass|: general format of the document (\verb|article|, \verb|book|, etc)
+
+    \item Font size: 10pt, 11pt, 12pt
+
+    \item \verb|\usepackage{}|: lots of packages available on Overleaf (no installation needed)
+
+    \item \verb|\begin{document}...\end{document}|
+
+    \item All commands start with a backslash \verb|\|
+\end{enumerate}
+
+
+\section{Mathematical Environments}
+
+\subsection{In-line}
+In-line \LaTeX is created when surrounding syntax with only one \$ on either side. This is similar to in-line R code.
+
+\noindent An example of in-line \LaTeX:
+The \verb|$\sqrt{25} + \sqrt{9}$| is 8.
+
+\noindent This render to:
+The $\sqrt{25} + \sqrt{9}$ is 8. 
+
+
+\subsection{Single-line equations}
+Sometimes you'd like to showcase an important result or a longer mathematical expression. To do so, you enclose the mathematical object with \verb|\begin{equation}| and \verb|\end{equation}|. As an example, let's look at the PMF of a Poisson random variable,
+
+\begin{equation}
+    f(x) = \frac{\lambda^{x}e^{-\lambda}}{x!}
+\end{equation}
+
+
+\subsection{Multi-line equations}
+A natural extension to single-line equations is a multi-line equations. This is useful for proofs or presenting all your steps to your audience. Here's an output example,
+\begin{align*}
+x \in (A \cup B)^{c} &= x \notin A \cup B \tag{step 1} \\
+                     &= x \notin A \land x \notin B \tag{step 2} \\
+                     &= x \in A^{c} \land x \in B^{c} \tag{step 3} \\
+                     &= x \in A^{c} \cap B^{c} \tag{step 4}
+\end{align*}
+
+To create multi-line equations, enclose your objects with commands \verb|\begin{align}...\end{align}| or \verb|\begin{align*}...\end{align*}| to suppress number tags and/or add your own tags. To add your own tag to any line, use command \verb|\tag{tag here}|. To align your equations, add \textbf{\&} to create vertical line breaks. To end a line, use \verb|\\| to create horizontal line breaks.
+
+\section{Structure}
+
+\subsection{Sections}
+\begin{verbatim}
+    \section
+    \subsection
+    \subsubsection
+\end{verbatim}
+
+\subsection{Lists}
+
+\begin{itemize}
+    \item Add bullet points using the commands \verb|\begin{itemize}...\end{itemize}|
+\end{itemize}
+
+\begin{enumerate}
+    \item Add number lists using the commands \verb|\begin{enumerate}...\end{enumerate}|
+\end{enumerate}
+
+Note: each item in the lists are identified by the \verb|\item| command. 
+
+
+\section{Useful Expressions \& Commands}
+Remember to add \$ before any \LaTeX syntax or commands. 
+\begin{itemize}
+    \item[] \verb|\frac{x}{y}| = $\frac{x}{y}$
+    \item[] \verb|e^{x}| = $e^{x}$
+    \item[] \verb|X_{i + j}| = $X_{i + j}$
+    \item[] \verb|\bar{X}| = $\bar{X}$
+    \item[] \verb|\mu| = $\mu$
+    \item[] \verb|\hat{\sigma}| = $\hat{\sigma}$
+    \item[] \verb|\sum| = $\sum$
+    \item[] \verb|\prod| = $\prod$
+    \item[] \verb|\in| = $\in$
+    \item[] \verb|\infty| = $\infty$
+    \item[] \verb|\int| = $\int$ 
+    \item[] \verb|X_1, \ldots, X_n| = $X_1, \ldots, X_n$
+    \item[] \verb|\{| \verb|\}| = $\{ \}$
+    (Add a backslash before a symbol if you'd like for it to appear in text or an equation.)
+\end{itemize}
+
+
+
+\section{Tables}
+There are now two different ways to create a table with \LaTeX. 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|} \hline
+    yes & no \\ \hline
+    2   & 10 \\ \hline
+    5   & 50 \\ \hline
+    \end{tabular}
+    \caption{Example Table}
+    \label{tab:my_label}
+\end{table}
+
+
+\begin{itemize}
+    \item[] One way is using the commands \verb|\begin{table}[h]...\end{table}|. In between the two commands and after the command \verb|\begin{tabular}|, you will see some preset lines with \& signs. On either side of the \& sign, you can add values or words to fill in the table. Include \verb|\hline| before and after lines to enclose values into a table. Also, include a label to refer back to it within your text using \verb|\ref{tab:name of table}|. 
+
+    \item[] An easier way to create a table in Overleaf is using the Visual Editor. Once in Visual Editor, click on the three dots (...) to access the \textbf{Insert Table} option. 
+\end{itemize}
+
+
+\section{Figures}
+\LaTeX also allows for the incorporation of figures and images into your document. In Overleaf, upload your image into the left-hand side. Using the commands \verb|\begin{figure}...\end{figure}|, include the file name in command \verb|\includegraphics{file_name_here}|. Similar to tables, you can label your figures to refer back to it within your text using \verb|\ref{fig:name of image}|. Here is an output example,
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{nyc_skyline_columbia.jpeg}
+    \caption{NYC Skyline}
+    \label{fig:Columbia_skyline}
+\end{figure}
+
+
+\section{Extra Resources}
+
+\begin{itemize}
+    \item Here is a website that has compiled various sources related to \LaTeX: \url{https://texblog.org/tex-resources/}
+
+    \item If you'd like more information on citations for papers/reports: \url{https://libguides.eur.nl/overleaf/bibliographies-and-citing#:~:text=Citing%20in%20LaTeX,is%20also%20a%20popular%20option.}
+
+    \item To get started on Overleaf, the basefiles and templates provided are a great start!   
+\end{itemize}
+
+\end{document}

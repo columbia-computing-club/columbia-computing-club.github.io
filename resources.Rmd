@@ -78,6 +78,12 @@ Using the OSX Terminal with Julia Wrobel.
 
 ## LaTeX
 
+Lupe + Ziyi's Fall 2023 Tutorial
+
+* [.pdf output file](resources_files/latex/intro_to_latex.pdf)
+* [.tex file](resources_files/latex/intro_to_latex_lupe.tex)
+
+
 Jimmy + Ziyi's Fall 2022 Tutorial
 
 * [.pdf output file](resources_files/jimmy_pres/intro2latex.pdf)
