@@ -82,6 +82,8 @@ Lupe + Ziyi's Fall 2023 Tutorial
 
 * [.pdf output file](resources_files/latex/intro_to_latex.pdf)
 * [.tex file](resources_files/latex/intro_to_latex_lupe.tex)
+* [.pdf tutorial](resources_files/latex/LateX_Cheat_Sheet.pdf)
+* [.zip tutorial](resources_files/latex/LateX_Cheat_Sheet.zip)
 
 
 Jimmy + Ziyi's Fall 2022 Tutorial
