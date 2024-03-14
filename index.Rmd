@@ -26,7 +26,7 @@ library(knitr)
 tib = tibble(
   `Topics` = c(
     "Website Development with Derek Lamb",
-    "Intro to SAS",
+    "Intro to SQL",
     "Topics Speed Round",
     "Intro to Beamer"),
   `Date` = c(
