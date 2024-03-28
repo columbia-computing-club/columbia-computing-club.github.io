@@ -1,0 +1,245 @@
+---
+title: "gtsummary Overview"
+author: 'Lupe Antonio Lopez'
+output: pdf_document
+date: "March 27, 2024"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Why {gtsummary}
+
+- It provides publication & presentation -ready analytical and summary tables using R.
+
+- It allows you summarize datasets, regression models, customize tables, and more in order to generate reproducible reports.
+
+- The code to create tables is consise and customizable. 
+
+- Can summarize datasets/dataframes using mean(), median(), min(), max(), etc.
+
+
+
+## Installation
+
+```{r, eval=FALSE, message = FALSE}
+install.packages('gtsummary')
+```
+
+Once installed, load package for use in file:
+
+```{r}
+library(gtsummary)
+```
+
+
+
+## Tutorial
+
+
+### Load dataset
+
+```{r, message = FALSE}
+#other libraries used:
+library(tidyverse)
+
+
+#included in the package:
+data("trial")
+```
+
+```{r}
+#quick view
+head(trial)
+```
+
+The dataset contains information on 200 patients receiving two types of chemotherapy treatments (Drug A or B).
+
+
+
+
+
+### Creating summary tables
+
+Within the `gtsummary` package we can create and customize summary tables using `tbl_summary()`.
+
+Below is a basic template:
+
+```{r, eval=FALSE}
+tbl_summary(by =,
+            statistic = list(all_continuous() ~ '{mean} ({sd})',
+                             all_categorical() ~ '{n} / {N} ({p}%)'),
+            digits = all_continuous() ~ 3)
+```
+
+#### The basics:
+
+- `by`: input the groups to split the data into
+
+- `statistic`: indicate the summary statistics to be generated \newline
+               differs by data type (i.e., continuous, categorical, etc.)
+               
+- `digits`: number of digits to appear in table \newline
+            can customize by variables
+
+
+
+some other modifiable input options include:
+
+- `label`: specify variable names to be presented
+
+- `missing`: whether to display row with number of missing observations
+
+- `missing_text`: text label for the missing number row
+
+- `include`: list of variables to include in summary table \newline
+             (can also do this beforehand with `select()`)
+
+
+
+**Important**: use `list()` to pass more than 2 sets of instructions to each input
+
+
+
+#### Functions to add information and format tables
+
+*added using pipes after tbl_summary()*
+
+- `add_p()`: adds p-values to table comparing values across groups
+(detects variable type and uses appropriate statistical tests)
+
+- `add_overall()`: adds a column with overall summary statistics
+
+- `add_n()` adds a column with N for non-missing observations for each variable
+
+- `add_stat_label()`: adds label for summary statistics shown in each row
+
+- `modify_header()`: updates column headers
+
+- `bold/italicize_labels()`: bolds/italicizes variable labels within table
+
+- `bold/italicize_levels()`: bolds/italicizes variable levels
+
+- `modify_caption()`: updates table caption/title
+
+- `modify_spanning_header()`: adds/updates a spanning header (i.e., btwn 2 groups)
+
+- `modify_footnote()`: updates footnote
+
+
+
+
+
+
+### Using regression models
+
+Within the `gtsummary` package we can create and customize tables from model outputs using `tbl_regression()`.
+
+Below is a basic template:
+
+
+```{r, message = FALSE}
+#fit model:
+mod <- glm(response ~ trt + age + grade + stage, data = trial,
+           family = binomial(link = 'logit'))
+
+
+#table:
+ tbl_name <- tbl_regression(mod, exponentiate = TRUE)
+```
+
+can add functions: 
+
+- `add_global_p()`: adds global p-values
+
+- `add_glance_table()`: adds various model statistics
+
+... and many more.
+
+
+
+
+
+### Reporting results in-line:
+
+`gtsummary` allows for results from tables to be reported efficiently using `inline_text()`. The default pattern within this function is: `{estimate} ({conf.level*100}% CI {conf.low}, {conf.high}; {p.value})`.
+
+
+### Example:
+
+*Code*: The odds ratio for age is `r inline_text(tbl_name, age)`
+
+
+
+
+### Examples
+
+
+```{r}
+trial %>% 
+  tbl_summary()
+```
+
+
+```{r}
+trial %>%
+  tbl_summary(
+    include = c(trt, age, grade, marker),
+    by = trt,
+    missing = 'no',
+    statistic = list(age ~ '{mean}',
+                     c(marker) ~ '{mean} ({sd})',
+                     all_categorical() ~ '{n} / {N} ({p}%)'),
+    digits = list(all_continuous() ~ 3,
+                  c(grade) ~ 2),
+    label = grade ~ 'Tumor Grade')
+```
+
+
+
+```{r, message=FALSE}
+#adding in other functions
+trial %>%
+  tbl_summary(
+    include = c(trt, age, grade, marker),
+    by = trt,
+    missing = 'no',
+    statistic = list(c(age) ~ '{mean}',
+                     c(marker) ~ '{mean} ({sd})',
+                     all_categorical() ~ '{n} / {N} ({p}%)'),
+    digits = list(all_continuous() ~ 3,
+                  c(grade) ~ 2),
+    label = grade ~ 'Tumor Grade') %>%
+  add_p() %>%
+  add_n() %>%
+  add_overall() %>%
+  modify_spanning_header(c('stat_1', 'stat_2') ~ '**Treatment**') %>%
+  bold_labels() %>%
+  modify_header(label = '**Variable**') %>%
+  modify_caption('Table 1')
+
+#change header: label = 'Variable'
+#bold spanning header
+#change caption/title
+```
+
+
+
+
+
+
+
+
+
+
+### Additional Resources:
+
+- [https://www.danieldsjoberg.com/gtsummary](https://www.danieldsjoberg.com/gtsummary/#:~:text=The%20%7Bgtsummary%7D%20package%20provides%20an,defaults%20with%20highly%20customizable%20capabilities.)
+
+- https://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html
+
+- https://www.danieldsjoberg.com/gtsummary-Columbia-Computing-Club/#12
+
+
+

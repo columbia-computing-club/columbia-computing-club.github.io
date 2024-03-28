@@ -192,11 +192,32 @@ Zilan's 2022 Workshop
 
 * [Slide Show](resources_files/Intro_to_cluster.pdf)
 
+## GIS
+
+Jake's Presentation Spring 2024
+
+* [Powerpoint](resources_files/cc_gis_jake.pptx)
+
 ## Libraries
 
 ### `gtsummary`
 
+Lupe's Presentation Spring 2024
+
+* [gtsummary tutorial pdf](resources_files/gtsummary_cc.pdf)
+* [gtsummary tutorial Rmd](resources_files/gtsummary_cc.Rmd)
+
+Daniels Sjoberg: 
+
 * [Slide Show](http://www.danieldsjoberg.com/gtsummary-Columbia-Computing-Club/#1)
+
+### `sf`
+
+Gustavo' Presentation Spring 2024
+
+* [.html file](resources_files/sf_tutorial.html)
+* [.Rmd file](resources_files/sf_tutorial.Rmd)
+
 
 ### `maps`
 

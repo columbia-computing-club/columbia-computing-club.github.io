@@ -1,0 +1,166 @@
+---
+title: "SF tutorial"
+author: "Gustavo Garcia-Franceschini"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+set.seed(1)
+```
+
+# SF package
+
+```{r}
+library(tidyverse)
+
+library(sf)
+
+library(sfheaders)
+```
+
+sf - basically a tibble, but one of the columns hold geometric / geographical information (like a shape, or point).
+
+sfheaders - helps with transition from sf to tibble, and vice versa.
+
+# Getting data
+
+There are tons of shapefiles online. This is one such [example](https://www2.census.gov/geo/tiger/TIGER2019/ZCTA5/).
+
+```{r}
+nyc = read_sf(dsn = "tl_2019_us_zcta510/", layer = 'tl_2019_us_zcta510') %>%
+  mutate(borough = case_when(
+    ZCTA5CE10 %in% 10001:10282 ~ "Manhattan",
+    
+    ZCTA5CE10 %in% 10301:10314 ~ "Staten Island",
+    
+    ZCTA5CE10 %in% 10451:10475 ~ "Bronx",
+    
+    ZCTA5CE10 %in% c(11004:11109, 11351:11697) ~ "Queens",
+    
+    ZCTA5CE10 %in% 11201:11256 ~ "Brooklyn",
+    
+    T ~ "Not NYC"
+  )) %>%
+  filter(borough != "Not NYC")
+
+head(nyc, 4)
+```
+
+# Quick map!
+
+```{r}
+ggplot(data = nyc) +
+  geom_sf(aes(geometry = geometry), fill = "white")
+```
+
+Can also filter, just like a tibble!
+
+```{r}
+nyc %>%
+  filter(borough != "Bronx") %>%
+  ggplot() +
+    geom_sf(aes(geometry = geometry))
+```
+
+Can also color them by borough!
+
+```{r}
+ggplot(data = nyc) +
+  geom_sf(aes(geometry = geometry, fill = borough))
+```
+
+If I have some sort of numeric measurement (like, percent of population sick in the zip code), we can plot that as well.
+
+```{r}
+nyc %>%
+  mutate(sick = runif(n = nrow(nyc))) %>%
+  ggplot() +
+    geom_sf(aes(geometry = geometry, fill = sick))
+```
+
+# Center of each zip code
+
+Ideally, we'd want to show the population for each zip code as number in the center of the polygon.
+
+```{r}
+nyc = nyc %>%
+ mutate(centers = st_centroid(nyc)$geometry,
+        people = round(runif(nrow(nyc), max = 100, min = 20)))
+
+head(nyc, 4)
+
+```
+
+```{r}
+nyc %>%
+  mutate(sick = runif(n = nrow(nyc))) %>%
+  filter(borough == "Brooklyn") %>%
+  ggplot() +
+    geom_sf(aes(geometry = geometry, fill = sick)) +
+    geom_sf_text(aes(geometry = centers, label = people), size = 2, color = "orange")
+```
+
+We can try fixing the centers so they are *on* the polygon (useful in the case of islands, for example)
+
+```{r}
+nyc = nyc %>%
+ mutate(centers = st_point_on_surface(nyc)$geometry,
+        people = round(runif(nrow(nyc), max = 100, min = 20)))
+
+nyc %>%
+  mutate(sick = runif(n = nrow(nyc))) %>%
+  filter(borough == "Brooklyn") %>%
+  ggplot() +
+    geom_sf(aes(geometry = geometry, fill = sick)) +
+    geom_sf_text(aes(geometry = centers, label = people), size = 2, color = "orange")
+```
+
+# Finding the zip code of points
+
+Sometimes, we may get the specific coordinates and want to know the zip-code/borough/state where the coordinate is on.
+
+```{r}
+N <- 100
+points =   data.frame(x = rnorm(N, mean = -73.9, sd = 0.2), 
+                 y = rnorm(N, mean = 40.7, sd = 0.1))
+
+#source: https://stackoverflow.com/questions/68247417/r-how-to-create-points-using-st-point-applied-to-columns-of-data-frame
+points = points %>%
+  as.matrix() %>%
+  st_multipoint() %>%
+  st_sfc() %>%
+  st_cast('POINT') %>%
+  st_as_sf(crs = st_crs(nyc)) #in this step, we are specifying the 
+                              #projection used
+```
+
+Let's plot it:
+
+```{r}
+ggplot() +
+  geom_sf(data = nyc, aes(geometry = geometry), fill = "white") +
+  geom_sf(data = points)
+```
+
+Now, we can figure out the zip code and borough for each of the points:
+
+```{r}
+points = points %>%
+          st_join(nyc, join = st_within) %>%
+          select(ZCTA5CE10, borough, geometry)
+
+points
+```
+
+# Bonus: sampling from geometries
+
+```{r}
+points = st_sample(nyc, size = 1000)
+
+ggplot() +
+  geom_sf(data = nyc, aes(geometry = geometry), fill = "white") +
+  geom_sf(data = points)
+```
