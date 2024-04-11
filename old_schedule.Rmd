@@ -13,7 +13,7 @@ library(kableExtra)
 ```{r, echo = FALSE, message = FALSE, warning = FALSE }
 tib = tibble(
   `Topics` = c(
-    "How to set up your ocmputer as a Statistician",
+    "How to set up your computer as a Statistician",
     "Intro to Python",
     "Intro to Latex"),
   `Date` = c(

@@ -1,0 +1,372 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+%------------------------------------------------------------
+%This block of code defines the information to appear in the
+%Title page
+\title[Beamer Intro] %optional
+{Presentations in Beamer}
+
+\subtitle{The basics}
+
+\author[Computing Club] % (optional)
+{Safiya Sirota\inst{1} \and Charly Fowler\inst{2}}
+
+\institute[CUIMC] % (optional)
+{
+  \inst{1}
+  Third year biostats PhD student\\
+  Columbia University
+
+  \inst{2}
+  Fifth year biostats PhD student\\
+  Columbia University
+  
+}
+
+\date[Spring 2024] % (optional)
+{Computing Club, April 2024}
+
+\logo{\includegraphics[height=1cm]{logo.jpeg}}
+
+%End of title page configuration block
+%------------------------------------------------------------
+
+
+
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the 
+%beginning of each section and highlights the current section:
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+%------------------------------------------------------------
+
+
+\begin{document}
+
+\begin{frame}
+\frametitle{Sign in!}
+
+Please scan this QR code and sign in :)
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{frame.png}
+\end{figure}
+
+\end{frame}
+
+%The next statement creates the title page.
+\frame{\titlepage}
+
+
+%---------------------------------------------------------
+%This block of code is for the table of contents after
+%the title page
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents
+\end{frame}
+%---------------------------------------------------------
+
+
+\section{What is Beamer?}
+
+%---------------------------------------------------------
+%Changing visivility of the text
+\begin{frame}
+\frametitle{What is \LaTeX?}
+
+\begin{itemize}
+    \item<1-> \LaTeX \hspace{0.05cm} is software for typesetting documents
+    \item<2-> It is widely used in the scientific community
+    \item<3> Once you have the software, you can write \LaTeX \hspace{0.05cm} scripts in Overleaf, RMarkdown, text files, and other environments
+\end{itemize}
+\end{frame}
+
+%---------------------------------------------------------
+
+
+%---------------------------------------------------------
+
+\begin{frame}
+\frametitle{What is Beamer?}
+
+\begin{itemize}
+    \item<1-> Beamer is a document "class" in \LaTeX
+    \item<2-> I'm using it right now to make these slides
+    \item<3-> Typically, the "article" class is used for creating papers and "beamer" is used for presentations
+\end{itemize}
+\end{frame}
+
+%---------------------------------------------------------
+
+
+%---------------------------------------------------------
+
+\begin{frame}
+\frametitle{Why use Beamer?}
+
+\begin{itemize}
+    \item<1-> Beamer, like the "article" class, typesets
+    \item<2-> This means that once you understand how to use \LaTeX, you don't have to worry about formatting your slides
+    \item<3-> Presentation creation goes much faster if you have a lot of mathematical symbols in your content
+    \item<4> Many people in our field and adjacent ones use Beamer to create their presentations
+\end{itemize}
+\end{frame}
+
+%---------------------------------------------------------
+
+
+%---------------------------------------------------------
+
+\begin{frame}
+\frametitle{Why not use Beamer?}
+
+\begin{itemize}
+    \item<1-> When you want to create a \alert{flashy} presentation
+    \item<2-> When you want a lot of control over the formatting and don't want it to be uniform across slides
+    \item<3-> When you don't have many equations
+    \item<4> When you're in a rush and you haven't yet mastered Beamer
+\end{itemize}
+\end{frame}
+
+%---------------------------------------------------------
+
+\section{Beamer basics and tips}
+
+%---------------------------------------------------------
+\begin{frame}
+\frametitle{Tips for getting started}
+
+\begin{itemize}
+    \item<1-> It's always faster to start with a pre-made template; there's no need to begin with a blank document
+    \item<2-> We have plenty of resources on \LaTeX \hspace{0.05cm} Beamer from previous years' \alert{\href{https://cu-biostats-computing-club.org/resources.html}{computing club meetings }}
+    \item<3-> Creating your presentation in \alert{\href{http://www.overleaf.com}{Overleaf}} may be helpful at first so that you can compile quickly to check that your document looks how you want
+    \item<4-> Leave yourself time to make your presentation if you are new to \LaTeX; there is a learning curve
+    \item<5> For this presentation, I started with this \alert{\href{https://www.overleaf.com/learn/latex/Beamer}{template}}
+\end{itemize}
+
+\end{frame}
+
+%---------------------------------------------------------
+
+\section{Beamer features}
+
+%---------------------------------------------------------
+
+\begin{frame}
+\frametitle{What can we do in Beamer?}
+
+\begin{itemize} 
+    \item<1-> Easily create a title page \pause
+    \item<2-> Easily create a outline \pause
+    \item<3->Set a theme \pause
+    \item<4-> Decide when content shows on the slide \pause
+    \item<4-> Insert equations \pause
+    \item<5-> Embed images \pause
+    \item<6-> Format content into multiple columns \pause
+\end{itemize} 
+ 
+\hspace{1cm}
+ 
+I'll show what the last 3 things look like in the presentation.  \pause The first few functions I've already used throughout, but I'll show you what "coding" it looks like in a \textbf{.tex} file.
+
+\end{frame}
+
+%---------------------------------------------------------
+
+
+
+%---------------------------------------------------------
+
+\begin{frame}
+\frametitle{Inserting equations}
+
+\begin{itemize}
+    \item<1-> Writing equations in Beamer is one of the easiest things you can do once you know \LaTeX! \pause
+    \item<2-> There are a few different ways to make equations \pause
+\end{itemize}
+
+\hspace{0.5cm}
+
+The first way is with in-line text, like so, \pause $f(x| \mu, \sigma) = \frac{1}{\sqrt{2\pi}\sigma}\exp\{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2\}$. \pause
+
+\hspace{0.5cm}
+
+Another way is by using the equation environment: \pause
+
+\begin{equation}
+f(x| \mu, \sigma) = \frac{1}{\sqrt{2\pi}\sigma}\exp\{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2\}
+\end{equation}
+
+\end{frame}
+
+%---------------------------------------------------------
+
+
+
+%---------------------------------------------------------
+
+\begin{frame}
+\frametitle{Inserting equations}
+
+You can also make the equation show up without a number,
+
+\begin{equation*}
+f(x| \mu, \sigma) = \frac{1}{\sqrt{2\pi}\sigma}\exp\{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2\}
+\end{equation*} \pause
+
+\hspace{0.5cm}
+
+or in multiple lines:
+
+\begin{align*}
+f(x| \mu, \sigma) &= \frac{1}{\sqrt{2\pi}\sigma}\exp\{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2\} \\
+&= \frac{1}{\sqrt{2\pi}}\exp \left\{-\frac{(x-\mu)^2}{2\sigma^2}\right\}
+\end{align*}
+
+\end{frame}
+
+%---------------------------------------------------------
+
+
+
+%---------------------------------------------------------
+
+\begin{frame}
+\frametitle{Inserting equations}
+
+\begin{block}{Normal block}
+Finally, to make equations stand out, you can use these special blocks. \pause
+\end{block}
+
+\begin{alertblock}{Alert block}
+The pdf for a R.V. X that follows a $N(\mu, \sigma^2)$ distribution is as follows. \pause
+\end{alertblock}
+
+\begin{examples}
+\begin{equation*}
+f(x| \mu, \sigma) = \frac{1}{\sqrt{2\pi}}\exp \left\{-\frac{(x-\mu)^2}{2\sigma^2}\right\}
+\end{equation*}
+\end{examples}
+
+\end{frame}
+
+%---------------------------------------------------------
+
+
+
+%---------------------------------------------------------
+
+\begin{frame}
+\frametitle{Embedding images}
+
+Adding images to your Beamer presentation is also relatively simple. \pause It does the formatting for you, so you just have to make sure your images are a good size for the page. \pause
+
+
+\begin{figure}[b]
+    \centering
+    \includegraphics[scale = 0.03]{tree.jpg}
+    \caption{Tree in my backyard}
+\end{figure}
+
+
+\end{frame}
+
+%---------------------------------------------------------
+
+
+
+%---------------------------------------------------------
+
+\begin{frame}
+\frametitle{Slides with multiple columns}
+
+\begin{columns}
+
+\column{0.5\textwidth}
+\begin{itemize}
+\item<1-> One of the popular slide layouts in Powerpoint is a slide with multiple columns 
+\item<2-> Usually you may want 2 or 3 
+\end{itemize}
+
+\column{0.5\textwidth}
+\begin{itemize}
+    \item<3-> Luckily, you can do this in \LaTeX \hspace{.05cm} as well.
+    \item<4-> This is a slide with 2 columns
+\end{itemize}
+\end{columns}
+\end{frame}
+
+
+%---------------------------------------------------------
+
+
+
+%---------------------------------------------------------
+
+\begin{frame}
+\frametitle{Slides with multiple columns}
+
+\begin{columns}
+
+\column{0.3\textwidth}
+Now let's try a slide with 3 columns. The first column here just has a text block. \pause
+
+\column{0.3\textwidth}
+\begin{itemize}
+    \item<2-> This column here has a couple of bullet points \pause
+    \item<3-> The next column will have a picture \pause
+\end{itemize}
+
+\column{0.3\textwidth}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale = 0.025]{tree.jpg}
+\end{figure}
+
+\end{columns}
+\end{frame}
+
+%---------------------------------------------------------
+
+\section{Writing a \textbf{.tex} script in Overleaf}
+
+%---------------------------------------------------------
+
+\begin{frame}
+\frametitle{What does the \textbf{.tex} file look like?}
+
+\hspace{1cm}
+
+Now, I'll show you what everything looks like when written in a \textbf{.tex} file in Overleaf!
+
+\end{frame}
+
+%---------------------------------------------------------
+
+\section{Making a Beamer presentation in Rmarkdown}
+
+%---------------------------------------------------------
+
+\begin{frame}
+\frametitle{Using RMarkdown}
+
+\hspace{1cm}
+
+Now, I'll show you very briefly what setting up a Beamer presentation in RMarkdown looks like.
+
+\end{frame}
+
+
+\end{document}

@@ -122,6 +122,12 @@ Brady Rippon's Fall 2017 Tutorial
 
 ## Beamer 
 
+Safiya Sirota Tutorial 2024:
+
+* [.pdf](resources_files/beamer/beamer_presentation.pdf)
+* [.tex](resources_files/beamer/beamer_presentation.tex)
+
+
 Waveley Qiu Tutorial 2023:
 
 * [Intro to Beamer in RMarkdown Pres](resources_files/intro_to_beamer.pdf)
