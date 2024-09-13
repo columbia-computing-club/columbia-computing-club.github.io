@@ -12,8 +12,7 @@ output:
 
 <img src="images/columbia_biostatistics.png" style="width:50%" align="left" hspace="20"> The Columbia Biostatistics Computing Club hosts casual seminars focusing on computational topics often encountered in biostatistics research. These tutorials provide hands-on learning at a variety of skill levels, with some focused on bringing new students up to speed and others addressing more advanced problems. Our overarching goal is to impart good programming practices that encourage collaborative reproducible research!
 
-This year's organizers are [Charly Fowler](https://www.charlottefowler.com/), [Amy Pitts](https://amypitts01.github.io/), Safiya Sirota, Ziyi Wang, Guadalupe Antonio Lopez, and Gustavo Garcia-Franceschini. In the doctoral program, Charly is in her fifth year, Amy is in her fourth year, while Ziyi and Safiya are both in their third year, and Guadalupe and Gustavo are starting their first year. The group is run with the help of faculty advisor [Christine Mauro](http://christinemauro.com/). A schedule for the upcoming  events is below and will be regularly updated. Please fill out this [survey](
-https://docs.google.com/forms/d/e/1FAIpQLSeTfIAiAvOHiVlbLPnZFyidY4D5MuMSkK8A_xsWbVYs7F75Mg/viewform?usp=sf_link) to let us know what topics you are most interested in. For other inquiries, you can contact ajp2257@cumc.columbia.edu.
+This year's organizers are [Amy Pitts](https://amypitts01.github.io/), Safiya Sirota, Ziyi Wang, Guadalupe Antonio Lopez, Gustavo Garcia-Franceschini, Kate Colvin. In the doctoral program, Charly is in her fifth year, Amy is in her fourth year, while Ziyi and Safiya are both in their third year, and Guadalupe and Gustavo are starting their first year. The group is run with the help of faculty advisor [Christine Mauro](http://christinemauro.com/). A schedule for the upcoming  events is below and will be regularly updated. Please fill out this [survey](https://forms.gle/MqpPYUmi3ivYqU4A9) to let us know what topics you are most interested in. For other inquiries, you can contact ajp2257@cumc.columbia.edu.
 
 </p>
 
@@ -25,21 +24,18 @@ library(tidyverse)
 library(knitr)
 tib = tibble(
   `Topics` = c(
-    "Website Development with Derek Lamb",
-    "Intro to SQL",
-    "Topics Speed Round",
-    "Intro to Beamer"),
+    "How to set up your computer as a Statistician",
+    "How to visually improve your homework",
+    "Intro to Python"),
   `Date` = c(
-    "Feb 7, 2024 from 11:45am-12:45pm",
-    "Feb 28, 2024 from 11:45am-12:45pm",
-    "March 27, 2024 from 11:45am-12:45pm", 
-    "April 10, 2024 from 11:45am-12:45pm")
+    "September 16, 2024 (Monday); 11:30 AM - 12:30 PM", 
+     "October 15, 2024 (Tuesday); 11:30 AM - 12:45 PM",
+     "November 6, 2024 (Wednesday); 11:30 AM - 12:45 PM")
   ,
   `Location` = c(
-    "Hammer LL107",
-    "Hammer LL107", 
-    "Hammer LL107",
-    "Hammer LL107")
+    "TBD",
+    "TBD",
+    "TBD")
 )
 kable(tib)
 ```

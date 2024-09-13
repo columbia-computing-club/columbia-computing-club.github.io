@@ -9,6 +9,34 @@ library(tidyverse)
 library(kableExtra)
 ```
 
+## Spring 2024 Schedule 
+```{r, echo = FALSE, message = FALSE, warning = FALSE }
+tib = tibble(
+  `Topics` = c(
+    "Website Development with Derek Lamb",
+    "Intro to SQL",
+    "Topics Speed Round",
+    "Intro to Beamer"),
+  `Date` = c(
+    "Feb 7, 2024 from 11:45am-12:45pm",
+    "Feb 28, 2024 from 11:45am-12:45pm",
+    "March 27, 2024 from 11:45am-12:45pm", 
+    "April 10, 2024 from 11:45am-12:45pm")
+  ,
+  `Location` = c(
+    "Hammer LL107",
+    "Hammer LL107", 
+    "Hammer LL107",
+    "Hammer LL107")
+)
+kable(tib, row.names = FALSE) %>%
+  kable_styling(bootstrap_options = "striped") %>%
+  column_spec(1, width = "8em") %>%
+  column_spec(2, width = "20em") %>%
+  column_spec(3, width = "15em")
+```
+
+
 ## Fall 2023 Schedule 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE }
 tib = tibble(
