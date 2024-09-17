@@ -13,6 +13,7 @@ This is a list of all the resources students have created for the Computing Club
 
 How to Set Up Your Computer as a Statistician
 
+* [2024 Notes from presentation and panel discussion](resources_files/20240916_cc_computer_setup_notes.docx)
 * [2023 Notes from presentation and panel discussion](resources_files/meeting_sept23.docx)
 * [2022 Notes from presentation and panel discussion](resources_files/meeting_sept20.docx)
 * [2021 Notes from presentation and panel discussion](resources_files/computing_club_minutes_20212109.pdf)
