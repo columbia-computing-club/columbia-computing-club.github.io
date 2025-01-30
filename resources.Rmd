@@ -86,6 +86,13 @@ Using the OSX Terminal with Julia Wrobel.
 
 ## LaTeX
 
+Lupe + Safiya's Fall 2024 Tutorial
+
+* [LaTeX output](resources_files/lupe_intro_to_latex_2025.pdf)
+* [LaTeX in R code](resources_files/safiya_latex_pres_2025.pdf)
+* [LaTeX in R output](resources_files/safiya_latex_pres_2025.Rmd)
+
+
 Lupe + Ziyi's Fall 2023 Tutorial
 
 * [.pdf output file](resources_files/latex/intro_to_latex.pdf)
@@ -148,6 +155,12 @@ Using GitHub for collaboration and version control with Jeff Goldsmith
 * [Jeff's slides](http://p8105.com/git.html)
 
 ## Python
+
+Fall 2024 (Amy Pitts & Gustavo Garcia-Franceschini):
+
+* [Slide  Show](resources_files/Python_tutorial_2020_amy.pdf)
+* [Blank Google Colab](https://colab.research.google.com/drive/1g4343nOLPo1p9MpvOEAnPM426lXDblph#scrollTo=xiZIneWtEdYs)
+* [Completed Google Colab](https://colab.research.google.com/drive/1tvqgGZG3k6I9R9THvQFl6R5JuYafWELX)
 
 Fall 2023 (Safiya Sirota & Gustavo Garcia-Franceschini):
 

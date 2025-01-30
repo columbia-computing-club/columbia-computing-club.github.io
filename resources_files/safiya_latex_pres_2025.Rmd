@@ -1,0 +1,135 @@
+---
+title: "Computing Club Presentation"
+author: "Safiya Sirota"
+date: "October 15, 2024"
+output:
+  pdf_document:
+    extra_dependencies: amsmath
+  html_document:
+    extra_dependencies: amsmath
+    df_print: paged
+---
+
+# Introduction
+
+Now that we've explored some basics with Lupe, we can see how it works in R Markdown. If you haven't before, you will want to install `tinytex::install_tinytex()` in order for RMarkdown documents to be rendered as .pdfs using \LaTeX.
+
+Let's pretend to do some work on the `tidyverse` dataset `diamonds`. This was we can also show how to incorporate nice tables and plots into our RMarkdown document.
+
+\section{Formatting}
+
+\begin{itemize}
+
+\item When working in an R Markdown file, there are multiple ways to produce the same formatting. For example, I use \text{section\{\}} above, but I could also use a hashtag, like I did to make the introduction header. Similarly \text{subsection\{\}}  will correlate to a double hashtag, and so on.
+
+\end{itemize}
+
+* There are also multiple way to italicize and bold your text. You can either do \textit{this}, or you can use the *R Markdown* way. And for boldface, you can use the \textbf{\LaTeX} way or the **R Markdown** way.
+
+* Finally, there are 2 ways to bullet point. One if by using the asterisk, and the other is by using an `\itemize{}` environment, as is done above.
+
+Just be careful when trying to use R Markdown conventional formatting _inside_ \text{\LaTeX} environments! This can lead to issues you may have to troubleshoot.
+
+# Tables and Plots
+
+\subsection{Plots}
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(gtsummary)
+```
+
+Including plots into your homework is easy enough and you may already know how to do it. One way is to simply just print the plot out from an R Markdown chunk.
+
+```{r}
+diamonds %>%
+  ggplot() +
+  geom_point(aes(x = carat, y = price))
+```
+
+However, you may not know that you can format your plot using \text{\LaTeX}-ish commands in the code chunk header...
+
+```{r figure 1, fig.align = 'center', out.width = "80%", fig.cap = "Diamonds by carat and price", message = FALSE}
+diamonds %>%
+  ggplot() +
+  geom_point(aes(x = carat, y = price))
+```
+
+And if I take a screenshot of my plot, or have a different picture. I can include it using this technique as well
+
+![Diamonds by carat and price](plot_pic.png)
+
+And there's even one more technique!
+
+```{r}
+library(knitr)
+include_graphics("plot_pic.png")
+```
+
+## Tables
+
+```{r}
+diamonds %>% head() %>% gt::gt()
+dim(diamonds)
+```
+
+
+```{r}
+diamonds_data <- diamonds %>% 
+  mutate(
+    quality2 = case_when(
+      cut %in% c("Fair", "Good") & carat < 3 ~ "okay",
+      cut %in% c("Good", "Very Good") & carat > 3 & carat <= 4.5 ~ "good",
+      cut %in% c("Very Good", "Premium", "Ideal") & carat > 4.5 ~ "great",
+      TRUE ~ "neither"
+    )
+  )
+diamonds_data %>% head() %>% gt::gt()
+```
+
+
+## `group_by()` and `summarise()`
+
+```{r}
+diamonds %>%
+  group_by(clarity) %>% # group_by has to come before summarise to get group-level summary statistics
+  summarise(
+    mean_price = mean(price),
+    count = n()
+  )  %>% # I can create +1 summary statistics at a time
+  gt::gt()
+```
+
+
+## `gtsummary`
+
+Here I am making a table one using `gtsummary`'s `tbl_summary` function. I am grouping by cut and adding an overal column and p values. The bolded labels are just to make it look pretty.
+
+```{r}
+diamonds %>% 
+  tbl_summary(by = cut) %>% # calling the table one summary compand 
+  add_overall() %>% # adding overall column
+  bold_labels() %>% # making labels look nice
+  add_p() # adding p values
+```
+
+This is a more complex gt summary example.  Here we are controlling the type of statistic variables that are going to be displayed. 
+
+```{r}
+diamonds %>% 
+  tbl_summary(by = cut,
+              type = all_continuous() ~ "continuous2",
+              statistic = list( # we need to specify the stats by the type of variable
+                all_continuous() ~ c("{mean} ({sd})", 
+                                     "{median} ({p25}, {p75})",
+                                     "{min}, {max}"),
+                all_categorical() ~ "{n} / {N} ({p}%)"
+              )) %>%
+  add_overall() %>%
+  bold_labels() %>%
+  add_p()
+```
+
+
+
+
