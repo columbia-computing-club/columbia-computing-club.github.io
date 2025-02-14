@@ -74,7 +74,11 @@ Introduction to Illustrator with Anjile An.
 
 ## HTML and CSS
 
-Introduction to HTML and CSS with Derek Lamb
+2025 Introduction to HTML and CSS with Derek Lamb
+
+* [Presentation File](resources_files/250210_html_and_css_for_data_science.pptx)
+
+2024 Introduction to HTML and CSS with Derek Lamb
 
 * [Presentation File](resources_files/html_and_css_for_data_science.pptx)
 
