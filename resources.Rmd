@@ -212,6 +212,10 @@ Christian's 2020 Workshop
 
 ## Cluster 
 
+Ting-Hsuan's presentation
+
+* [Slide Show](resources_files/ginsburgh_computing_club.pdf)
+
 Zilan's 2022 Workshop 
 
 * [Slide Show](resources_files/Intro_to_cluster.pdf)
