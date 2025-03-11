@@ -196,7 +196,7 @@ Fall 2020 (Amy Pitts & Muhire Honorine Kwizera):
 
 Olivia's SQL 2024 Presentation
 
-*[powerpoint slideshow](resources_files/SQL_Presentation.pdf)
+* [powerpoint slideshow](resources_files/SQL_Presentation.pdf)
 
 
 Colby Lewis 2022 Presentation 
