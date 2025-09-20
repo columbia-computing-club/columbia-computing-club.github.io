@@ -9,6 +9,33 @@ library(tidyverse)
 library(kableExtra)
 ```
 
+## Spring 2025 Schedule
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE }
+library(tidyverse)
+library(knitr)
+tib = tibble(
+  `Topics` = c(
+    "Website Development with Derek Lamb",
+    "Introduction to High Performance Computing Cluster at CUIMC",
+    "Intro to Beamer"),
+  `Date` = c(
+    "February 10, 2025 (Monday); 11:30 AM - 12:45 PM", 
+     "March 10, 2025 (Monday); 11:30 AM - 12:45 PM",
+     "April 15, 2025 (Tuesday); 11:30 AM - 12:45 PM")
+  ,
+  `Location` = c(
+    "HSC LL 106",
+    "HSC LL 106",
+    "HSC LL 203")
+)
+kable(tib, row.names = FALSE) %>%
+  kable_styling(bootstrap_options = "striped") %>%
+  column_spec(1, width = "8em") %>%
+  column_spec(2, width = "20em") %>%
+  column_spec(3, width = "15em")
+```
+
 ## Fall 2024 Schedule 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE }
 tib = tibble(

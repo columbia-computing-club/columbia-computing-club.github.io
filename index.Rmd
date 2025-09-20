@@ -12,7 +12,7 @@ output:
 
 <img src="images/columbia_biostatistics.png" style="width:50%" align="left" hspace="20"> The Columbia Biostatistics Computing Club hosts casual seminars focusing on computational topics often encountered in biostatistics research. These tutorials provide hands-on learning at a variety of skill levels, with some focused on bringing new students up to speed and others addressing more advanced problems. Our overarching goal is to impart good programming practices that encourage collaborative reproducible research!
 
-This year's organizers are [Amy Pitts](https://amypitts01.github.io/), Safiya Sirota, Guadalupe Antonio Lopez, Gustavo Garcia-Franceschini and Kate Colvin. In the doctoral program, Amy is in her fifth year, Safiya is in her fourth year, while Guadalupe and Gustavo are both in their second year, and Kate is starting her first year. The group is run with the help of faculty advisor [Christine Mauro](http://christinemauro.com/). A schedule for the upcoming  events is below and will be regularly updated. Please fill out this [survey](https://forms.gle/MqpPYUmi3ivYqU4A9) to let us know what topics you are most interested in. For other inquiries, you can contact ajp2257@cumc.columbia.edu.
+This year's organizers are Safiya Sirota, Guadalupe Antonio Lopez, Gustavo Garcia-Franceschini and Kate Colvin. In the doctoral program, Safiya is in her fifth year, while Guadalupe and Gustavo are both in their third year, and Kate is in her second year. The group is run with the help of faculty advisor [Christine Mauro](http://christinemauro.com/). A schedule for the upcoming  events is below and will be regularly updated. Please fill out this [survey](https://docs.google.com/forms/d/e/1FAIpQLSdH4v0oPvEYLz2jfXFMT0n13YOGaqf4E3fR-2D-VHTaTuc2Kg/viewform) to let us know what topics you are most interested in.
 
 </p>
 
@@ -24,18 +24,18 @@ library(tidyverse)
 library(knitr)
 tib = tibble(
   `Topics` = c(
-    "Website Development with Derek Lamb",
-    "Introduction to High Performance Computing Cluster at CUIMC",
-    "Intro to Beamer"),
+    "How to set up your computer as a Statistician",
+    "How to visually improve your homework",
+    "Intro to Python"),
   `Date` = c(
-    "February 10, 2025 (Monday); 11:30 AM - 12:45 PM", 
-     "March 10, 2025 (Monday); 11:30 AM - 12:45 PM",
-     "April 15, 2025 (Tuesday); 11:30 AM - 12:45 PM")
+    "September 18, 2025 (Thursday); 1 - 2 PM", 
+     "October 15, 2025 (Wednesday); 11:45 AM -12:45 PM",
+     "TBD")
   ,
   `Location` = c(
-    "HSC LL 106",
-    "HSC LL 106",
-    "HSC LL 203")
+    "VEC 903",
+    "HSC LL 107",
+    "TBD")
 )
 kable(tib)
 ```
