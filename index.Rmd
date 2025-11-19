@@ -30,12 +30,12 @@ tib = tibble(
   `Date` = c(
     "September 18, 2025 (Thursday); 1 - 2 PM", 
      "October 15, 2025 (Wednesday); 11:45 AM -12:45 PM",
-     "TBD")
+     "November 5, 2025 (Wednesday); 11:45 AM -12:45 PM")
   ,
   `Location` = c(
     "VEC 903",
     "HSC LL 107",
-    "TBD")
+    "VEC 1303")
 )
 kable(tib)
 ```

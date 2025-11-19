@@ -91,11 +91,18 @@ Using the OSX Terminal with Julia Wrobel.
 
 ## LaTeX
 
+Lupe + Safiya + Gustavo's Fall 2025 Tutorial
+
+* [LaTeX output](resources_files/2025_intro_latex.pdf)
+* [LaTeX code](resources_files/updated_2025.tex)
+* [LaTeX in R code](resources_files/latex_example.Rmd)
+
+
 Lupe + Safiya's Fall 2024 Tutorial
 
-* [LaTeX output](resources_files/lupe_intro_to_latex_2025.pdf)
-* [LaTeX in R code](resources_files/safiya_latex_pres_2025.pdf)
-* [LaTeX in R output](resources_files/safiya_latex_pres_2025.Rmd)
+* [LaTeX output](resources_files/lupe_intro_to_latex_2024.pdf)
+* [LaTeX in R code](resources_files/safiya_latex_pres_2024.pdf)
+* [LaTeX in R output](resources_files/safiya_latex_pres_2024.Rmd)
 
 
 Lupe + Ziyi's Fall 2023 Tutorial
