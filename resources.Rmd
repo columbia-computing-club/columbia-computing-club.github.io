@@ -168,6 +168,12 @@ Using GitHub for collaboration and version control with Jeff Goldsmith
 
 ## Python
 
+Fall 2025 (Kate Colvin & Gustavo Garcia-Franceschini):
+
+* [Slide  Show](resources_files/python_intro_2025_kate.pdf)
+* [Blank Google Colab](https://colab.research.google.com/drive/1g4343nOLPo1p9MpvOEAnPM426lXDblph#scrollTo=xiZIneWtEdYs)
+* [Completed Google Colab](https://colab.research.google.com/drive/1tvqgGZG3k6I9R9THvQFl6R5JuYafWELX)
+
 Fall 2024 (Amy Pitts & Gustavo Garcia-Franceschini):
 
 * [Slide  Show](resources_files/Python_tutorial_2020_amy.pdf)
