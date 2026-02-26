@@ -277,4 +277,9 @@ Jihui Lee's presentation
 * [.pdf file](resources_files/ggplot2.pdf)
 * [Jihui's rMarkdown file on ggplot2](resources_files/ggplot2.rmd)
 
+## Optimization
 
+Vidit Tripathi (2026)
+
+* [code](resources_files/optimization_code.ipynb)
+* [slides](resources_files/optimization_slides.pdf)

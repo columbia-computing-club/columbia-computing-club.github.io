@@ -24,18 +24,15 @@ library(tidyverse)
 library(knitr)
 tib = tibble(
   `Topics` = c(
-    "How to set up your computer as a Statistician",
-    "How to visually improve your homework",
-    "Intro to Python"),
+    "Optimization Modeling in Python",
+    "Intro to Beamer"),
   `Date` = c(
-    "September 18, 2025 (Thursday); 1 - 2 PM", 
-     "October 15, 2025 (Wednesday); 11:45 AM -12:45 PM",
-     "November 5, 2025 (Wednesday); 11:45 AM -12:45 PM")
+    "February 25, 2026 (Wednesday); 11:45 am - 12:45 PM", 
+     "TBD")
   ,
   `Location` = c(
-    "VEC 903",
-    "HSC LL 107",
-    "VEC 1303")
+    "HSC LL 205",
+    "TBD")
 )
 kable(tib)
 ```
