@@ -27,7 +27,7 @@ tib = tibble(
     "Optimization Modeling in Python",
     "Intro to Beamer"),
   `Date` = c(
-    "February 25, 2026 (Wednesday); 11:45 am - 12:45 PM", 
+    "February 25, 2026 (Wednesday); 11:45 AM - 12:45 PM", 
      "TBD")
   ,
   `Location` = c(
